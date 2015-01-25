@@ -73,6 +73,8 @@ public class ModifyAdd extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         subectLabel = new javax.swing.JLabel();
         subjectText = new javax.swing.JTextField();
+        ImageLabel = new javax.swing.JLabel();
+        ImgBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -322,6 +324,19 @@ public class ModifyAdd extends javax.swing.JFrame {
             }
         });
 
+        ImageLabel.setBackground(new java.awt.Color(34, 34, 34));
+        ImageLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ImageLabel.setForeground(new java.awt.Color(240, 240, 240));
+        ImageLabel.setText("Images:");
+        ImageLabel.setOpaque(true);
+
+        ImgBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Assignment.png", "Exam.png", "Meeting.png", "Presentation.png", "Quiz.png" }));
+        ImgBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImgBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -329,10 +344,13 @@ public class ModifyAdd extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(subjectText)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(subectLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 91, Short.MAX_VALUE))
-                    .addComponent(subjectText))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(subectLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(ImgBox, 0, 166, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -342,7 +360,11 @@ public class ModifyAdd extends javax.swing.JFrame {
                 .addComponent(subectLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(subjectText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ImgBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -463,6 +485,10 @@ public class ModifyAdd extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_subjectTextActionPerformed
 
+    private void ImgBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImgBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImgBoxActionPerformed
+
     private void close(){
         this.dispose();
     }
@@ -502,6 +528,8 @@ public class ModifyAdd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ImageLabel;
+    private javax.swing.JComboBox ImgBox;
     private javax.swing.JButton cancelButton;
     private javax.swing.JTextArea descArea;
     private javax.swing.JLabel descLabel;
