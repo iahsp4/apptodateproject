@@ -308,8 +308,20 @@ public class Settings extends javax.swing.JFrame {
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         // TODO add your handling code here:
+        Path path = Paths.get("");
+        Path realPath;
+        File file = new File(stringPath + "\\AppToDate\\pink.txt");
+        File pink = new File(stringPath + "\\AppToDate\\pink.txt");
+        file.delete();
+        try {
+            realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+            stringPath = realPath.toString();
+            stringPath = stringPath.replace("\\","\\\\");
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        
+         
         close();
     }//GEN-LAST:event_okButtonActionPerformed
 
