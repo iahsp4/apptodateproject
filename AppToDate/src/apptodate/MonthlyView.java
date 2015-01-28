@@ -1216,7 +1216,7 @@ public class MonthlyView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(34, 34, 34));
+        jPanel3.setBackground(new java.awt.Color(51, 61, 68));
         jPanel3.setForeground(new java.awt.Color(240, 240, 240));
 
         monthLeftArrow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/left_arrow.png"))); // NOI18N
@@ -1479,6 +1479,57 @@ public class MonthlyView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        int num = Calendar.getInstance().get(Calendar.MONTH);
+        monthNum = num;
+        i = num;
+        if(num == 0){
+            janButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 1){
+            febButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 2){
+            marButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 3){
+            aprButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 4){
+            mayButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 5){
+            junButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 6){
+            julButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 7){
+            augButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 8){
+            sepButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 9){
+            octButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 10){
+            novButton.setBackground(new java.awt.Color(29,114,239));
+        }
+
+        if(num == 11){
+            decButton.setBackground(new java.awt.Color(29,114,239));
+        }
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
