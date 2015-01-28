@@ -9,7 +9,7 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author TONETTE
+ * @author revamp group
  */
 public class AppToDate {
 
