@@ -104,7 +104,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="yearButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="yearButton.setContentAreaFilled(false);&#xa;yearButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -124,7 +124,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="monthButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="monthButton.setContentAreaFilled(false);&#xa;monthButton.setOpaque(true);">
               <Color blue="ef" green="72" red="1d" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -144,7 +144,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton.setContentAreaFilled(false);&#xa;dayButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1795,7 +1795,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="janButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="janButton.setContentAreaFilled(false);&#xa;janButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1816,7 +1816,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="febButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="febButton.setContentAreaFilled(false);&#xa;febButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1837,7 +1837,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="marButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="marButton.setContentAreaFilled(false);&#xa;marButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1858,7 +1858,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="aprButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="aprButton.setContentAreaFilled(false);&#xa;aprButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1879,7 +1879,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="mayButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="mayButton.setContentAreaFilled(false);&#xa;mayButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1900,7 +1900,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="junButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="junButton.setContentAreaFilled(false);&#xa;junButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1921,7 +1921,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="julButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="julButton.setContentAreaFilled(false);&#xa;julButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1942,7 +1942,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="augButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="augButton.setContentAreaFilled(false);&#xa;augButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1963,7 +1963,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="sepButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="sepButton.setContentAreaFilled(false);&#xa;sepButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1984,7 +1984,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="octButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="octButton.setContentAreaFilled(false);&#xa;octButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2005,7 +2005,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="novButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="novButton.setContentAreaFilled(false);&#xa;novButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2026,7 +2026,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="decButton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="decButton.setContentAreaFilled(false);&#xa;decButton.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
