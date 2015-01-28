@@ -141,6 +141,8 @@ public class MonthlyView extends javax.swing.JFrame {
         titlePanel.setFont(new java.awt.Font("Aldhabi", 0, 18)); // NOI18N
 
         yearButton.setBackground(new java.awt.Color(34, 34, 34));
+        yearButton.setContentAreaFilled(false);
+        yearButton.setOpaque(true);
         yearButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         yearButton.setForeground(new java.awt.Color(240, 240, 240));
         yearButton.setText("YEAR");
@@ -152,6 +154,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         monthButton.setBackground(new java.awt.Color(29, 114, 239));
+        monthButton.setContentAreaFilled(false);
+        monthButton.setOpaque(true);
         monthButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         monthButton.setForeground(new java.awt.Color(240, 240, 240));
         monthButton.setText("MONTH");
@@ -163,6 +167,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton.setContentAreaFilled(false);
+        dayButton.setOpaque(true);
         dayButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         dayButton.setForeground(new java.awt.Color(240, 240, 240));
         dayButton.setText("DAY");
@@ -1230,6 +1236,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         janButton.setBackground(new java.awt.Color(34, 34, 34));
+        janButton.setContentAreaFilled(false);
+        janButton.setOpaque(true);
         janButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         janButton.setForeground(new java.awt.Color(240, 240, 240));
         janButton.setText("JAN");
@@ -1242,6 +1250,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         febButton.setBackground(new java.awt.Color(34, 34, 34));
+        febButton.setContentAreaFilled(false);
+        febButton.setOpaque(true);
         febButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         febButton.setForeground(new java.awt.Color(240, 240, 240));
         febButton.setText("FEB");
@@ -1254,6 +1264,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         marButton.setBackground(new java.awt.Color(34, 34, 34));
+        marButton.setContentAreaFilled(false);
+        marButton.setOpaque(true);
         marButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         marButton.setForeground(new java.awt.Color(240, 240, 240));
         marButton.setText("MAR");
@@ -1266,6 +1278,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         aprButton.setBackground(new java.awt.Color(34, 34, 34));
+        aprButton.setContentAreaFilled(false);
+        aprButton.setOpaque(true);
         aprButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         aprButton.setForeground(new java.awt.Color(240, 240, 240));
         aprButton.setText("APR");
@@ -1278,6 +1292,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         mayButton.setBackground(new java.awt.Color(34, 34, 34));
+        mayButton.setContentAreaFilled(false);
+        mayButton.setOpaque(true);
         mayButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         mayButton.setForeground(new java.awt.Color(240, 240, 240));
         mayButton.setText("MAY");
@@ -1290,6 +1306,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         junButton.setBackground(new java.awt.Color(34, 34, 34));
+        junButton.setContentAreaFilled(false);
+        junButton.setOpaque(true);
         junButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         junButton.setForeground(new java.awt.Color(240, 240, 240));
         junButton.setText("JUN");
@@ -1302,6 +1320,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         julButton.setBackground(new java.awt.Color(34, 34, 34));
+        julButton.setContentAreaFilled(false);
+        julButton.setOpaque(true);
         julButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         julButton.setForeground(new java.awt.Color(240, 240, 240));
         julButton.setText("JUL");
@@ -1314,6 +1334,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         augButton.setBackground(new java.awt.Color(34, 34, 34));
+        augButton.setContentAreaFilled(false);
+        augButton.setOpaque(true);
         augButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         augButton.setForeground(new java.awt.Color(240, 240, 240));
         augButton.setText("AUG");
@@ -1326,6 +1348,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         sepButton.setBackground(new java.awt.Color(34, 34, 34));
+        sepButton.setContentAreaFilled(false);
+        sepButton.setOpaque(true);
         sepButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         sepButton.setForeground(new java.awt.Color(240, 240, 240));
         sepButton.setText("SEP");
@@ -1338,6 +1362,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         octButton.setBackground(new java.awt.Color(34, 34, 34));
+        octButton.setContentAreaFilled(false);
+        octButton.setOpaque(true);
         octButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         octButton.setForeground(new java.awt.Color(240, 240, 240));
         octButton.setText("OCT");
@@ -1350,6 +1376,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         novButton.setBackground(new java.awt.Color(34, 34, 34));
+        novButton.setContentAreaFilled(false);
+        novButton.setOpaque(true);
         novButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         novButton.setForeground(new java.awt.Color(240, 240, 240));
         novButton.setText("NOV");
@@ -1362,6 +1390,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         decButton.setBackground(new java.awt.Color(34, 34, 34));
+        decButton.setContentAreaFilled(false);
+        decButton.setOpaque(true);
         decButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         decButton.setForeground(new java.awt.Color(240, 240, 240));
         decButton.setText("DEC");
