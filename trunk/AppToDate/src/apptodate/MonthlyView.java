@@ -299,6 +299,8 @@ public class MonthlyView extends javax.swing.JFrame {
         dayLabel7.setOpaque(true);
 
         dayButton1.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton1.setContentAreaFilled(false);
+        dayButton1.setOpaque(true);
         dayButton1.setForeground(new java.awt.Color(240, 240, 240));
         dayButton1.setText(String.valueOf(getDefaultMonth(0)));
         dayButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -313,6 +315,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton2.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton2.setContentAreaFilled(false);
+        dayButton2.setOpaque(true);
         dayButton2.setForeground(new java.awt.Color(240, 240, 240));
         dayButton2.setText(String.valueOf(getDefaultMonth(1)));
         dayButton2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -327,6 +331,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton3.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton3.setContentAreaFilled(false);
+        dayButton3.setOpaque(true);
         dayButton3.setForeground(new java.awt.Color(240, 240, 240));
         dayButton3.setText(String.valueOf(getDefaultMonth(2)));
         dayButton3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -341,6 +347,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton4.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton4.setContentAreaFilled(false);
+        dayButton4.setOpaque(true);
         dayButton4.setForeground(new java.awt.Color(240, 240, 240));
         dayButton4.setText(String.valueOf(getDefaultMonth(3)));
         dayButton4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -355,6 +363,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton5.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton5.setContentAreaFilled(false);
+        dayButton5.setOpaque(true);
         dayButton5.setForeground(new java.awt.Color(240, 240, 240));
         dayButton5.setText(String.valueOf(getDefaultMonth(4)));
         dayButton5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -369,6 +379,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton6.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton6.setContentAreaFilled(false);
+        dayButton6.setOpaque(true);
         dayButton6.setForeground(new java.awt.Color(240, 240, 240));
         dayButton6.setText(String.valueOf(getDefaultMonth(5)));
         dayButton6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -383,6 +395,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton7.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton7.setContentAreaFilled(false);
+        dayButton7.setOpaque(true);
         dayButton7.setForeground(new java.awt.Color(240, 240, 240));
         dayButton7.setText(String.valueOf(getDefaultMonth(6)));
         dayButton7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -397,6 +411,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton8.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton8.setContentAreaFilled(false);
+        dayButton8.setOpaque(true);
         dayButton8.setForeground(new java.awt.Color(240, 240, 240));
         dayButton8.setText(String.valueOf(getDefaultMonth(7)));
         dayButton8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -411,6 +427,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton9.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton9.setContentAreaFilled(false);
+        dayButton9.setOpaque(true);
         dayButton9.setForeground(new java.awt.Color(240, 240, 240));
         dayButton9.setText(String.valueOf(getDefaultMonth(8)));
         dayButton9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -425,6 +443,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton10.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton10.setContentAreaFilled(false);
+        dayButton10.setOpaque(true);
         dayButton10.setForeground(new java.awt.Color(240, 240, 240));
         dayButton10.setText(String.valueOf(getDefaultMonth(9)));
         dayButton10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -439,6 +459,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton11.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton11.setContentAreaFilled(false);
+        dayButton11.setOpaque(true);
         dayButton11.setForeground(new java.awt.Color(240, 240, 240));
         dayButton11.setText(String.valueOf(getDefaultMonth(10)));
         dayButton11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -453,6 +475,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton12.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton12.setContentAreaFilled(false);
+        dayButton12.setOpaque(true);
         dayButton12.setForeground(new java.awt.Color(240, 240, 240));
         dayButton12.setText(String.valueOf(getDefaultMonth(11)));
         dayButton12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -467,6 +491,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton13.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton13.setContentAreaFilled(false);
+        dayButton13.setOpaque(true);
         dayButton13.setForeground(new java.awt.Color(240, 240, 240));
         dayButton13.setText(String.valueOf(getDefaultMonth(12)));
         dayButton13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -481,6 +507,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton14.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton14.setContentAreaFilled(false);
+        dayButton14.setOpaque(true);
         dayButton14.setForeground(new java.awt.Color(240, 240, 240));
         dayButton14.setText(String.valueOf(getDefaultMonth(13)));
         dayButton14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -495,6 +523,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton15.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton15.setContentAreaFilled(false);
+        dayButton15.setOpaque(true);
         dayButton15.setForeground(new java.awt.Color(240, 240, 240));
         dayButton15.setText(String.valueOf(getDefaultMonth(14)));
         dayButton15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -509,6 +539,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton16.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton16.setContentAreaFilled(false);
+        dayButton16.setOpaque(true);
         dayButton16.setForeground(new java.awt.Color(240, 240, 240));
         dayButton16.setText(String.valueOf(getDefaultMonth(15)));
         dayButton16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -523,6 +555,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton17.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton17.setContentAreaFilled(false);
+        dayButton17.setOpaque(true);
         dayButton17.setForeground(new java.awt.Color(240, 240, 240));
         dayButton17.setText(String.valueOf(getDefaultMonth(16)));
         dayButton17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -537,6 +571,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton18.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton18.setContentAreaFilled(false);
+        dayButton18.setOpaque(true);
         dayButton18.setForeground(new java.awt.Color(240, 240, 240));
         dayButton18.setText(String.valueOf(getDefaultMonth(17)));
         dayButton18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -551,6 +587,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton19.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton19.setContentAreaFilled(false);
+        dayButton19.setOpaque(true);
         dayButton19.setForeground(new java.awt.Color(240, 240, 240));
         dayButton19.setText(String.valueOf(getDefaultMonth(18)));
         dayButton19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -565,6 +603,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton20.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton20.setContentAreaFilled(false);
+        dayButton20.setOpaque(true);
         dayButton20.setForeground(new java.awt.Color(240, 240, 240));
         dayButton20.setText(String.valueOf(getDefaultMonth(19)));
         dayButton20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -579,6 +619,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton21.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton21.setContentAreaFilled(false);
+        dayButton21.setOpaque(true);
         dayButton21.setForeground(new java.awt.Color(240, 240, 240));
         dayButton21.setText(String.valueOf(getDefaultMonth(20)));
         dayButton21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -593,6 +635,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton22.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton22.setContentAreaFilled(false);
+        dayButton22.setOpaque(true);
         dayButton22.setForeground(new java.awt.Color(240, 240, 240));
         dayButton22.setText(String.valueOf(getDefaultMonth(21)));
         dayButton22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -607,6 +651,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton23.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton23.setContentAreaFilled(false);
+        dayButton23.setOpaque(true);
         dayButton23.setForeground(new java.awt.Color(240, 240, 240));
         dayButton23.setText(String.valueOf(getDefaultMonth(22)));
         dayButton23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -621,6 +667,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton24.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton24.setContentAreaFilled(false);
+        dayButton24.setOpaque(true);
         dayButton24.setForeground(new java.awt.Color(240, 240, 240));
         dayButton24.setText(String.valueOf(getDefaultMonth(23)));
         dayButton24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -635,6 +683,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton25.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton25.setContentAreaFilled(false);
+        dayButton25.setOpaque(true);
         dayButton25.setForeground(new java.awt.Color(240, 240, 240));
         dayButton25.setText(String.valueOf(getDefaultMonth(24)));
         dayButton25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -649,6 +699,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton26.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton26.setContentAreaFilled(false);
+        dayButton26.setOpaque(true);
         dayButton26.setForeground(new java.awt.Color(240, 240, 240));
         dayButton26.setText(String.valueOf(getDefaultMonth(25)));
         dayButton26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -663,6 +715,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton27.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton27.setContentAreaFilled(false);
+        dayButton27.setOpaque(true);
         dayButton27.setForeground(new java.awt.Color(240, 240, 240));
         dayButton27.setText(String.valueOf(getDefaultMonth(26)));
         dayButton27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -677,6 +731,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton28.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton28.setContentAreaFilled(false);
+        dayButton28.setOpaque(true);
         dayButton28.setForeground(new java.awt.Color(240, 240, 240));
         dayButton28.setText(String.valueOf(getDefaultMonth(27)));
         dayButton28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -691,6 +747,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton29.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton29.setContentAreaFilled(false);
+        dayButton29.setOpaque(true);
         dayButton29.setForeground(new java.awt.Color(240, 240, 240));
         dayButton29.setText(String.valueOf(getDefaultMonth(28)));
         dayButton29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -705,6 +763,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton30.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton30.setContentAreaFilled(false);
+        dayButton30.setOpaque(true);
         dayButton30.setForeground(new java.awt.Color(240, 240, 240));
         dayButton30.setText(String.valueOf(getDefaultMonth(29)));
         dayButton30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -719,6 +779,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton31.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton31.setContentAreaFilled(false);
+        dayButton31.setOpaque(true);
         dayButton31.setForeground(new java.awt.Color(240, 240, 240));
         dayButton31.setText(String.valueOf(getDefaultMonth(30)));
         dayButton31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -733,6 +795,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton32.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton32.setContentAreaFilled(false);
+        dayButton32.setOpaque(true);
         dayButton32.setForeground(new java.awt.Color(240, 240, 240));
         dayButton32.setText(String.valueOf(getDefaultMonth(31)));
         dayButton32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -747,6 +811,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton33.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton33.setContentAreaFilled(false);
+        dayButton33.setOpaque(true);
         dayButton33.setForeground(new java.awt.Color(240, 240, 240));
         dayButton33.setText(String.valueOf(getDefaultMonth(32)));
         dayButton33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -761,6 +827,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton34.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton34.setContentAreaFilled(false);
+        dayButton34.setOpaque(true);
         dayButton34.setForeground(new java.awt.Color(240, 240, 240));
         dayButton34.setText(String.valueOf(getDefaultMonth(33)));
         dayButton34.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -775,6 +843,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton35.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton35.setContentAreaFilled(false);
+        dayButton35.setOpaque(true);
         dayButton35.setForeground(new java.awt.Color(240, 240, 240));
         dayButton35.setText(String.valueOf(getDefaultMonth(34)));
         dayButton35.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -789,6 +859,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton36.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton36.setContentAreaFilled(false);
+        dayButton36.setOpaque(true);
         dayButton36.setForeground(new java.awt.Color(240, 240, 240));
         dayButton36.setText(String.valueOf(getDefaultMonth(35)));
         dayButton36.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -803,6 +875,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton37.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton37.setContentAreaFilled(false);
+        dayButton37.setOpaque(true);
         dayButton37.setForeground(new java.awt.Color(240, 240, 240));
         dayButton37.setText(String.valueOf(getDefaultMonth(36)));
         dayButton37.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -817,6 +891,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton38.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton38.setContentAreaFilled(false);
+        dayButton38.setOpaque(true);
         dayButton38.setForeground(new java.awt.Color(240, 240, 240));
         dayButton38.setText(String.valueOf(getDefaultMonth(37)));
         dayButton38.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -831,6 +907,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton39.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton39.setContentAreaFilled(false);
+        dayButton39.setOpaque(true);
         dayButton39.setForeground(new java.awt.Color(240, 240, 240));
         dayButton39.setText(String.valueOf(getDefaultMonth(39)));
         dayButton39.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -845,6 +923,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton40.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton40.setContentAreaFilled(false);
+        dayButton40.setOpaque(true);
         dayButton40.setForeground(new java.awt.Color(240, 240, 240));
         dayButton40.setText(String.valueOf(getDefaultMonth(40)));
         dayButton40.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -859,6 +939,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton41.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton41.setContentAreaFilled(false);
+        dayButton41.setOpaque(true);
         dayButton41.setForeground(new java.awt.Color(240, 240, 240));
         dayButton41.setText(String.valueOf(getDefaultMonth(40)));
         dayButton41.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -873,6 +955,8 @@ public class MonthlyView extends javax.swing.JFrame {
         });
 
         dayButton42.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton42.setContentAreaFilled(false);
+        dayButton42.setOpaque(true);
         dayButton42.setForeground(new java.awt.Color(240, 240, 240));
         dayButton42.setText(String.valueOf(getDefaultMonth(41)));
         dayButton42.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

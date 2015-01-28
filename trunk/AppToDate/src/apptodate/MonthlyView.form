@@ -526,7 +526,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton1">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton1.setContentAreaFilled(false);&#xa;dayButton1.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -549,7 +549,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton2">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton2.setContentAreaFilled(false);&#xa;dayButton2.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -572,7 +572,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton3">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton3.setContentAreaFilled(false);&#xa;dayButton3.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -595,7 +595,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton4">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton4.setContentAreaFilled(false);&#xa;dayButton4.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -618,7 +618,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton5">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton5.setContentAreaFilled(false);&#xa;dayButton5.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -641,7 +641,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton6">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton6.setContentAreaFilled(false);&#xa;dayButton6.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -664,7 +664,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton7">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton7.setContentAreaFilled(false);&#xa;dayButton7.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -687,7 +687,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton8">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton8.setContentAreaFilled(false);&#xa;dayButton8.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -710,7 +710,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton9">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton9.setContentAreaFilled(false);&#xa;dayButton9.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -733,7 +733,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton10">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton10.setContentAreaFilled(false);&#xa;dayButton10.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -756,7 +756,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton11">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton11.setContentAreaFilled(false);&#xa;dayButton11.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -779,7 +779,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton12">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton12.setContentAreaFilled(false);&#xa;dayButton12.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -802,7 +802,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton13">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton13.setContentAreaFilled(false);&#xa;dayButton13.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -825,7 +825,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton14">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton14.setContentAreaFilled(false);&#xa;dayButton14.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -848,7 +848,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton15">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton15.setContentAreaFilled(false);&#xa;dayButton15.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -871,7 +871,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton16">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton16.setContentAreaFilled(false);&#xa;dayButton16.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -894,7 +894,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton17">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton17.setContentAreaFilled(false);&#xa;dayButton17.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -917,7 +917,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton18">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton18.setContentAreaFilled(false);&#xa;dayButton18.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -940,7 +940,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton19">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton19.setContentAreaFilled(false);&#xa;dayButton19.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -963,7 +963,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton20">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton20.setContentAreaFilled(false);&#xa;dayButton20.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -986,7 +986,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton21">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton21.setContentAreaFilled(false);&#xa;dayButton21.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1009,7 +1009,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton22">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton22.setContentAreaFilled(false);&#xa;dayButton22.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1032,7 +1032,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton23">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton23.setContentAreaFilled(false);&#xa;dayButton23.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1055,7 +1055,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton24">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton24.setContentAreaFilled(false);&#xa;dayButton24.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1078,7 +1078,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton25">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton25.setContentAreaFilled(false);&#xa;dayButton25.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1101,7 +1101,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton26">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton26.setContentAreaFilled(false);&#xa;dayButton26.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1124,7 +1124,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton27">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton27.setContentAreaFilled(false);&#xa;dayButton27.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1147,7 +1147,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton28">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton28.setContentAreaFilled(false);&#xa;dayButton28.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1170,7 +1170,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton29">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton29.setContentAreaFilled(false);&#xa;dayButton29.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1193,7 +1193,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton30">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton30.setContentAreaFilled(false);&#xa;dayButton30.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1216,7 +1216,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton31">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton31.setContentAreaFilled(false);&#xa;dayButton31.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1239,7 +1239,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton32">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton32.setContentAreaFilled(false);&#xa;dayButton32.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1262,7 +1262,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton33">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton33.setContentAreaFilled(false);&#xa;dayButton33.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1285,7 +1285,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton34">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton34.setContentAreaFilled(false);&#xa;dayButton34.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1308,7 +1308,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton35">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton35.setContentAreaFilled(false);&#xa;dayButton35.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1331,7 +1331,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton36">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton36.setContentAreaFilled(false);&#xa;dayButton36.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1354,7 +1354,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton37">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton37.setContentAreaFilled(false);&#xa;dayButton37.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1377,7 +1377,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton38">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton38.setContentAreaFilled(false);&#xa;dayButton38.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1400,7 +1400,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton39">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton39.setContentAreaFilled(false);&#xa;dayButton39.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1423,7 +1423,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton40">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton40.setContentAreaFilled(false);&#xa;dayButton40.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1446,7 +1446,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton41">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton41.setContentAreaFilled(false);&#xa;dayButton41.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1469,7 +1469,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="dayButton42">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="dayButton42.setContentAreaFilled(false);&#xa;dayButton42.setOpaque(true);">
               <Color blue="22" green="22" red="22" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
