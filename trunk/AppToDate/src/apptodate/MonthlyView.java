@@ -173,6 +173,11 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton.setForeground(new java.awt.Color(240, 240, 240));
         dayButton.setText("DAY");
         dayButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dayButtonActionPerformed(evt);
+            }
+        });
 
         settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/wrench.png"))); // NOI18N
         settings.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -3057,6 +3062,13 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
     }//GEN-LAST:event_monthRightArrowActionPerformed
+
+    private void dayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButtonActionPerformed
+        // TODO add your handling code here:
+        close();
+        DailyView dV = new DailyView();
+        dV.setVisible(true);
+    }//GEN-LAST:event_dayButtonActionPerformed
     
     private void close(){
         this.dispose();

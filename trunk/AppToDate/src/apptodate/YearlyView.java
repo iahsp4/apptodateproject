@@ -5,9 +5,16 @@
  */
 package apptodate;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,6 +23,7 @@ import java.util.GregorianCalendar;
 public class YearlyView extends javax.swing.JFrame {
 
     public int year;
+    public String stringPath = "";
     public int d[] = new int[42];
     public int i;
 
@@ -45,6 +53,64 @@ public class YearlyView extends javax.swing.JFrame {
         yearRightArrow = new javax.swing.JButton();
         leftYearArrow = new javax.swing.JButton();
         jScrollPane13 = new javax.swing.JScrollPane();
+        String[] dow = new String[7]; //Days of Week
+        if(getStartingWeek() == 0){
+            dow[0] = "Sn";
+            dow[1] = "M";
+            dow[2] = "T";
+            dow[3] = "W";
+            dow[4] = "Th";
+            dow[5] = "F";
+            dow[6] = "S";
+        }else if(getStartingWeek() == 1){
+            dow[0] = "M";
+            dow[1] = "T";
+            dow[2] = "W";
+            dow[3] = "Th";
+            dow[4] = "F";
+            dow[5] = "S";
+            dow[6] = "Sn";
+        }else if(getStartingWeek() == 2){
+            dow[0] = "T";
+            dow[1] = "W";
+            dow[2] = "Th";
+            dow[3] = "F";
+            dow[4] = "S";
+            dow[5] = "Sn";
+            dow[6] = "M";
+        }else if(getStartingWeek() == 3){
+            dow[0] = "W";
+            dow[1] = "Th";
+            dow[2] = "F";
+            dow[3] = "S";
+            dow[4] = "Sn";
+            dow[5] = "M";
+            dow[6] = "T";
+        }else if(getStartingWeek() == 4){
+            dow[0] = "Th";
+            dow[1] = "F";
+            dow[2] = "S";
+            dow[3] = "Sn";
+            dow[4] = "M";
+            dow[5] = "T";
+            dow[6] = "W";
+        }else if(getStartingWeek() == 5){
+            dow[0] = "F";
+            dow[1] = "S";
+            dow[2] = "Sn";
+            dow[3] = "M";
+            dow[4] = "T";
+            dow[5] = "W";
+            dow[6] = "Th";
+        }else if(getStartingWeek() == 6){
+            dow[0] = "S";
+            dow[1] = "Sn";
+            dow[2] = "M";
+            dow[3] = "T";
+            dow[4] = "W";
+            dow[5] = "Th";
+            dow[6] = "F";
+        }
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         janTable = new javax.swing.JTable();
@@ -91,6 +157,8 @@ public class YearlyView extends javax.swing.JFrame {
         titlePanel.setFont(new java.awt.Font("Aldhabi", 0, 18)); // NOI18N
 
         yearButton.setBackground(new java.awt.Color(29, 114, 239));
+        yearButton.setContentAreaFilled(false);
+        yearButton.setOpaque(true);
         yearButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         yearButton.setForeground(new java.awt.Color(240, 240, 240));
         yearButton.setText("YEAR");
@@ -102,6 +170,8 @@ public class YearlyView extends javax.swing.JFrame {
         });
 
         monthButton.setBackground(new java.awt.Color(34, 34, 34));
+        monthButton.setContentAreaFilled(false);
+        monthButton.setOpaque(true);
         monthButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         monthButton.setForeground(new java.awt.Color(240, 240, 240));
         monthButton.setText("MONTH");
@@ -113,10 +183,17 @@ public class YearlyView extends javax.swing.JFrame {
         });
 
         dayButton.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton.setContentAreaFilled(false);
+        dayButton.setOpaque(true);
         dayButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         dayButton.setForeground(new java.awt.Color(240, 240, 240));
         dayButton.setText("DAY");
         dayButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dayButtonActionPerformed(evt);
+            }
+        });
 
         settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/wrench.png"))); // NOI18N
         settings.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -194,6 +271,22 @@ public class YearlyView extends javax.swing.JFrame {
                     .addComponent(dayButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        if(checkPink() == 1){
+            monthButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            monthButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkWrench.png"))); // NOI18N
+        }
+        if(checkPink() == 1){
+            modifyAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkAdd.png"))); // NOI18N
+        }
         yearLabel.setText(String.valueOf(getYear()));
 
         jPanel1.setBackground(new java.awt.Color(51, 61, 68));
@@ -214,7 +307,7 @@ public class YearlyView extends javax.swing.JFrame {
                 {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
             },
             new String [] {
-                "Sn", "M", "T", "W", "Th", "F", "S"
+                dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
             }){
                 boolean[] canEdit = new boolean [] {
                     false, false, false, false
@@ -229,6 +322,11 @@ public class YearlyView extends javax.swing.JFrame {
         janTable.getTableHeader().setResizingAllowed(false);
         janTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(janTable);
+        if(checkPink() == 1){
+            janTable.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            janTable.setBackground(new java.awt.Color(34, 34, 34));
+        }
 
         janLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         janLabel.setText(" JAN");
@@ -258,7 +356,7 @@ public class YearlyView extends javax.swing.JFrame {
                 {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
             },
             new String [] {
-                "Sn", "M", "T", "W", "Th", "F", "S"
+                dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
             }
         ){
             boolean[] canEdit = new boolean [] {
@@ -273,6 +371,11 @@ public class YearlyView extends javax.swing.JFrame {
     febTable.getTableHeader().setResizingAllowed(false);
     febTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane2.setViewportView(febTable);
+    if(checkPink() == 1){
+        febTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        febTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     i = 2;
     for(int counter = 0; counter <= 41; counter++){
@@ -290,7 +393,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -306,6 +409,11 @@ public class YearlyView extends javax.swing.JFrame {
     marTable.getTableHeader().setResizingAllowed(false);
     marTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane3.setViewportView(marTable);
+    if(checkPink() == 1){
+        marTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        marTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     aprLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
     aprLabel.setText(" APR");
@@ -327,7 +435,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -342,6 +450,11 @@ public class YearlyView extends javax.swing.JFrame {
     aprTable.getTableHeader().setResizingAllowed(false);
     aprTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane4.setViewportView(aprTable);
+    if(checkPink() == 1){
+        aprTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        aprTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     mayLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
     mayLabel.setText(" MAY");
@@ -367,7 +480,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -382,6 +495,11 @@ public class YearlyView extends javax.swing.JFrame {
     mayTable.getTableHeader().setResizingAllowed(false);
     mayTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane5.setViewportView(mayTable);
+    if(checkPink() == 1){
+        mayTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        mayTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     i = 5;
     for(int counter = 0; counter <= 41; counter++){
@@ -399,7 +517,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -415,6 +533,11 @@ public class YearlyView extends javax.swing.JFrame {
     junTable.getTableHeader().setResizingAllowed(false);
     junTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane6.setViewportView(junTable);
+    if(checkPink() == 1){
+        junTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        junTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     julLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
     julLabel.setText(" JUL");
@@ -436,7 +559,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -451,6 +574,11 @@ public class YearlyView extends javax.swing.JFrame {
     julTable.getTableHeader().setResizingAllowed(false);
     julTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane7.setViewportView(julTable);
+    if(checkPink() == 1){
+        julTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        julTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     augLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
     augLabel.setText(" AUG");
@@ -476,7 +604,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -491,6 +619,11 @@ public class YearlyView extends javax.swing.JFrame {
     augTable.getTableHeader().setResizingAllowed(false);
     augTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane8.setViewportView(augTable);
+    if(checkPink() == 1){
+        augTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        augTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     i = 8;
     for(int counter = 0; counter <= 41; counter++){
@@ -508,7 +641,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -523,12 +656,17 @@ public class YearlyView extends javax.swing.JFrame {
     sepTable.getTableHeader().setResizingAllowed(false);
     sepTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane9.setViewportView(sepTable);
+    if(checkPink() == 1){
+        sepTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        sepTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     octLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
     octLabel.setText(" OCT");
     octLabel.setOpaque(true);
 
-    i = 6;
+    i = 9;
     for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
     }
@@ -544,7 +682,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -559,12 +697,17 @@ public class YearlyView extends javax.swing.JFrame {
     octTable.getTableHeader().setResizingAllowed(false);
     octTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane10.setViewportView(octTable);
+    if(checkPink() == 1){
+        octTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        octTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     novLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
     novLabel.setText(" NOV");
     novLabel.setOpaque(true);
 
-    i = 6;
+    i = 10;
     for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
     }
@@ -580,7 +723,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -595,8 +738,13 @@ public class YearlyView extends javax.swing.JFrame {
     novTable.getTableHeader().setResizingAllowed(false);
     novTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane11.setViewportView(novTable);
+    if(checkPink() == 1){
+        novTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        novTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
-    i = 6;
+    i = 11;
     for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
     }
@@ -612,7 +760,7 @@ public class YearlyView extends javax.swing.JFrame {
             {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
         },
         new String [] {
-            "Sn", "M", "T", "W", "Th", "F", "S"
+            dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
         }
     ){
         boolean[] canEdit = new boolean [] {
@@ -627,6 +775,11 @@ public class YearlyView extends javax.swing.JFrame {
     decTable.getTableHeader().setResizingAllowed(false);
     decTable.getTableHeader().setReorderingAllowed(false);
     jScrollPane12.setViewportView(decTable);
+    if(checkPink() == 1){
+        decTable.setBackground(new java.awt.Color(255, 9, 88));
+    }else{
+        decTable.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     decLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
     decLabel.setText(" DEC");
@@ -734,10 +887,15 @@ public class YearlyView extends javax.swing.JFrame {
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(20, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     jScrollPane13.setViewportView(jPanel1);
+    if(checkPink() == 1){
+        jPanel1.setBackground(new java.awt.Color(255, 174, 201));
+    }else{
+        jPanel1.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -751,8 +909,14 @@ public class YearlyView extends javax.swing.JFrame {
         .addGroup(layout.createSequentialGroup()
             .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE))
+            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE))
     );
+
+    if(checkPink() == 1){
+        titlePanel.setBackground(new java.awt.Color(255, 174, 201));
+    }else{
+        titlePanel.setBackground(new java.awt.Color(34, 34, 34));
+    }
 
     pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -770,230 +934,64 @@ public class YearlyView extends javax.swing.JFrame {
         // TODO add your handling code here:
         year = year + 1;
         yearLabel.setText(String.valueOf(year));
-        
-           i = 0;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
+        String[] dow = new String[7]; //Days of Week
+        if(getStartingWeek() == 0){
+            dow[0] = "Sn";
+            dow[1] = "M";
+            dow[2] = "T";      
+            dow[3] = "W";
+            dow[4] = "Th";      
+            dow[5] = "F";       
+            dow[6] = "S";       
+        }else if(getStartingWeek() == 1){
+            dow[0] = "M";
+            dow[1] = "T";
+            dow[2] = "W";      
+            dow[3] = "Th";
+            dow[4] = "F";      
+            dow[5] = "S";       
+            dow[6] = "Sn";  
+        }else if(getStartingWeek() == 2){
+            dow[0] = "T";
+            dow[1] = "W";
+            dow[2] = "Th";      
+            dow[3] = "F";
+            dow[4] = "S";      
+            dow[5] = "Sn";       
+            dow[6] = "M";  
+        }else if(getStartingWeek() == 3){
+            dow[0] = "W";
+            dow[1] = "Th";
+            dow[2] = "F";      
+            dow[3] = "S";
+            dow[4] = "Sn";      
+            dow[5] = "M";       
+            dow[6] = "T";  
+        }else if(getStartingWeek() == 4){
+            dow[0] = "Th";
+            dow[1] = "F";
+            dow[2] = "S";      
+            dow[3] = "Sn";
+            dow[4] = "M";      
+            dow[5] = "T";       
+            dow[6] = "W";  
+        }else if(getStartingWeek() == 5){
+            dow[0] = "F";
+            dow[1] = "S";
+            dow[2] = "Sn";      
+            dow[3] = "M";
+            dow[4] = "T";      
+            dow[5] = "W";       
+            dow[6] = "Th";  
+        }else if(getStartingWeek() == 6){
+            dow[0] = "S";
+            dow[1] = "Sn";
+            dow[2] = "M";      
+            dow[3] = "T";
+            dow[4] = "W";      
+            dow[5] = "Th";       
+            dow[6] = "F";  
         }
-        janTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));
-        
-        i = 1;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        febTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));
-        
-        i = 2;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        marTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));
-        
-        i = 3;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        aprTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));
-        
-        i = 4;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        mayTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));        
-        
-        i = 5;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        junTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));  
-        
-        i = 6;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        julTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));        
-
-        i = 7;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        augTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));
-        
-        i = 8;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        sepTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));        
-        
-        i = 9;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        octTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));        
-        
-        i = 10;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        novTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));        
-        
-        i = 11;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        decTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
-    }
-));        
-
-    }//GEN-LAST:event_yearRightArrowActionPerformed
-
-    private void leftYearArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftYearArrowActionPerformed
-        // TODO add your handling code here:
-        year = year - 1;
-        yearLabel.setText(String.valueOf(year));
-        
         i = 0;
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
@@ -1008,7 +1006,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));
         
@@ -1026,7 +1024,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));
         
@@ -1044,7 +1042,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));
         
@@ -1062,7 +1060,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));
         
@@ -1080,7 +1078,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));        
         
@@ -1098,7 +1096,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));  
         
@@ -1116,7 +1114,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));        
 
@@ -1134,7 +1132,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));
         
@@ -1152,7 +1150,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));        
         
@@ -1170,7 +1168,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));        
         
@@ -1188,7 +1186,7 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));        
         
@@ -1206,11 +1204,292 @@ public class YearlyView extends javax.swing.JFrame {
         {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
     },
     new String [] {
-        "Sn", "M", "T", "W", "Th", "F", "S"
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
     }
 ));        
-    }//GEN-LAST:event_leftYearArrowActionPerformed
 
+    }//GEN-LAST:event_yearRightArrowActionPerformed
+
+    private void leftYearArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftYearArrowActionPerformed
+        // TODO add your handling code here:
+        year = year - 1;
+        yearLabel.setText(String.valueOf(year));
+                String[] dow = new String[7]; //Days of Week
+        if(getStartingWeek() == 0){
+            dow[0] = "Sn";
+            dow[1] = "M";
+            dow[2] = "T";      
+            dow[3] = "W";
+            dow[4] = "Th";      
+            dow[5] = "F";       
+            dow[6] = "S";       
+        }else if(getStartingWeek() == 1){
+            dow[0] = "M";
+            dow[1] = "T";
+            dow[2] = "W";      
+            dow[3] = "Th";
+            dow[4] = "F";      
+            dow[5] = "S";       
+            dow[6] = "Sn";  
+        }else if(getStartingWeek() == 2){
+            dow[0] = "T";
+            dow[1] = "W";
+            dow[2] = "Th";      
+            dow[3] = "F";
+            dow[4] = "S";      
+            dow[5] = "Sn";       
+            dow[6] = "M";  
+        }else if(getStartingWeek() == 3){
+            dow[0] = "W";
+            dow[1] = "Th";
+            dow[2] = "F";      
+            dow[3] = "S";
+            dow[4] = "Sn";      
+            dow[5] = "M";       
+            dow[6] = "T";  
+        }else if(getStartingWeek() == 4){
+            dow[0] = "Th";
+            dow[1] = "F";
+            dow[2] = "S";      
+            dow[3] = "Sn";
+            dow[4] = "M";      
+            dow[5] = "T";       
+            dow[6] = "W";  
+        }else if(getStartingWeek() == 5){
+            dow[0] = "F";
+            dow[1] = "S";
+            dow[2] = "Sn";      
+            dow[3] = "M";
+            dow[4] = "T";      
+            dow[5] = "W";       
+            dow[6] = "Th";  
+        }else if(getStartingWeek() == 6){
+            dow[0] = "S";
+            dow[1] = "Sn";
+            dow[2] = "M";      
+            dow[3] = "T";
+            dow[4] = "W";      
+            dow[5] = "Th";       
+            dow[6] = "F";  
+        }
+        i = 0;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        janTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));
+        
+        i = 1;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        febTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));
+        
+        i = 2;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        marTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));
+        
+        i = 3;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        aprTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));
+        
+        i = 4;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        mayTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));        
+        
+        i = 5;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        junTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));  
+        
+        i = 6;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        julTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));        
+
+        i = 7;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        augTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));
+        
+        i = 8;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        sepTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));        
+        
+        i = 9;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        octTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));        
+        
+        i = 10;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        novTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+));        
+        
+        i = 11;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        decTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
+        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
+        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
+        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
+        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
+        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }
+            
+));        
+    }//GEN-LAST:event_leftYearArrowActionPerformed
+    
     private void monthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthButtonActionPerformed
         // TODO add your handling code here:
         close();
@@ -1232,6 +1511,30 @@ public class YearlyView extends javax.swing.JFrame {
         
     }//GEN-LAST:event_yearButtonActionPerformed
 
+    private void dayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButtonActionPerformed
+        // TODO add your handling code here:
+        close();
+        DailyView dV = new DailyView();
+        dV.setVisible(true);
+    }//GEN-LAST:event_dayButtonActionPerformed
+
+    private int checkPink(){
+        Path path = Paths.get("");
+        Path realPath;
+        int check = 0;
+        try {
+            realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+            stringPath = realPath.toString();
+            stringPath = stringPath.replace("\\","\\\\");
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        File pink = new File(stringPath + "\\AppToDate\\pink.txt");
+        if(pink.exists()){
+            check = 1;
+        }
+        return check;
+    }
     private int getYear() {
         GregorianCalendar cal = new GregorianCalendar();
         year = cal.get(Calendar.YEAR);
@@ -1252,11 +1555,19 @@ public class YearlyView extends javax.swing.JFrame {
         int day = c.get(Calendar.DAY_OF_WEEK);
         int store[] = new int[42];
 
-        int counter = 0;
-
-        while (counter + 1 < day) {
-            store[counter] = 0;
-            counter++;
+        day = day - 1;
+        if(day - getStartingWeek() > 0){
+            day = day - getStartingWeek(); 
+        }else if(day - getStartingWeek() < 0){
+            day = 7 + (day - getStartingWeek());
+        }else if(day - getStartingWeek() == 0){
+            day = 0;
+        }
+    
+    int counter = 0;
+        while(counter < day){
+        store[counter] = 0; 
+        counter++;
         }
 
         for (int j = 1; j <= max; j++) {
@@ -1274,6 +1585,27 @@ public class YearlyView extends javax.swing.JFrame {
     
     private void close(){
         this.dispose();
+    }
+    
+    private int getStartingWeek(){
+        Path path = Paths.get("");
+        Path realPath;
+        int weekCounter = 0;
+        try {
+            realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+            stringPath = realPath.toString();
+            stringPath = stringPath.replace("\\","\\\\");
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        for(int counter = 0; counter < 7; counter++){
+        File week = new File(stringPath + "\\AppToDate\\" + counter + ".txt");
+        if(week.exists()){
+           weekCounter = counter;
+        }
+        }
+        return weekCounter;
     }
 
     /**
