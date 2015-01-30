@@ -386,14 +386,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     marTable.setBackground(new java.awt.Color(34, 34, 34));
     marTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     marTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -428,14 +429,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     aprTable.setBackground(new java.awt.Color(34, 34, 34));
     aprTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     aprTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -473,14 +475,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     mayTable.setBackground(new java.awt.Color(34, 34, 34));
     mayTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     mayTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -510,14 +513,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     junTable.setBackground(new java.awt.Color(34, 34, 34));
     junTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     junTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -552,14 +556,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     julTable.setBackground(new java.awt.Color(34, 34, 34));
     julTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     julTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -597,14 +602,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     augTable.setBackground(new java.awt.Color(34, 34, 34));
     augTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     augTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -634,14 +640,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     sepTable.setBackground(new java.awt.Color(34, 34, 34));
     sepTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     sepTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -675,14 +682,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     octTable.setBackground(new java.awt.Color(34, 34, 34));
     octTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     octTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -716,14 +724,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     novTable.setBackground(new java.awt.Color(34, 34, 34));
     novTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     novTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -753,14 +762,15 @@ public class YearlyView extends javax.swing.JFrame {
     }
     decTable.setBackground(new java.awt.Color(34, 34, 34));
     decTable.setForeground(new java.awt.Color(240, 240, 240));
+    removeZero();
     decTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-            {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-            {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-            {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-            {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-            {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+            {s[0], s[1], s[2], s[3], s[4], s[5], s[6]},
+            {s[7], s[8], s[9], s[10], s[11], s[12], s[13]},
+            {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+            {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+            {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+            {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
         },
         new String [] {
             dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1034,17 +1044,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));
         
         i = 2;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         marTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1052,17 +1063,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));
         
         i = 3;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         aprTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1070,17 +1082,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));
         
         i = 4;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         mayTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1088,17 +1101,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));        
         
         i = 5;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         junTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1106,17 +1120,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));  
         
         i = 6;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         julTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1124,17 +1139,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));        
 
         i = 7;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         augTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1142,17 +1158,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));
         
         i = 8;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         sepTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1160,17 +1177,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));        
         
         i = 9;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         octTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1178,17 +1196,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));        
         
         i = 10;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         novTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1196,17 +1215,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));        
         
         i = 11;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         decTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1316,17 +1336,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));
         
         i = 2;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         marTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1334,17 +1355,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));
         
         i = 3;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         aprTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1352,35 +1374,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));
         
         i = 4;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         mayTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
-    },
-    new String [] {
-        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
-    }
-));        
-        
-        i = 5;
-        for(int counter = 0; counter <= 41; counter++){
-        d[counter] = getCalendarDay(counter, i);
-        }
-        junTable.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1388,17 +1393,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));  
         
         i = 6;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         julTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1406,17 +1412,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));        
 
         i = 7;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         augTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1424,17 +1431,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));
         
         i = 8;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         sepTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1442,17 +1450,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));        
         
         i = 9;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         octTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1460,17 +1469,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));        
         
         i = 10;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         novTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1478,17 +1488,18 @@ public class YearlyView extends javax.swing.JFrame {
 ));        
         
         i = 11;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         decTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
