@@ -25,6 +25,7 @@ public class YearlyView extends javax.swing.JFrame {
     public int year;
     public String stringPath = "";
     public int d[] = new int[42];
+    public String[] s = new String[42];
     public int i;
 
     /**
@@ -297,14 +298,15 @@ public class YearlyView extends javax.swing.JFrame {
         }
         janTable.setBackground(new java.awt.Color(34, 34, 34));
         janTable.setForeground(new java.awt.Color(240, 240, 240));
+        removeZero();
         janTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-                {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-                {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-                {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-                {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-                {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+                {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+                {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+                {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+                {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+                {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+                {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
             },
             new String [] {
                 dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1273,17 +1275,18 @@ public class YearlyView extends javax.swing.JFrame {
             dow[6] = "F";  
         }
         i = 0;
+        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
         janTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-        {d[0], d[1], d[2], d[3], d[4], d[5], d[6]},
-        {d[7], d[8], d[9], d[10], d[11], d[12], d[13]},
-        {d[14], d[15], d[16], d[17], d[18], d[19], d[20]},
-        {d[21], d[22], d[23], d[24], d[25], d[26], d[27]},
-        {d[28], d[29], d[30], d[31], d[32], d[33], d[34]},
-        {d[35], d[36], d[37], d[38], d[39], d[40], d[41]}
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
@@ -1576,7 +1579,8 @@ public class YearlyView extends javax.swing.JFrame {
         }
 
         while (counter <= 41) {
-            store[counter] = 1 + addNum;
+            //store[counter] = 1 + addNum;
+            store[counter] = 0;
             counter++;
             addNum++;
         }
@@ -1585,6 +1589,17 @@ public class YearlyView extends javax.swing.JFrame {
     
     private void close(){
         this.dispose();
+    }
+    
+    private void removeZero(){
+        for(int counter = 0; counter < 42; counter++){
+            s[counter] = Integer.toString(d[counter]);
+        }
+        for(int counter = 0; counter < 42; counter++){
+            if(d[counter] == 0){
+            s[counter] = null;
+            }
+        }
     }
     
     private int getStartingWeek(){
