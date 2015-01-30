@@ -73,8 +73,8 @@ public class ModifyAdd extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         subectLabel = new javax.swing.JLabel();
         subjectText = new javax.swing.JTextField();
-        ImageLabel = new javax.swing.JLabel();
-        ImgBox = new javax.swing.JComboBox();
+        imagesLabel = new javax.swing.JLabel();
+        imgBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -324,16 +324,15 @@ public class ModifyAdd extends javax.swing.JFrame {
             }
         });
 
-        ImageLabel.setBackground(new java.awt.Color(34, 34, 34));
-        ImageLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        ImageLabel.setForeground(new java.awt.Color(240, 240, 240));
-        ImageLabel.setText("Images:");
-        ImageLabel.setOpaque(true);
+        imagesLabel.setBackground(new java.awt.Color(34, 34, 34));
+        imagesLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        imagesLabel.setForeground(new java.awt.Color(240, 240, 240));
+        imagesLabel.setText("Images:");
 
-        ImgBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Assignment.png", "Exam.png", "Meeting.png", "Presentation.png", "Quiz.png" }));
-        ImgBox.addActionListener(new java.awt.event.ActionListener() {
+        imgBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Assignment.png", "Exam.png", "Meeting.png", "Presentation.png", "Quiz.png" }));
+        imgBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImgBoxActionPerformed(evt);
+                imgBoxActionPerformed(evt);
             }
         });
 
@@ -348,9 +347,9 @@ public class ModifyAdd extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(subectLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(imagesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(ImgBox, 0, 166, Short.MAX_VALUE))
+                    .addComponent(imgBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, 166, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -361,9 +360,9 @@ public class ModifyAdd extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(subjectText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imagesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ImgBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imgBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -404,7 +403,7 @@ public class ModifyAdd extends javax.swing.JFrame {
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         // TODO add your handling code here:
-        String eventTitle = eventArea.getText();
+                String eventTitle = eventArea.getText();
         String desc = descArea.getText();
         String subj = subjectText.getText();
         String fromH = fromHour.getSelectedItem().toString();
@@ -419,6 +418,7 @@ public class ModifyAdd extends javax.swing.JFrame {
         String unMonth = untilMonth.getSelectedItem().toString();
         String untilD = untilDay.getSelectedItem().toString();
         String untilYr = untilYear.getText();
+        String imgPath = imgBox.getSelectedItem().toString();
         
         Path path = Paths.get("");
         Path realPath;
@@ -452,26 +452,51 @@ public class ModifyAdd extends javax.swing.JFrame {
                 file3.mkdir();
             }
             
-            File file4 = new File(myPathData + "\\AppToDate\\" + fromYr);
+            File file4 = new File(myPathData + "\\AppToDate\\" + fromYr + "\\");
             if(!file4.exists()){
                 file4.mkdir();
             }
             
-            File file5 = new File(myPathData + "\\AppToDate\\" + fromYr + "\\" 
-                    + frMonth + "-" + fromD + "-" + eventTitle + ".txt");
+              File file42 = new File(myPathData + "\\AppToDate\\" + fromYr + "\\" + frMonth);
+            if(!file42.exists()){
+                file42.mkdir();
+            }
+            
+            File file43 = new File(myPathData + "\\AppToDate\\" + fromYr + "\\" + frMonth + "\\" + fromD);
+            if(!file43.exists()){
+                file43.mkdir();
+            }
+            if(wholeDayEvent.isSelected()){
+                fromH = "12";
+                fromM = "00";
+                Fampm = "AM";
+                untilH = "11";
+                untilM = "59";
+                Uampm = "PM";
+            }
+            
+            File file5 = new File(myPathData + "\\AppToDate\\" + fromYr + "\\" + frMonth 
+                    + "\\" + fromD + "\\" + frMonth + "-" + fromD + "-" + eventTitle + ".txt");
             if(!file5.exists()){
             try{
-               Writer write = new BufferedWriter(new FileWriter(myPathData + "\\AppToDate\\" + fromYr + "\\" 
-                       + frMonth + "-" + fromD + "-" + eventTitle + ".txt", false));
+               Writer write = new BufferedWriter(new FileWriter(myPathData + "\\AppToDate\\" + fromYr + "\\" + frMonth + "\\" 
+                       + fromD + "\\" + frMonth + "-" + fromD + "-" + eventTitle + ".txt", false));
                write.append(eventTitle + " + "); 
                write.append(desc + " + ");
                write.append(subj + " + ");
-               write.append(untilH + " + ");
-               write.append(untilM + " + ");
+               write.append(fromH + ":");
+               write.append(fromM);
+               write.append(Fampm + " + ");
+               write.append(frMonth + " ");
+               write.append(fromD + ", ");
+               write.append(fromYr + "+");
+               write.append(untilH + ":");
+               write.append(untilM);
                write.append(Uampm + " + ");
-               write.append(unMonth+ " + ");
-               write.append(untilD + " + ");
-               write.append(untilYr);
+               write.append(unMonth + " ");
+               write.append(untilD + ", ");
+               write.append(untilYr + " + ");
+               write.append("\\apptodate\\images\\" + imgPath);
                
                
                write.close();
@@ -488,6 +513,10 @@ public class ModifyAdd extends javax.swing.JFrame {
     private void ImgBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImgBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgBoxActionPerformed
+
+    private void imgBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_imgBoxActionPerformed
 
     private void close(){
         this.dispose();
@@ -528,8 +557,6 @@ public class ModifyAdd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ImageLabel;
-    private javax.swing.JComboBox ImgBox;
     private javax.swing.JButton cancelButton;
     private javax.swing.JTextArea descArea;
     private javax.swing.JLabel descLabel;
@@ -543,6 +570,8 @@ public class ModifyAdd extends javax.swing.JFrame {
     private javax.swing.JComboBox fromMinute;
     private javax.swing.JComboBox fromMonth;
     private javax.swing.JTextField fromYear;
+    private javax.swing.JLabel imagesLabel;
+    private javax.swing.JComboBox imgBox;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
