@@ -49,6 +49,8 @@ public class DailyView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        dayButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         yearButton = new javax.swing.JButton();
         monthButton = new javax.swing.JButton();
@@ -58,6 +60,7 @@ public class DailyView extends javax.swing.JFrame {
         yearRightArrow = new javax.swing.JButton();
         settings = new javax.swing.JButton();
         modifyAdd = new javax.swing.JButton();
+        viewAllButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -69,6 +72,14 @@ public class DailyView extends javax.swing.JFrame {
         monthComboBox = new javax.swing.JComboBox();
         showButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
+
+        dayButton1.setBackground(new java.awt.Color(29, 114, 239));
+        dayButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        dayButton1.setForeground(new java.awt.Color(240, 240, 240));
+        dayButton1.setText("DAY");
+        dayButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,6 +120,11 @@ public class DailyView extends javax.swing.JFrame {
         dayButton.setForeground(new java.awt.Color(240, 240, 240));
         dayButton.setText("DAY");
         dayButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dayButtonActionPerformed(evt);
+            }
+        });
 
         leftYearArrow.setBackground(new java.awt.Color(34, 34, 34));
         leftYearArrow.setForeground(new java.awt.Color(34, 34, 34));
@@ -150,6 +166,17 @@ public class DailyView extends javax.swing.JFrame {
             }
         });
 
+        viewAllButton.setBackground(new java.awt.Color(29, 114, 239));
+        viewAllButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        viewAllButton.setForeground(new java.awt.Color(240, 240, 240));
+        viewAllButton.setText("VIEW ALL");
+        viewAllButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewAllButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAllButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -161,12 +188,14 @@ public class DailyView extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addComponent(dayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewAllButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(leftYearArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addComponent(yearLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(yearRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(yearRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(modifyAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(settings, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -175,12 +204,16 @@ public class DailyView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(yearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(monthButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(dayButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
             .addComponent(yearRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(yearLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(leftYearArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(modifyAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(settings, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(dayButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(viewAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         if(checkPink() == 1){
@@ -194,6 +227,12 @@ public class DailyView extends javax.swing.JFrame {
             monthButton.setBackground(new java.awt.Color(34, 34, 34));
         }
         yearLabel.setText(String.valueOf(getYear()));
+        if(checkPink() == 1){
+            settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkWrench.png"))); // NOI18N
+        }
+        if(checkPink() == 1){
+            modifyAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkAdd.png"))); // NOI18N
+        }
 
         jPanel2.setBackground(new java.awt.Color(34, 34, 34));
 
@@ -435,7 +474,7 @@ public class DailyView extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_settingsActionPerformed
-    
+         
         private int getYear(){
         GregorianCalendar cal = new GregorianCalendar();
         year = cal.get(Calendar.YEAR);
@@ -536,6 +575,14 @@ try {
 
 }
     }//GEN-LAST:event_updateButtonActionPerformed
+
+    private void viewAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewAllButtonActionPerformed
+
+    private void dayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dayButtonActionPerformed
     public void setDataInfo(String data){
         this.combineData = data;
     }
@@ -747,8 +794,10 @@ try {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dayButton;
+    private javax.swing.JButton dayButton1;
     private javax.swing.JComboBox dayComboBox;
     private javax.swing.JButton deleteButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -763,6 +812,7 @@ try {
     private javax.swing.JButton settings;
     private javax.swing.JButton showButton;
     private javax.swing.JButton updateButton;
+    private javax.swing.JButton viewAllButton;
     private javax.swing.JButton yearButton;
     private javax.swing.JLabel yearLabel;
     private javax.swing.JButton yearRightArrow;
