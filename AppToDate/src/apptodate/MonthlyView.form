@@ -1581,7 +1581,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton34ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton34.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton34.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton34.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton34.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton34.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton34.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton35">
@@ -1610,7 +1610,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton35ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton35.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton35.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton35.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton35.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton35.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton35.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton36">
