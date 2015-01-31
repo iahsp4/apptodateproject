@@ -18,6 +18,9 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 /**
  *
@@ -25,10 +28,16 @@ import java.util.logging.Logger;
  */
 public class MonthlyView extends javax.swing.JFrame {
 
+    
+
+  
+
     /**
      * Creates new form MonthlyView
      */
     public int year;
+    private String thePathOfFile = "";
+    private String whatDayNow;
     private int i;
     private int monthNum;
     private int lock = 0;
@@ -55,6 +64,7 @@ public class MonthlyView extends javax.swing.JFrame {
         yearLabel = new javax.swing.JLabel();
         yearRightArrow = new javax.swing.JButton();
         leftYearArrow = new javax.swing.JButton();
+        refreshButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         dayLabel1 = new javax.swing.JLabel();
         dayLabel2 = new javax.swing.JLabel();
@@ -105,19 +115,6 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40 = new javax.swing.JButton();
         dayButton41 = new javax.swing.JButton();
         dayButton42 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        eventLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        textArea1 = new javax.swing.JTextArea();
-        eventLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        textArea3 = new javax.swing.JTextArea();
-        eventLabel3 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        textArea2 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         monthLeftArrow = new javax.swing.JButton();
         monthRightArrow = new javax.swing.JButton();
@@ -133,6 +130,20 @@ public class MonthlyView extends javax.swing.JFrame {
         octButton = new javax.swing.JButton();
         novButton = new javax.swing.JButton();
         decButton = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
+        eventLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textArea1 = new javax.swing.JTextArea();
+        eventLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textArea3 = new javax.swing.JTextArea();
+        eventLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        textArea2 = new javax.swing.JTextArea();
+        eventButton1 = new javax.swing.JButton();
+        eventButton2 = new javax.swing.JButton();
+        eventButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -146,6 +157,7 @@ public class MonthlyView extends javax.swing.JFrame {
         yearButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         yearButton.setForeground(new java.awt.Color(240, 240, 240));
         yearButton.setText("YEAR");
+        yearButton.setBorder(null);
         yearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         yearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +171,7 @@ public class MonthlyView extends javax.swing.JFrame {
         monthButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         monthButton.setForeground(new java.awt.Color(240, 240, 240));
         monthButton.setText("MONTH");
+        monthButton.setBorder(null);
         monthButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         monthButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,7 +200,7 @@ public class MonthlyView extends javax.swing.JFrame {
             }
         });
 
-        modifyAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/add.png"))); // NOI18N
+        modifyAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/add.png")));
         modifyAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         modifyAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +232,19 @@ public class MonthlyView extends javax.swing.JFrame {
             }
         });
 
+        refreshButton.setBackground(new java.awt.Color(34, 34, 34));
+        refreshButton.setContentAreaFilled(false);
+        refreshButton.setOpaque(true);
+        refreshButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        refreshButton.setForeground(new java.awt.Color(240, 240, 240));
+        refreshButton.setText("Refresh");
+        refreshButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        refreshButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout titlePanelLayout = new javax.swing.GroupLayout(titlePanel);
         titlePanel.setLayout(titlePanelLayout);
         titlePanelLayout.setHorizontalGroup(
@@ -236,6 +262,8 @@ public class MonthlyView extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(yearRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(refreshButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(modifyAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(settings, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -253,9 +281,31 @@ public class MonthlyView extends javax.swing.JFrame {
                     .addComponent(settings, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modifyAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(yearRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+            .addComponent(refreshButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        if(checkPink() == 1){
+            yearButton.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            yearButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            dayButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkWrench.png"))); // NOI18N
+        }
+        if(checkPink() == 1){
+            modifyAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkAdd.png"))); // NOI18N
+        }
         yearLabel.setText(String.valueOf(getYear()));
+        if(checkPink() == 1){
+            refreshButton.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            refreshButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
 
         jPanel1.setBackground(new java.awt.Color(51, 61, 68));
         jPanel1.setForeground(new java.awt.Color(240, 240, 240));
@@ -314,6 +364,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton1.setOpaque(true);
         dayButton1.setForeground(new java.awt.Color(240, 240, 240));
         dayButton1.setText(String.valueOf(getDefaultMonth(0)));
+        dayButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton1.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -330,6 +381,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton2.setOpaque(true);
         dayButton2.setForeground(new java.awt.Color(240, 240, 240));
         dayButton2.setText(String.valueOf(getDefaultMonth(1)));
+        dayButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton2.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -346,6 +398,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton3.setOpaque(true);
         dayButton3.setForeground(new java.awt.Color(240, 240, 240));
         dayButton3.setText(String.valueOf(getDefaultMonth(2)));
+        dayButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton3.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -362,6 +415,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton4.setOpaque(true);
         dayButton4.setForeground(new java.awt.Color(240, 240, 240));
         dayButton4.setText(String.valueOf(getDefaultMonth(3)));
+        dayButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton4.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton4.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -378,6 +432,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton5.setOpaque(true);
         dayButton5.setForeground(new java.awt.Color(240, 240, 240));
         dayButton5.setText(String.valueOf(getDefaultMonth(4)));
+        dayButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton5.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -394,6 +449,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton6.setOpaque(true);
         dayButton6.setForeground(new java.awt.Color(240, 240, 240));
         dayButton6.setText(String.valueOf(getDefaultMonth(5)));
+        dayButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton6.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -410,6 +466,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton7.setOpaque(true);
         dayButton7.setForeground(new java.awt.Color(240, 240, 240));
         dayButton7.setText(String.valueOf(getDefaultMonth(6)));
+        dayButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton7.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton7.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -426,6 +483,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton8.setOpaque(true);
         dayButton8.setForeground(new java.awt.Color(240, 240, 240));
         dayButton8.setText(String.valueOf(getDefaultMonth(7)));
+        dayButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton8.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton8.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -442,6 +500,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton9.setOpaque(true);
         dayButton9.setForeground(new java.awt.Color(240, 240, 240));
         dayButton9.setText(String.valueOf(getDefaultMonth(8)));
+        dayButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton9.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton9.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -458,6 +517,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton10.setOpaque(true);
         dayButton10.setForeground(new java.awt.Color(240, 240, 240));
         dayButton10.setText(String.valueOf(getDefaultMonth(9)));
+        dayButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton10.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton10.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -474,6 +534,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton11.setOpaque(true);
         dayButton11.setForeground(new java.awt.Color(240, 240, 240));
         dayButton11.setText(String.valueOf(getDefaultMonth(10)));
+        dayButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton11.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton11.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -490,6 +551,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton12.setOpaque(true);
         dayButton12.setForeground(new java.awt.Color(240, 240, 240));
         dayButton12.setText(String.valueOf(getDefaultMonth(11)));
+        dayButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton12.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton12.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -506,6 +568,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton13.setOpaque(true);
         dayButton13.setForeground(new java.awt.Color(240, 240, 240));
         dayButton13.setText(String.valueOf(getDefaultMonth(12)));
+        dayButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton13.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton13.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -522,6 +585,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton14.setOpaque(true);
         dayButton14.setForeground(new java.awt.Color(240, 240, 240));
         dayButton14.setText(String.valueOf(getDefaultMonth(13)));
+        dayButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton14.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton14.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -538,6 +602,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton15.setOpaque(true);
         dayButton15.setForeground(new java.awt.Color(240, 240, 240));
         dayButton15.setText(String.valueOf(getDefaultMonth(14)));
+        dayButton15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton15.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton15.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -554,6 +619,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton16.setOpaque(true);
         dayButton16.setForeground(new java.awt.Color(240, 240, 240));
         dayButton16.setText(String.valueOf(getDefaultMonth(15)));
+        dayButton16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton16.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton16.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -570,6 +636,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton17.setOpaque(true);
         dayButton17.setForeground(new java.awt.Color(240, 240, 240));
         dayButton17.setText(String.valueOf(getDefaultMonth(16)));
+        dayButton17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton17.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton17.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -586,6 +653,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton18.setOpaque(true);
         dayButton18.setForeground(new java.awt.Color(240, 240, 240));
         dayButton18.setText(String.valueOf(getDefaultMonth(17)));
+        dayButton18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton18.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton18.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -602,6 +670,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton19.setOpaque(true);
         dayButton19.setForeground(new java.awt.Color(240, 240, 240));
         dayButton19.setText(String.valueOf(getDefaultMonth(18)));
+        dayButton19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton19.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton19.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -618,6 +687,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton20.setOpaque(true);
         dayButton20.setForeground(new java.awt.Color(240, 240, 240));
         dayButton20.setText(String.valueOf(getDefaultMonth(19)));
+        dayButton20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton20.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton20.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -634,6 +704,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton21.setOpaque(true);
         dayButton21.setForeground(new java.awt.Color(240, 240, 240));
         dayButton21.setText(String.valueOf(getDefaultMonth(20)));
+        dayButton21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton21.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton21.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -650,6 +721,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton22.setOpaque(true);
         dayButton22.setForeground(new java.awt.Color(240, 240, 240));
         dayButton22.setText(String.valueOf(getDefaultMonth(21)));
+        dayButton22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton22.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton22.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -666,6 +738,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton23.setOpaque(true);
         dayButton23.setForeground(new java.awt.Color(240, 240, 240));
         dayButton23.setText(String.valueOf(getDefaultMonth(22)));
+        dayButton23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton23.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton23.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -682,6 +755,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton24.setOpaque(true);
         dayButton24.setForeground(new java.awt.Color(240, 240, 240));
         dayButton24.setText(String.valueOf(getDefaultMonth(23)));
+        dayButton24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton24.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton24.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -698,6 +772,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton25.setOpaque(true);
         dayButton25.setForeground(new java.awt.Color(240, 240, 240));
         dayButton25.setText(String.valueOf(getDefaultMonth(24)));
+        dayButton25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton25.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton25.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -714,6 +789,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton26.setOpaque(true);
         dayButton26.setForeground(new java.awt.Color(240, 240, 240));
         dayButton26.setText(String.valueOf(getDefaultMonth(25)));
+        dayButton26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton26.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton26.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -730,6 +806,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton27.setOpaque(true);
         dayButton27.setForeground(new java.awt.Color(240, 240, 240));
         dayButton27.setText(String.valueOf(getDefaultMonth(26)));
+        dayButton27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton27.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton27.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -746,6 +823,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton28.setOpaque(true);
         dayButton28.setForeground(new java.awt.Color(240, 240, 240));
         dayButton28.setText(String.valueOf(getDefaultMonth(27)));
+        dayButton28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton28.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton28.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -762,6 +840,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton29.setOpaque(true);
         dayButton29.setForeground(new java.awt.Color(240, 240, 240));
         dayButton29.setText(String.valueOf(getDefaultMonth(28)));
+        dayButton29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton29.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton29.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -778,6 +857,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton30.setOpaque(true);
         dayButton30.setForeground(new java.awt.Color(240, 240, 240));
         dayButton30.setText(String.valueOf(getDefaultMonth(29)));
+        dayButton30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton30.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton30.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -794,6 +874,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton31.setOpaque(true);
         dayButton31.setForeground(new java.awt.Color(240, 240, 240));
         dayButton31.setText(String.valueOf(getDefaultMonth(30)));
+        dayButton31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton31.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton31.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -810,6 +891,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton32.setOpaque(true);
         dayButton32.setForeground(new java.awt.Color(240, 240, 240));
         dayButton32.setText(String.valueOf(getDefaultMonth(31)));
+        dayButton32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton32.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton32.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -826,6 +908,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton33.setOpaque(true);
         dayButton33.setForeground(new java.awt.Color(240, 240, 240));
         dayButton33.setText(String.valueOf(getDefaultMonth(32)));
+        dayButton33.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton33.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton33.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -842,6 +925,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton34.setOpaque(true);
         dayButton34.setForeground(new java.awt.Color(240, 240, 240));
         dayButton34.setText(String.valueOf(getDefaultMonth(33)));
+        dayButton34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton34.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton34.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton34.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -858,6 +942,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton35.setOpaque(true);
         dayButton35.setForeground(new java.awt.Color(240, 240, 240));
         dayButton35.setText(String.valueOf(getDefaultMonth(34)));
+        dayButton35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton35.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton35.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton35.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -874,6 +959,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton36.setOpaque(true);
         dayButton36.setForeground(new java.awt.Color(240, 240, 240));
         dayButton36.setText(String.valueOf(getDefaultMonth(35)));
+        dayButton36.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton36.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton36.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton36.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -890,6 +976,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton37.setOpaque(true);
         dayButton37.setForeground(new java.awt.Color(240, 240, 240));
         dayButton37.setText(String.valueOf(getDefaultMonth(36)));
+        dayButton37.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton37.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton37.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton37.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -906,6 +993,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton38.setOpaque(true);
         dayButton38.setForeground(new java.awt.Color(240, 240, 240));
         dayButton38.setText(String.valueOf(getDefaultMonth(37)));
+        dayButton38.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton38.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton38.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton38.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -922,6 +1010,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton39.setOpaque(true);
         dayButton39.setForeground(new java.awt.Color(240, 240, 240));
         dayButton39.setText(String.valueOf(getDefaultMonth(39)));
+        dayButton39.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton39.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton39.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton39.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -938,6 +1027,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setOpaque(true);
         dayButton40.setForeground(new java.awt.Color(240, 240, 240));
         dayButton40.setText(String.valueOf(getDefaultMonth(40)));
+        dayButton40.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton40.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton40.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton40.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -954,6 +1044,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton41.setOpaque(true);
         dayButton41.setForeground(new java.awt.Color(240, 240, 240));
         dayButton41.setText(String.valueOf(getDefaultMonth(40)));
+        dayButton41.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton41.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton41.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton41.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -970,6 +1061,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton42.setOpaque(true);
         dayButton42.setForeground(new java.awt.Color(240, 240, 240));
         dayButton42.setText(String.valueOf(getDefaultMonth(41)));
+        dayButton42.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dayButton42.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dayButton42.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         dayButton42.setMargin(new java.awt.Insets(3, 0, 0, 5));
@@ -1120,106 +1212,307 @@ public class MonthlyView extends javax.swing.JFrame {
                     .addComponent(dayButton40, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dayButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dayButton42, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
-
-        jPanel2.setBackground(new java.awt.Color(51, 61, 68));
-        jPanel2.setForeground(new java.awt.Color(240, 240, 240));
-
-        eventLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        eventLabel1.setForeground(new java.awt.Color(240, 240, 240));
-        eventLabel1.setText("Event 1");
-
-        textArea1.setEditable(false);
-        textArea1.setBackground(new java.awt.Color(34, 34, 34));
-        textArea1.setColumns(20);
-        textArea1.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        textArea1.setForeground(new java.awt.Color(240, 240, 240));
-        textArea1.setRows(5);
-        textArea1.setText("Description");
-        jScrollPane1.setViewportView(textArea1);
-
-        eventLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        eventLabel2.setForeground(new java.awt.Color(240, 240, 240));
-        eventLabel2.setText("Event 2");
-
-        textArea3.setBackground(new java.awt.Color(34, 34, 34));
-        textArea3.setColumns(20);
-        textArea3.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        textArea3.setForeground(new java.awt.Color(240, 240, 240));
-        textArea3.setRows(5);
-        textArea3.setText("Description");
-        jScrollPane2.setViewportView(textArea3);
-
-        eventLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        eventLabel3.setForeground(new java.awt.Color(240, 240, 240));
-        eventLabel3.setText("Event 3");
-
-        textArea2.setEditable(false);
-        textArea2.setBackground(new java.awt.Color(34, 34, 34));
-        textArea2.setColumns(20);
-        textArea2.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        textArea2.setForeground(new java.awt.Color(240, 240, 240));
-        textArea2.setRows(5);
-        textArea2.setText("Description");
-        jScrollPane3.setViewportView(textArea2);
-
-        jButton1.setBackground(new java.awt.Color(34, 34, 34));
-        jButton1.setText("IMG");
-
-        jButton2.setBackground(new java.awt.Color(34, 34, 34));
-        jButton2.setText("IMG");
-
-        jButton3.setBackground(new java.awt.Color(34, 34, 34));
-        jButton3.setText("IMG");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane3)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(eventLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eventLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eventLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eventLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eventLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eventLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(34, 34, 34));
+        if(checkPink() == 1){
+            dayLabel1.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            yearButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayLabel2.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            dayLabel2.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayLabel3.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            dayLabel3.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayLabel4.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            dayLabel4.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayLabel5.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            dayLabel5.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayLabel6.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            dayLabel6.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayLabel7.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            dayLabel7.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
+        if(0 == getStartingWeek()){
+        }else if(1 == getStartingWeek()){
+            dayLabel1.setText("Monday");
+            dayLabel2.setText("Tuesday");
+            dayLabel3.setText("Wednesday");
+            dayLabel4.setText("Thursday");
+            dayLabel5.setText("Friday");
+            dayLabel6.setText("Saturday");
+            dayLabel7.setText("Sunday");
+        }else if(2 == getStartingWeek()){
+            dayLabel1.setText("Tuesday");
+            dayLabel2.setText("Wednesday");
+            dayLabel3.setText("Thursday");
+            dayLabel4.setText("Friday");
+            dayLabel5.setText("Saturday");
+            dayLabel6.setText("Sunday");
+            dayLabel7.setText("Monday");
+        }else if(3 == getStartingWeek()){
+            dayLabel1.setText("Wednesday");
+            dayLabel2.setText("Thursday");
+            dayLabel3.setText("Friday");
+            dayLabel4.setText("Saturday");
+            dayLabel5.setText("Sunday");
+            dayLabel6.setText("Monday");
+            dayLabel7.setText("Tuesday");
+        }else if(4 == getStartingWeek()){
+            dayLabel1.setText("Thursday");
+            dayLabel2.setText("Friday");
+            dayLabel3.setText("Saturday");
+            dayLabel4.setText("Sunday");
+            dayLabel5.setText("Monday");
+            dayLabel6.setText("Tuesday");
+            dayLabel7.setText("Wednesday");
+        }else if(5 == getStartingWeek()){
+            dayLabel1.setText("Friday");
+            dayLabel2.setText("Saturday");
+            dayLabel3.setText("Sunday");
+            dayLabel4.setText("Monday");
+            dayLabel5.setText("Tuesday");
+            dayLabel6.setText("Wednesday");
+            dayLabel7.setText("Thursday");
+        }else if(6 == getStartingWeek()){
+            dayLabel1.setText("Saturday");
+            dayLabel2.setText("Sunday");
+            dayLabel3.setText("Monday");
+            dayLabel4.setText("Tuesday");
+            dayLabel5.setText("Wednesday");
+            dayLabel6.setText("Thursday");
+            dayLabel7.setText("Friday");
+        }
+        if(checkPink() == 1){
+            dayButton1.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton1.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton2.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton2.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton3.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton3.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton4.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton4.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton5.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton5.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton6.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton6.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton7.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton7.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton8.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton8.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton9.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton9.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton10.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton10.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton11.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton11.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton12.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton12.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton13.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton13.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton14.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton14.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton15.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton15.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton16.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton16.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton17.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton17.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton18.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton18.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton19.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton19.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton20.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton20.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton21.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton21.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton22.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton22.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton23.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton23.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton24.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton24.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton25.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton25.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton26.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton26.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton27.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton27.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton28.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton28.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton29.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton29.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton30.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton30.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton31.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton31.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton32.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton32.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton33.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton33.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton34.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton34.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton35.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton35.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton36.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton36.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton37.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton37.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton38.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton38.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton39.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton39.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton40.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton40.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton41.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton41.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            dayButton42.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            dayButton42.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
+        jPanel3.setBackground(new java.awt.Color(51, 61, 68));
         jPanel3.setForeground(new java.awt.Color(240, 240, 240));
 
         monthLeftArrow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/left_arrow.png"))); // NOI18N
@@ -1244,6 +1537,7 @@ public class MonthlyView extends javax.swing.JFrame {
         janButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         janButton.setForeground(new java.awt.Color(240, 240, 240));
         janButton.setText("JAN");
+        janButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         janButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         janButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         janButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1258,6 +1552,7 @@ public class MonthlyView extends javax.swing.JFrame {
         febButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         febButton.setForeground(new java.awt.Color(240, 240, 240));
         febButton.setText("FEB");
+        febButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         febButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         febButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         febButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1272,6 +1567,7 @@ public class MonthlyView extends javax.swing.JFrame {
         marButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         marButton.setForeground(new java.awt.Color(240, 240, 240));
         marButton.setText("MAR");
+        marButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         marButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         marButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         marButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1286,6 +1582,7 @@ public class MonthlyView extends javax.swing.JFrame {
         aprButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         aprButton.setForeground(new java.awt.Color(240, 240, 240));
         aprButton.setText("APR");
+        aprButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         aprButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         aprButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         aprButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1300,6 +1597,7 @@ public class MonthlyView extends javax.swing.JFrame {
         mayButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         mayButton.setForeground(new java.awt.Color(240, 240, 240));
         mayButton.setText("MAY");
+        mayButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mayButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mayButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         mayButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1314,6 +1612,7 @@ public class MonthlyView extends javax.swing.JFrame {
         junButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         junButton.setForeground(new java.awt.Color(240, 240, 240));
         junButton.setText("JUN");
+        junButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         junButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         junButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         junButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1328,6 +1627,7 @@ public class MonthlyView extends javax.swing.JFrame {
         julButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         julButton.setForeground(new java.awt.Color(240, 240, 240));
         julButton.setText("JUL");
+        julButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         julButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         julButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         julButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1342,6 +1642,7 @@ public class MonthlyView extends javax.swing.JFrame {
         augButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         augButton.setForeground(new java.awt.Color(240, 240, 240));
         augButton.setText("AUG");
+        augButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         augButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         augButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         augButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1356,6 +1657,7 @@ public class MonthlyView extends javax.swing.JFrame {
         sepButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         sepButton.setForeground(new java.awt.Color(240, 240, 240));
         sepButton.setText("SEP");
+        sepButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sepButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         sepButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         sepButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1370,6 +1672,7 @@ public class MonthlyView extends javax.swing.JFrame {
         octButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         octButton.setForeground(new java.awt.Color(240, 240, 240));
         octButton.setText("OCT");
+        octButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         octButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         octButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         octButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1384,6 +1687,7 @@ public class MonthlyView extends javax.swing.JFrame {
         novButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         novButton.setForeground(new java.awt.Color(240, 240, 240));
         novButton.setText("NOV");
+        novButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         novButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         novButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         novButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1398,6 +1702,7 @@ public class MonthlyView extends javax.swing.JFrame {
         decButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         decButton.setForeground(new java.awt.Color(240, 240, 240));
         decButton.setText("DEC");
+        decButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         decButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         decButton.setMargin(new java.awt.Insets(1, 1, 1, 1));
         decButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1437,7 +1742,7 @@ public class MonthlyView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(decButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(monthRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE))
+                .addComponent(monthRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 55, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1460,14 +1765,227 @@ public class MonthlyView extends javax.swing.JFrame {
             .addComponent(decButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            janButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            febButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            febButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            marButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            marButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            aprButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            aprButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            mayButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            mayButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            junButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            junButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            julButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            julButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            augButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            augButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            sepButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            sepButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            octButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            octButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            novButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            novButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            decButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
+        jPanel2.setBackground(new java.awt.Color(51, 61, 68));
+        jPanel2.setForeground(new java.awt.Color(240, 240, 240));
+
+        eventLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        eventLabel1.setForeground(new java.awt.Color(240, 240, 240));
+        eventLabel1.setText("Event 1");
+
+        textArea1.setEditable(false);
+        textArea1.setBackground(new java.awt.Color(34, 34, 34));
+        textArea1.setColumns(20);
+        textArea1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textArea1.setForeground(new java.awt.Color(240, 240, 240));
+        textArea1.setRows(5);
+        textArea1.setText("Description:");
+        jScrollPane1.setViewportView(textArea1);
+        if(checkPink() == 1){
+            textArea1.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            textArea1.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
+        eventLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        eventLabel2.setForeground(new java.awt.Color(240, 240, 240));
+        eventLabel2.setText("Event 2");
+
+        textArea3.setBackground(new java.awt.Color(34, 34, 34));
+        textArea3.setColumns(20);
+        textArea3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textArea3.setForeground(new java.awt.Color(240, 240, 240));
+        textArea3.setRows(5);
+        textArea3.setText("Description:");
+        jScrollPane2.setViewportView(textArea3);
+        if(checkPink() == 1){
+            textArea3.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            textArea3.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
+        eventLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        eventLabel3.setForeground(new java.awt.Color(240, 240, 240));
+        eventLabel3.setText("Event 3");
+
+        textArea2.setEditable(false);
+        textArea2.setBackground(new java.awt.Color(34, 34, 34));
+        textArea2.setColumns(20);
+        textArea2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textArea2.setForeground(new java.awt.Color(240, 240, 240));
+        textArea2.setRows(5);
+        textArea2.setText("Description:");
+        jScrollPane3.setViewportView(textArea2);
+        if(checkPink() == 1){
+            textArea2.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            textArea2.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
+        eventButton1.setBackground(new java.awt.Color(34, 34, 34));
+        eventButton1.setContentAreaFilled(false);
+        eventButton1.setOpaque(true);
+        eventButton1.setText("IMG");
+        eventButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eventButton1ActionPerformed(evt);
+            }
+        });
+
+        eventButton2.setBackground(new java.awt.Color(34, 34, 34));
+        eventButton2.setContentAreaFilled(false);
+        eventButton2.setOpaque(true);
+        eventButton2.setText("IMG");
+        eventButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eventButton2ActionPerformed(evt);
+            }
+        });
+
+        eventButton3.setBackground(new java.awt.Color(34, 34, 34));
+        eventButton3.setContentAreaFilled(false);
+        eventButton3.setOpaque(true);
+        eventButton3.setText("IMG");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(eventLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eventButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(eventLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(46, 46, 46)
+                        .addComponent(eventButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(eventLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eventButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(eventLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eventButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(eventLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eventButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(eventLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eventButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
+
+        if(checkPink() == 1){
+            eventButton1.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            eventButton1.setBackground(new java.awt.Color(34,34,34));
+        }
+        if(checkPink() == 1){
+            eventButton2.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            eventButton2.setBackground(new java.awt.Color(34,34,34));
+        }
+        if(checkPink() == 1){
+            eventButton3.setBackground(new java.awt.Color(255,9 , 88));
+        }else{
+            eventButton3.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
+        jScrollPane4.setViewportView(jPanel2);
+        if(checkPink() == 1){
+            jPanel2.setBackground(new java.awt.Color(255, 174, 201));
+        }else{
+            jPanel2.setBackground(new java.awt.Color(51, 61, 68));
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4))
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(titlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1475,14 +1993,29 @@ public class MonthlyView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        if(checkPink() == 1){
+            titlePanel.setBackground(new java.awt.Color(255, 174, 201));
+        }else{
+            titlePanel.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            jPanel1.setBackground(new java.awt.Color(255, 174, 201));
+        }else{
+            jPanel1.setBackground(new java.awt.Color(51, 61, 68));
+        }
+        if(checkPink() == 1){
+            jPanel3.setBackground(new java.awt.Color(255, 174, 201));
+        }else{
+            jPanel3.setBackground(new java.awt.Color(51, 61, 68));
+        }
         int num = Calendar.getInstance().get(Calendar.MONTH);
         monthNum = num;
         i = num;
@@ -1548,220 +2081,487 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void dayButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton1ActionPerformed
         // TODO add your handling code here:
-       String monthNow = getMonthNum(monthNum);
-       String dayNow = dayButton1.getText();
-       String combine = monthNow + "-" + dayNow;
-       System.out.println(getFileNames(0));
-       String string = getFileNames(0);
-       String[] parts = string.split("-");
-       String part1 = parts[0]; 
-       String part2 = parts[1]; 
-       String part3 = parts[2]; 
-       String combine2 = part1 + "-" + part2;
-       int numOfFiles = getNumOfFiles();
-       if(combine.equals(combine2) && lock <= 4){
-           eventLabel1.setText(part3);
-           lock++;
-       }
-       string = getFileNames(1);
-       string.split("-");
-       part1 = parts[0]; 
-       part2 = parts[1]; 
-       part3 = parts[2]; 
-       combine2 = part1 + "-" + part2;
-       if(combine.equals(combine2) && lock <= 4){
-           eventLabel2.setText(part3);
-           lock++;
-       }
+       setTextData();
        
-
-       string = getFileNames(2);
-       string.split("-");
-       part1 = parts[0]; 
-       part2 = parts[1]; 
-       part3 = parts[2]; 
-       combine2 = part1 + "-" + part2;
-       if(combine.equals(combine2) && lock <= 4){
-           eventLabel3.setText(part3);
-           lock++;
-       }
+       String monthNow = getMonthNum(monthNum);
+       lock = 0;
+       String dayNow = dayButton1.getText();
+       
+       setEventData(monthNow, dayNow);
        
     }//GEN-LAST:event_dayButton1ActionPerformed
 
     private void dayButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton2ActionPerformed
         // TODO add your handling code here:
+       setTextData();
+       
+       String monthNow = getMonthNum(monthNum);
+       lock = 0;
+       String dayNow = dayButton2.getText();
+       
+       setEventData(monthNow, dayNow);
                
     }//GEN-LAST:event_dayButton2ActionPerformed
 
     private void dayButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton3ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+       String monthNow = getMonthNum(monthNum);
+       lock = 0;
+       String dayNow = dayButton3.getText();
+       
+       setEventData(monthNow, dayNow);
                
     }//GEN-LAST:event_dayButton3ActionPerformed
 
     private void dayButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton4ActionPerformed
         // TODO add your handling code here:
-       
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton4.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton4ActionPerformed
 
     private void dayButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton5ActionPerformed
         // TODO add your handling code here:
-
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton5.getText();
+       
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton5ActionPerformed
 
     private void dayButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton6ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton6.getText();
+       
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton6ActionPerformed
 
     private void dayButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton7ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton7.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton7ActionPerformed
 
     private void dayButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton8ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton8.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton8ActionPerformed
 
     private void dayButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton9ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton9.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton9ActionPerformed
 
     private void dayButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton10ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton10.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton10ActionPerformed
 
     private void dayButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton11ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton11.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton11ActionPerformed
 
     private void dayButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton12ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+       String monthNow = getMonthNum(monthNum);
+       lock = 0;
+       String dayNow = dayButton12.getText();
+       
+       setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton12ActionPerformed
 
     private void dayButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton13ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton13.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton13ActionPerformed
 
     private void dayButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton14ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton14.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton14ActionPerformed
 
     private void dayButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton15ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+       
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton15.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton15ActionPerformed
 
     private void dayButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton16ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton16.getText();
+       
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton16ActionPerformed
 
     private void dayButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton17ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton17.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton17ActionPerformed
 
     private void dayButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton18ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton18.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton18ActionPerformed
 
     private void dayButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton19ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton19.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton19ActionPerformed
 
     private void dayButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton20ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton20.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton20ActionPerformed
 
     private void dayButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton21ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton21.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton21ActionPerformed
 
     private void dayButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton22ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton22.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton22ActionPerformed
 
     private void dayButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton23ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton23.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton23ActionPerformed
 
     private void dayButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton24ActionPerformed
         // TODO add your handling code here:
+       setTextData();
+        
+       String monthNow = getMonthNum(monthNum);
+       lock = 0;
+       String dayNow = dayButton24.getText();
+       
+       setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton24ActionPerformed
 
     private void dayButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton25ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton25.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton25ActionPerformed
 
     private void dayButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton26ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton26.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton26ActionPerformed
 
     private void dayButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton27ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton27.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton27ActionPerformed
 
     private void dayButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton28ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton28.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton28ActionPerformed
 
     private void dayButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton29ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton29.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton29ActionPerformed
 
     private void dayButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton30ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton30.getText();
+       
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton30ActionPerformed
 
     private void dayButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton31ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton31.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton31ActionPerformed
 
     private void dayButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton32ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton32.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton32ActionPerformed
 
     private void dayButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton33ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);lock = 0;
+        String dayNow = dayButton33.getText();
+        String combine = monthNow + "-" + dayNow;
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton33ActionPerformed
 
     private void dayButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton34ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton34.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton34ActionPerformed
 
     private void dayButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton35ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton35.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton35ActionPerformed
 
     private void dayButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton36ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton36.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton36ActionPerformed
 
     private void dayButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton37ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton37.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton37ActionPerformed
 
     private void dayButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton38ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton38.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton38ActionPerformed
 
     private void dayButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton39ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton39.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton39ActionPerformed
 
     private void dayButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton40ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:#
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton40.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton40ActionPerformed
 
     private void dayButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton41ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton41.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton41ActionPerformed
 
     private void dayButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton42ActionPerformed
         // TODO add your handling code here:
+        setTextData();
+        
+        String monthNow = getMonthNum(monthNum);
+        lock = 0;
+        String dayNow = dayButton42.getText();
+        
+        setEventData(monthNow, dayNow);
     }//GEN-LAST:event_dayButton42ActionPerformed
 
     private void janButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_janButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 0;
         monthNum = i;
-    
-            janButton.setBackground(new java.awt.Color(29,114,239));
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
+            janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
             aprButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -1772,8 +2572,9 @@ public class MonthlyView extends javax.swing.JFrame {
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
-        
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+        janButton.setBackground(new java.awt.Color(29,114,239));       
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -1817,14 +2618,32 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+
     }//GEN-LAST:event_janButtonActionPerformed
 
     private void febButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_febButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 1;
         monthNum = i;
+            
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(29,114,239));
+            febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
             aprButton.setBackground(new java.awt.Color(34, 34, 34));
             mayButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -1834,8 +2653,10 @@ public class MonthlyView extends javax.swing.JFrame {
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
-   
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+        febButton.setBackground(new java.awt.Color(29,114,239));
+      
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
         dayButton3.setText(String.valueOf(getCalendarDay(2, i)));
@@ -1882,11 +2703,27 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void marButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 2;
         monthNum = i;        
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(29,114,239));
+            marButton.setBackground(new java.awt.Color(34, 34, 34));
             aprButton.setBackground(new java.awt.Color(34, 34, 34));
             mayButton.setBackground(new java.awt.Color(34, 34, 34));
             junButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -1895,7 +2732,10 @@ public class MonthlyView extends javax.swing.JFrame {
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+            marButton.setBackground(new java.awt.Color(29,114,239));
+       
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -1943,12 +2783,28 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void aprButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aprButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 3;
         monthNum = i;    
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(29,114,239));
+            aprButton.setBackground(new java.awt.Color(34, 34, 34));
             mayButton.setBackground(new java.awt.Color(34, 34, 34));
             junButton.setBackground(new java.awt.Color(34, 34, 34));
             julButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -1956,7 +2812,10 @@ public class MonthlyView extends javax.swing.JFrame {
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+            aprButton.setBackground(new java.awt.Color(29,114,239));
+     
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -2004,20 +2863,38 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void mayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mayButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 4;
         monthNum = i;      
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
             aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(29,114,239));
+            mayButton.setBackground(new java.awt.Color(34, 34, 34));
             junButton.setBackground(new java.awt.Color(34, 34, 34));
             julButton.setBackground(new java.awt.Color(34, 34, 34));
             augButton.setBackground(new java.awt.Color(34, 34, 34));
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+            mayButton.setBackground(new java.awt.Color(29,114,239));
+         
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -2065,20 +2942,39 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void junButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_junButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 5;
         monthNum = i;
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
             aprButton.setBackground(new java.awt.Color(34, 34, 34));
             mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(29,114,239));
+            junButton.setBackground(new java.awt.Color(34, 34, 34));
             julButton.setBackground(new java.awt.Color(34, 34, 34));
             augButton.setBackground(new java.awt.Color(34, 34, 34));
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+            junButton.setBackground(new java.awt.Color(29,114,239));
+      
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -2126,20 +3022,39 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void julButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_julButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 6;
         monthNum = i;       
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
             aprButton.setBackground(new java.awt.Color(34, 34, 34));
             mayButton.setBackground(new java.awt.Color(34, 34, 34));
             junButton.setBackground(new java.awt.Color(34, 34, 34));
-            julButton.setBackground(new java.awt.Color(29,114,239));
+            julButton.setBackground(new java.awt.Color(34, 34, 34));
             augButton.setBackground(new java.awt.Color(34, 34, 34));
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+            julButton.setBackground(new java.awt.Color(29,114,239));
+       
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -2187,8 +3102,24 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void augButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_augButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 7;
         monthNum = i;
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -2196,11 +3127,14 @@ public class MonthlyView extends javax.swing.JFrame {
             mayButton.setBackground(new java.awt.Color(34, 34, 34));
             junButton.setBackground(new java.awt.Color(34, 34, 34));
             julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(29,114,239));
+            augButton.setBackground(new java.awt.Color(34, 34, 34));
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+            augButton.setBackground(new java.awt.Color(29,114,239));
+       
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -2248,8 +3182,24 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void sepButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sepButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 8;
         monthNum = i;       
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -2258,10 +3208,13 @@ public class MonthlyView extends javax.swing.JFrame {
             junButton.setBackground(new java.awt.Color(34, 34, 34));
             julButton.setBackground(new java.awt.Color(34, 34, 34));
             augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(29,114,239));
+            sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+            sepButton.setBackground(new java.awt.Color(29,114,239));
+       
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -2309,8 +3262,24 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void octButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_octButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 9;
         monthNum = i;   
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -2320,9 +3289,12 @@ public class MonthlyView extends javax.swing.JFrame {
             julButton.setBackground(new java.awt.Color(34, 34, 34));
             augButton.setBackground(new java.awt.Color(34, 34, 34));
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(29, 114, 239));
+            octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+            octButton.setBackground(new java.awt.Color(29, 114, 239));
+      
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -2370,8 +3342,24 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void novButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 10;
         monthNum = i;    
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -2382,8 +3370,11 @@ public class MonthlyView extends javax.swing.JFrame {
             augButton.setBackground(new java.awt.Color(34, 34, 34));
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
+            novButton.setBackground(new java.awt.Color(34, 34, 34));
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
             novButton.setBackground(new java.awt.Color(29,114,239));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));        
+      
         
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
         dayButton2.setText(String.valueOf(getCalendarDay(1, i)));
@@ -2431,8 +3422,24 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void decButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decButtonActionPerformed
         // TODO add your handling code here:
+        setTextData();
         i = 11;
         monthNum = i;
+            
+            if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -2444,6 +3451,8 @@ public class MonthlyView extends javax.swing.JFrame {
             sepButton.setBackground(new java.awt.Color(34, 34, 34));
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
             decButton.setBackground(new java.awt.Color(29,114,239));        
         
         
@@ -2493,6 +3502,7 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void leftYearArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftYearArrowActionPerformed
         // TODO add your handling code here:
+        setTextData();
         year = year - 1;
         yearLabel.setText(String.valueOf(year));
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
@@ -2541,6 +3551,7 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void yearRightArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearRightArrowActionPerformed
         // TODO add your handling code here:
+        setTextData();
         year = year + 1;
         yearLabel.setText(String.valueOf(year));
         yearLabel.setText(String.valueOf(year));
@@ -2611,203 +3622,79 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void monthLeftArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthLeftArrowActionPerformed
         // TODO add your handling code here:
-        
+        setTextData();
+        if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
+            janButton.setBackground(new java.awt.Color(34, 34, 34));
+            febButton.setBackground(new java.awt.Color(34, 34, 34));
+            marButton.setBackground(new java.awt.Color(34, 34, 34));
+            aprButton.setBackground(new java.awt.Color(34, 34, 34));
+            mayButton.setBackground(new java.awt.Color(34, 34, 34));
+            junButton.setBackground(new java.awt.Color(34, 34, 34));
+            julButton.setBackground(new java.awt.Color(34, 34, 34));
+            augButton.setBackground(new java.awt.Color(34, 34, 34));
+            sepButton.setBackground(new java.awt.Color(34, 34, 34));
+            octButton.setBackground(new java.awt.Color(34, 34, 34));
+            novButton.setBackground(new java.awt.Color(34, 34, 34));
+            decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
         if(monthNum == 1){
             janButton.setBackground(new java.awt.Color(29,114,239));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34, 34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;
         }else if(monthNum == 2){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
             febButton.setBackground(new java.awt.Color(29,114,239));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34, 34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;
         }else if(monthNum == 3){
-           janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             marButton.setBackground(new java.awt.Color(29,114,239));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34, 34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;   
         }else if(monthNum == 4){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             aprButton.setBackground(new java.awt.Color(29,114,239));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34, 34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;   
         }else if(monthNum == 5){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             mayButton.setBackground(new java.awt.Color(29,114,239));
-            junButton.setBackground(new java.awt.Color(34, 34, 34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;
         }else if(monthNum == 6){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             junButton.setBackground(new java.awt.Color(29,114,239));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;
         }else if(monthNum == 7){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
+            
             julButton.setBackground(new java.awt.Color(29,114,239));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;
+
         }else if(monthNum == 8){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             augButton.setBackground(new java.awt.Color(29,114,239));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;
         }else if(monthNum == 9){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
+                
             sepButton.setBackground(new java.awt.Color(29,114,239));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;
         }else if(monthNum == 10){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             octButton.setBackground(new java.awt.Color(29,114,239));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
-            monthNum = monthNum - 1;
-        }else if(monthNum == 8){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(29,114,239));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
-            monthNum = monthNum - 1;
-        }else if(monthNum == 9){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(29,114,239));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
-            monthNum = monthNum - 1;
-        }else if(monthNum == 10){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(29,114,239));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;
         }else if(monthNum == 11){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             novButton.setBackground(new java.awt.Color(29,114,239));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum - 1;
+        }else{
+            janButton.setBackground(new java.awt.Color(29,114,239));
         }
         
         i = monthNum;
@@ -2862,10 +3749,23 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void monthRightArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthRightArrowActionPerformed
         // TODO add your handling code here:
-          
-        if(monthNum == 0){
+        setTextData();
+        if(checkPink() == 1){
+            janButton.setBackground(new java.awt.Color(255,9 , 88));
+            febButton.setBackground(new java.awt.Color(255,9 , 88));
+            marButton.setBackground(new java.awt.Color(255,9 , 88));
+            aprButton.setBackground(new java.awt.Color(255,9 , 88));
+            mayButton.setBackground(new java.awt.Color(255,9 , 88));
+            junButton.setBackground(new java.awt.Color(255,9 , 88));
+            julButton.setBackground(new java.awt.Color(255,9 , 88));
+            augButton.setBackground(new java.awt.Color(255,9 , 88));
+            sepButton.setBackground(new java.awt.Color(255,9 , 88));
+            octButton.setBackground(new java.awt.Color(255,9 , 88));
+            novButton.setBackground(new java.awt.Color(255,9 , 88));
+            decButton.setBackground(new java.awt.Color(255,9 , 88));
+            }else{
             janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(29,114,239));
+            febButton.setBackground(new java.awt.Color(34, 34, 34));
             marButton.setBackground(new java.awt.Color(34, 34, 34));
             aprButton.setBackground(new java.awt.Color(34, 34, 34));
             mayButton.setBackground(new java.awt.Color(34, 34, 34));
@@ -2876,147 +3776,54 @@ public class MonthlyView extends javax.swing.JFrame {
             octButton.setBackground(new java.awt.Color(34, 34, 34));
             novButton.setBackground(new java.awt.Color(34, 34, 34));
             decButton.setBackground(new java.awt.Color(34, 34, 34));
+            }
+        if(monthNum == 0){
+            
+            
+            febButton.setBackground(new java.awt.Color(29,114,239));
             monthNum = monthNum + 1;   
         }else if(monthNum == 1){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             marButton.setBackground(new java.awt.Color(29,114,239));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34, 34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum + 1;
         }else if(monthNum == 2){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34 , 34));
+            
             aprButton.setBackground(new java.awt.Color(29,114,239));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34, 34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum + 1;
         }else if(monthNum == 3){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             mayButton.setBackground(new java.awt.Color(29,114,239));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum + 1;
         }else if(monthNum == 4){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             junButton.setBackground(new java.awt.Color(29,114,239));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum + 1;
         }else if(monthNum == 5){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
+            
             julButton.setBackground(new java.awt.Color(29,114,239));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34 , 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum + 1;
         }else if(monthNum == 6){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             augButton.setBackground(new java.awt.Color(29,114,239));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum + 1;
         }else if(monthNum == 7){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             sepButton.setBackground(new java.awt.Color(29,114,239));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum + 1;
         }else if(monthNum == 8){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             octButton.setBackground(new java.awt.Color(29,114,239));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum + 1;
         }else if(monthNum == 9){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             novButton.setBackground(new java.awt.Color(29,114,239));
-            decButton.setBackground(new java.awt.Color(34, 34, 34));
             monthNum = monthNum + 1;
         }else if(monthNum == 10){
-            janButton.setBackground(new java.awt.Color(34, 34, 34));
-            febButton.setBackground(new java.awt.Color(34, 34, 34));
-            marButton.setBackground(new java.awt.Color(34, 34, 34));
-            aprButton.setBackground(new java.awt.Color(34, 34, 34));
-            mayButton.setBackground(new java.awt.Color(34, 34, 34));
-            junButton.setBackground(new java.awt.Color(34, 34 ,34));
-            julButton.setBackground(new java.awt.Color(34, 34, 34));
-            augButton.setBackground(new java.awt.Color(34, 34, 34));
-            sepButton.setBackground(new java.awt.Color(34, 34, 34));
-            octButton.setBackground(new java.awt.Color(34, 34, 34));
-            novButton.setBackground(new java.awt.Color(34, 34, 34));
+            
             decButton.setBackground(new java.awt.Color(29,114,239));
             monthNum = monthNum + 1;
+        }else{
+            decButton.setBackground(new java.awt.Color(29,114,239));
         }
         i = monthNum;
         dayButton1.setText(String.valueOf(getCalendarDay(0, i)));
@@ -3069,6 +3876,21 @@ public class MonthlyView extends javax.swing.JFrame {
         DailyView dV = new DailyView();
         dV.setVisible(true);
     }//GEN-LAST:event_dayButtonActionPerformed
+
+    private void eventButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eventButton2ActionPerformed
+
+    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
+        // TODO add your handling code here:
+        close();
+        new MonthlyView().setVisible(true);
+  
+    }//GEN-LAST:event_refreshButtonActionPerformed
+
+    private void eventButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eventButton1ActionPerformed
     
     private void close(){
         this.dispose();
@@ -3111,9 +3933,17 @@ private int getCalendarDay(int dayButton ,int i){
     int day = c.get(Calendar.DAY_OF_WEEK);
     int store[] = new int[42];
     
-    int counter = 0;
+    day = day - 1;
+    if(day - getStartingWeek() > 0){
+       day = day - getStartingWeek(); 
+    }else if(day - getStartingWeek() < 0){
+       day = 7 + (day - getStartingWeek());
+    }else if(day - getStartingWeek() == 0){
+        day = 0;
+    }
     
-        while(counter+1 < day){
+    int counter = 0;
+        while(counter < day){
         store[counter] = 0; 
         counter++;
         }
@@ -3124,7 +3954,7 @@ private int getCalendarDay(int dayButton ,int i){
         }
         
         while(counter <= 41){
-            store[counter] = 1 + addNum;
+            store[counter] = 0;
             counter++;
             addNum++;
         }
@@ -3146,10 +3976,18 @@ private int getDefaultMonth(int dayButton){
     c.set(intYear, month, 1);
     int day = c.get(Calendar.DAY_OF_WEEK);
     int store[] = new int[42];
+
+    day = day - 1;
+    if(day - getStartingWeek() > 0){
+       day = day - getStartingWeek(); 
+    }else if(day - getStartingWeek() < 0){
+       day = 7 + (day - getStartingWeek());
+    }else if(day - getStartingWeek() == 0){
+        day = 0;
+    }
     
     int counter = 0;
-    
-        while(counter+1 < day){
+        while(counter < day){
         store[counter] = 0; 
         counter++;
         }
@@ -3160,7 +3998,7 @@ private int getDefaultMonth(int dayButton){
         }
         
         while(counter <= 41){
-            store[counter] = 1 + addNum;
+            store[counter] = 0; //1 + addNum;
             counter++;
             addNum++;
         }
@@ -3196,39 +4034,134 @@ private int getDefaultMonth(int dayButton){
         return myPathData;
     }
     
+    private String getDesc(int num) throws FileNotFoundException, IOException{
+        int j = 0;
+        String combineAll = "";
+        String[] splitString = new String[5];
+        File file = new File(getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
+        FileReader read = new FileReader(getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
+        BufferedReader br = new BufferedReader(read);
+        String[] descData = new String[100];
+        if(file.exists()){
+        j = 0;    
+            while((descData[j] = br.readLine()) != null) { 
+
+            j++;
+            } 
+            br.close();
+        for(int k = 0; k <= j; k++){
+            combineAll = combineAll + descData[k];
+        }
+        splitString = combineAll.split("\\+");
+        }
+        return splitString[1];
+    }
+    
+        private String getImagePath(int num) throws FileNotFoundException, IOException{
+        int j = 0;
+        String combineAll = "";
+        String[] splitString = new String[6];
+        File file = new File(getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
+        FileReader read = new FileReader(getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
+        BufferedReader br = new BufferedReader(read);
+        String[] descData = new String[100];
+        if(file.exists()){
+        j = 0;    
+            while((descData[j] = br.readLine()) != null) { 
+
+            j++;
+            } 
+            br.close();
+        for(int k = 0; k <= j; k++){
+            combineAll = combineAll + descData[k];
+        }
+        splitString = combineAll.split("\\+");
+        }
+        splitString[7] = splitString[7].replaceAll("null", "");
+        return splitString[7];
+    }
+    
     public String getFileNames(int num){
         String thePathFile[] = new String[1000];
         String filePath = getPath();
-        File folder = new File(filePath + "\\AppToDate\\" + yearLabel.getText());
+        File folder = new File(filePath + "\\AppToDate\\" + yearLabel.getText() + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow);
         File[] listOfFiles = folder.listFiles();
-
+      if(folder.exists()){
     for (int i = 0; i < listOfFiles.length; i++) {
       if (listOfFiles[i].isFile()) {
-        System.out.println("File " + listOfFiles[i].getName());
         thePathFile[i] = listOfFiles[i].getName();
-      } else if (listOfFiles[i].isDirectory()) {
-        System.out.println("Directory " + listOfFiles[i].getName());
       }
     }
+      }else if(!folder.exists()){
+          thePathFile[num] = "NONE";
+      }
     return thePathFile[num];
     }
         public int getNumOfFiles(){
-        String thePathFile[] = new String[1000];
+         String thePathFile[] = new String[1000];
         String filePath = getPath();
-        File folder = new File(filePath + "\\AppToDate\\" + yearLabel.getText());
+        File folder = new File(filePath + "\\AppToDate\\" + yearLabel.getText() + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow) ;
         File[] listOfFiles = folder.listFiles();
-
+        int numFiles = 0;
+    if(folder.exists()){
+       
     for (int i = 0; i < listOfFiles.length; i++) {
       if (listOfFiles[i].isFile()) {
-        System.out.println("File " + listOfFiles[i].getName());
         thePathFile[i] = listOfFiles[i].getName();
-      } else if (listOfFiles[i].isDirectory()) {
-        System.out.println("Directory " + listOfFiles[i].getName());
+        
+      } 
+      if(i == listOfFiles.length - 1){
+          numFiles = listOfFiles.length;
       }
     }
-    return listOfFiles.length;
+    }else if(!folder.exists()){
+        numFiles = 0;
+    }
+    return numFiles;
+    }
+        
+    private int checkPink(){
+        Path path = Paths.get("");
+        Path realPath;
+        int check = 0;
+        try {
+            realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+            stringPath = realPath.toString();
+            stringPath = stringPath.replace("\\","\\\\");
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        File pink = new File(stringPath + "\\AppToDate\\pink.txt");
+        if(pink.exists()){
+            check = 1;
+        }
+        return check;
     }
     
+    private int getStartingWeek(){
+        Path path = Paths.get("");
+        Path realPath;
+        int weekCounter = 0;
+        try {
+            realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+            stringPath = realPath.toString();
+            stringPath = stringPath.replace("\\","\\\\");
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        for(int counter = 0; counter < 7; counter++){
+        File week = new File(stringPath + "\\AppToDate\\" + counter + ".txt");
+        if(week.exists()){
+           weekCounter = counter;
+        }
+        }
+        return weekCounter;
+    }
     
     public String getMonthNum(int num){
         String stringMonth = "";
@@ -3283,6 +4216,104 @@ private int getDefaultMonth(int dayButton){
         
         return stringMonth;
     }
+    
+    private void setTextData(){
+        eventLabel1.setText("Event 1");
+        eventLabel2.setText("Event 2"); 
+        eventLabel3.setText("Event 3");
+        textArea1.setText("Description:");
+        textArea2.setText("Description:");
+        textArea3.setText("Description:");
+        eventButton1.setIcon(null);
+        eventButton2.setIcon(null);
+        eventButton3.setIcon(null);
+        eventButton1.setText("Img");
+        eventButton2.setText("Img");
+        eventButton3.setText("Img");
+    }
+    
+    private void setEventData(String monthNow, String dayNow){
+       String combine = monthNow + "-" + dayNow;
+       whatDayNow = dayNow;
+       int numOfFiles = getNumOfFiles();
+       if(numOfFiles == 0){
+          eventLabel1.setText("Event 1");
+          eventLabel2.setText("Event 2"); 
+          eventLabel3.setText("Event 3"); 
+          eventButton1.setIcon(null);
+          eventButton2.setIcon(null);
+          eventButton3.setIcon(null);
+          eventButton1.setText("Img");
+          eventButton2.setText("Img");
+          eventButton3.setText("Img");
+       }
+       if(numOfFiles != 0){
+        String string = getFileNames(0);
+        String[] parts = string.split("-");
+        String part1 = parts[0]; 
+        String part2 = parts[1]; 
+        String part3 = parts[2]; 
+        String combine2 = part1 + "-" + part2;
+         if(combine.equals(combine2)){
+           eventLabel1.setText(part3.replace(".txt",""));
+           try {
+               textArea1.setText(getDesc(0));
+               eventButton1.setText("");
+               String ImgRsc = getImagePath(0).replace("\\", "/");
+               ImgRsc = ImgRsc.replace(" ", "");
+               eventButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImgRsc))); // NOI18N
+            } catch (IOException ex) {
+                Logger.getLogger(MonthlyView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       }
+         }
+      
+       if(numOfFiles == 2 || numOfFiles >= 3){
+        String string = getFileNames(1);
+        String[] parts = string.split("-");
+        String part1 = parts[0]; 
+        String part2 = parts[1]; 
+        String part3 = parts[2]; 
+        String combine2 = part1 + "-" + part2;
+         if(combine.equals(combine2)){
+           eventLabel2.setText(part3.replace(".txt",""));
+           try {
+               textArea2.setText(getDesc(1));
+               eventButton2.setText("");
+               String ImgRsc = getImagePath(1).replace("\\", "/");
+               ImgRsc = ImgRsc.replace(" ", "");
+               eventButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImgRsc))); // NOI18N
+            } catch (IOException ex) {
+                Logger.getLogger(MonthlyView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       }  
+       }
+       
+       if(numOfFiles >= 3){
+        String string = getFileNames(2);
+        String[] parts = string.split("-");
+        String part1 = parts[0]; 
+        String part2 = parts[1]; 
+        String part3 = parts[2]; 
+        String combine2 = part1 + "-" + part2;
+         if(combine.equals(combine2)){
+           eventLabel3.setText(part3.replace(".txt",""));
+           try {
+               textArea3.setText(getDesc(2));
+               eventButton3.setText("");
+               String ImgRsc = getImagePath(2).replace("\\", "/");
+               ImgRsc = ImgRsc.replace(" ", "");
+               eventButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImgRsc))); // NOI18N
+            } catch (IOException ex) {
+                Logger.getLogger(MonthlyView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       }  
+       }
+       
+    }
+    
+    
+    
     
     /**
      * @param args the command line arguments
@@ -3374,19 +4405,20 @@ private int getDefaultMonth(int dayButton){
     private javax.swing.JLabel dayLabel6;
     private javax.swing.JLabel dayLabel7;
     private javax.swing.JButton decButton;
+    private javax.swing.JButton eventButton1;
+    private javax.swing.JButton eventButton2;
+    private javax.swing.JButton eventButton3;
     private javax.swing.JLabel eventLabel1;
     private javax.swing.JLabel eventLabel2;
     private javax.swing.JLabel eventLabel3;
     private javax.swing.JButton febButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JButton janButton;
     private javax.swing.JButton julButton;
     private javax.swing.JButton junButton;
@@ -3399,6 +4431,7 @@ private int getDefaultMonth(int dayButton){
     private javax.swing.JButton monthRightArrow;
     private javax.swing.JButton novButton;
     private javax.swing.JButton octButton;
+    private javax.swing.JButton refreshButton;
     private javax.swing.JButton sepButton;
     private javax.swing.JButton settings;
     private javax.swing.JTextArea textArea1;
