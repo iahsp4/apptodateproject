@@ -304,6 +304,27 @@ public class Settings extends javax.swing.JFrame {
                                     .addComponent(whatToDoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             );
 
+                            if(checkPink() == 1){
+                                configurePanel.setBackground(new java.awt.Color(255, 9, 88));
+                            }else{
+                                configurePanel.setBackground(new java.awt.Color(34, 34, 34));
+                            }
+                            if(checkPink() == 1){
+                                whatToDoPanel.setBackground(new java.awt.Color(255, 9, 88));
+                            }else{
+                                whatToDoPanel.setBackground(new java.awt.Color(34, 34, 34));
+                            }
+                            if(checkPink() == 1){
+                                customizeViewPanel.setBackground(new java.awt.Color(255, 9, 88));
+                            }else{
+                                customizeViewPanel.setBackground(new java.awt.Color(34, 34, 34));
+                            }
+                            if(checkPink() == 1){
+                                jPanel4.setBackground(new java.awt.Color(255, 9, 88));
+                            }else{
+                                jPanel4.setBackground(new java.awt.Color(34, 34, 34));
+                            }
+
                             pack();
                         }// </editor-fold>//GEN-END:initComponents
 

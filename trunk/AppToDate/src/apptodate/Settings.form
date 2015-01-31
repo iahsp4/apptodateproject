@@ -51,6 +51,9 @@
           <Color blue="22" green="22" red="22" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;configurePanel.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;configurePanel.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -126,6 +129,9 @@
           <Color blue="22" green="22" red="22" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;whatToDoPanel.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;whatToDoPanel.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -177,6 +183,9 @@
           <Color blue="22" green="22" red="22" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;customizeViewPanel.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;customizeViewPanel.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -318,6 +327,9 @@
           <Color blue="22" green="22" red="22" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;jPanel4.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;jPanel4.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
