@@ -624,7 +624,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton1ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton1.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton1.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton1.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton1.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton1.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton1.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton2">
@@ -653,7 +653,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton2ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton2.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton2.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton2.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton2.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton2.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton2.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton3">
@@ -682,7 +682,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton3ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton3.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton3.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton3.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton3.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton3.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton3.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton4">
@@ -711,7 +711,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton4ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton4.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton4.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton4.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton4.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton4.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton4.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton5">
@@ -740,7 +740,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton5ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton5.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton5.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton5.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton5.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton5.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton5.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton6">
@@ -769,7 +769,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton6ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton6.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton6.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton6.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton6.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton6.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton6.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton7">
@@ -798,7 +798,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton7ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton7.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton7.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton7.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton7.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton7.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton7.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton8">
@@ -827,7 +827,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton8ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton8.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton8.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton8.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton8.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton8.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton8.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton9">
@@ -856,7 +856,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton9ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton9.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton9.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton9.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton9.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton9.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton9.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton10">
@@ -885,7 +885,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton10ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton10.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton10.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton10.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton10.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton10.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton10.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton11">
@@ -914,7 +914,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton11ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton11.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton11.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton11.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton11.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton11.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton11.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton12">
@@ -943,7 +943,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton12ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton12.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton12.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton12.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton12.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton12.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton12.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton13">
@@ -972,7 +972,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton13ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton13.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton13.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton13.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton13.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton13.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton13.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton14">
@@ -1001,7 +1001,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton14ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton14.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton14.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton14.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton14.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton14.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton14.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton15">
@@ -1030,7 +1030,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton15ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton15.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton15.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton15.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton15.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton15.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton15.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton16">
@@ -1059,7 +1059,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton16ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton16.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton16.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton16.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton16.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton16.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton16.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton17">
@@ -1088,7 +1088,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton17ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton17.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton17.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton17.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton17.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton17.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton17.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton18">
@@ -1117,7 +1117,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton18ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton18.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton18.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton18.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton18.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton18.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton18.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton19">
@@ -1146,7 +1146,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton19ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton19.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton19.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton19.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton19.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton19.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton19.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton20">
@@ -1175,7 +1175,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton20ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton20.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton20.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton20.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton20.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton20.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton20.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton21">
@@ -1204,7 +1204,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton21ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton21.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton21.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton21.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton21.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton21.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton21.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton22">
@@ -1233,7 +1233,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton22ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton22.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton22.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton22.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton22.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton22.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton22.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton23">
@@ -1262,7 +1262,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton23ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton23.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton23.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton23.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton23.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton23.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton23.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton24">
@@ -1291,7 +1291,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton24ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton24.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton24.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton24.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton24.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton24.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton24.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton25">
@@ -1320,7 +1320,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton25ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton25.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton25.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton25.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton25.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton25.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton25.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton26">
@@ -1349,7 +1349,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton26ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton26.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton26.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton26.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton26.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton26.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton26.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton27">
@@ -1378,7 +1378,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton27ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton27.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton27.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton27.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton27.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton27.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton27.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton28">
@@ -1407,7 +1407,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton28ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton28.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton28.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton28.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton28.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton28.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton28.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton29">
@@ -1436,7 +1436,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton29ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton29.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton29.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton29.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton29.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton29.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton29.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton30">
@@ -1465,7 +1465,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton30ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton30.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton30.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton30.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton30.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton30.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton30.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton31">
@@ -1494,7 +1494,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton31ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton31.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton31.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton31.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton31.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton31.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton31.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton32">
@@ -1523,7 +1523,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton32ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton32.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton32.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton32.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton32.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton32.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton32.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton33">
@@ -1552,7 +1552,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton33ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton33.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton33.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton33.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton33.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton33.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton33.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton34">
@@ -1639,7 +1639,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton36ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton36.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton36.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton36.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton36.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton36.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton36.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton37">
@@ -1668,7 +1668,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton37ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton37.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton37.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton37.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton37.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton37.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton37.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton38">
@@ -1697,7 +1697,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton38ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton38.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton38.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton38.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton38.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton38.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton38.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton39">
@@ -1726,7 +1726,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton39ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton39.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton39.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton39.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton39.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton39.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton39.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton40">
@@ -1755,7 +1755,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton40ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton40.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton40.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton40.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton40.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton40.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton40.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton41">
@@ -1784,7 +1784,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton41ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton41.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton41.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton41.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton41.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton41.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton41.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="dayButton42">
@@ -1813,7 +1813,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayButton42ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton42.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton42.setBackground(new java.awt.Color(34, 34, 34));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;dayButton42.setBackground(new java.awt.Color(255, 9, 88));&#xa;}else{&#xa;dayButton42.setBackground(new java.awt.Color(34, 34, 34));&#xa;}&#xa;&#xa;if(checkDayNow()){&#xa;int confirmDay = Integer.parseInt(dayButton42.getText());&#xa;if(getNow(1) == confirmDay){&#xa;dayButton42.setBackground(new java.awt.Color(29, 114, 239));&#xa;}&#xa;}"/>
           </AuxValues>
         </Component>
       </SubComponents>
