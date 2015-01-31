@@ -85,7 +85,7 @@ public class ModifyAdd extends javax.swing.JFrame {
         eventLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         eventLabel.setForeground(new java.awt.Color(240, 240, 240));
         eventLabel.setText("Event Name:");
-        eventLabel.setOpaque(true);
+        eventLabel.setOpaque(false);
 
         eventArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +101,7 @@ public class ModifyAdd extends javax.swing.JFrame {
         descLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         descLabel.setForeground(new java.awt.Color(240, 240, 240));
         descLabel.setText("Description:");
-        descLabel.setOpaque(true);
+        descLabel.setOpaque(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -177,13 +177,13 @@ public class ModifyAdd extends javax.swing.JFrame {
         fromLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         fromLabel.setForeground(new java.awt.Color(240, 240, 240));
         fromLabel.setText("From:");
-        fromLabel.setOpaque(true);
+        fromLabel.setOpaque(false);
 
         untilLabel.setBackground(new java.awt.Color(34, 34, 34));
         untilLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         untilLabel.setForeground(new java.awt.Color(240, 240, 240));
         untilLabel.setText("Until:");
-        untilLabel.setOpaque(true);
+        untilLabel.setOpaque(false);
 
         fromHour.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         fromHour.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
@@ -207,18 +207,19 @@ public class ModifyAdd extends javax.swing.JFrame {
         wholeDayEvent.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         wholeDayEvent.setForeground(new java.awt.Color(240, 240, 240));
         wholeDayEvent.setText("Whole Day Event");
+        wholeDayEvent.setOpaque(false);
 
         fromLabel1.setBackground(new java.awt.Color(34, 34, 34));
         fromLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         fromLabel1.setForeground(new java.awt.Color(240, 240, 240));
         fromLabel1.setText("From:");
-        fromLabel1.setOpaque(true);
+        fromLabel1.setOpaque(false);
 
         untilLabel1.setBackground(new java.awt.Color(34, 34, 34));
         untilLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         untilLabel1.setForeground(new java.awt.Color(240, 240, 240));
         untilLabel1.setText("Until:");
-        untilLabel1.setOpaque(true);
+        untilLabel1.setOpaque(false);
 
         untilMonth.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         untilMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" }));
@@ -315,7 +316,6 @@ public class ModifyAdd extends javax.swing.JFrame {
         subectLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         subectLabel.setForeground(new java.awt.Color(240, 240, 240));
         subectLabel.setText("Subject:");
-        subectLabel.setOpaque(true);
 
         subjectText.setText("Subject!");
         subjectText.addActionListener(new java.awt.event.ActionListener() {
@@ -349,7 +349,7 @@ public class ModifyAdd extends javax.swing.JFrame {
                             .addComponent(subectLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(imagesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(imgBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, 166, Short.MAX_VALUE))
+                    .addComponent(imgBox, 0, 166, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -359,7 +359,7 @@ public class ModifyAdd extends javax.swing.JFrame {
                 .addComponent(subectLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(subjectText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(imagesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(imgBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -389,6 +389,27 @@ public class ModifyAdd extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        if(checkPink() == 1){
+            jPanel1.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            jPanel1.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            jPanel2.setBackground(new java.awt.Color(255, 174, 201));
+        }else{
+            jPanel2.setBackground(new java.awt.Color(51, 61, 88));
+        }
+        if(checkPink() == 1){
+            jPanel3.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            jPanel3.setBackground(new java.awt.Color(34, 34, 34));
+        }
+        if(checkPink() == 1){
+            jPanel4.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            jPanel4.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -402,8 +423,8 @@ public class ModifyAdd extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        // TODO add your handling code here:
-                String eventTitle = eventArea.getText();
+        // TODO add your handling code here:        
+        String eventTitle = eventArea.getText();
         String desc = descArea.getText();
         String subj = subjectText.getText();
         String fromH = fromHour.getSelectedItem().toString();
@@ -510,14 +531,28 @@ public class ModifyAdd extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_subjectTextActionPerformed
 
-    private void ImgBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImgBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ImgBoxActionPerformed
-
     private void imgBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_imgBoxActionPerformed
 
+    private int checkPink(){
+        Path path = Paths.get("");
+        Path realPath;
+        int check = 0;
+        try {
+            realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+            stringPath = realPath.toString();
+            stringPath = stringPath.replace("\\","\\\\");
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        File pink = new File(stringPath + "\\AppToDate\\pink.txt");
+        if(pink.exists()){
+            check = 1;
+        }
+        return check;
+    }
+    
     private void close(){
         this.dispose();
     }
