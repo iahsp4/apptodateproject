@@ -1471,10 +1471,24 @@ public class MonthlyView extends javax.swing.JFrame {
         }else{
             dayButton34.setBackground(new java.awt.Color(34, 34, 34));
         }
+
+        if(checkDayNow()){
+            int confirmDay = Integer.parseInt(dayButton34.getText());
+            if(getNow(1) == confirmDay){
+                dayButton34.setBackground(new java.awt.Color(29, 114, 239));
+            }
+        }
         if(checkPink() == 1){
             dayButton35.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton35.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
+        if(checkDayNow()){
+            int confirmDay = Integer.parseInt(dayButton35.getText());
+            if(getNow(1) == confirmDay){
+                dayButton35.setBackground(new java.awt.Color(29, 114, 239));
+            }
         }
         if(checkPink() == 1){
             dayButton36.setBackground(new java.awt.Color(255, 9, 88));
@@ -2088,6 +2102,8 @@ public class MonthlyView extends javax.swing.JFrame {
        String dayNow = dayButton1.getText();
        
        setEventData(monthNow, dayNow);
+       
+ 
        
     }//GEN-LAST:event_dayButton1ActionPerformed
 
@@ -3551,6 +3567,7 @@ public class MonthlyView extends javax.swing.JFrame {
 
     private void yearRightArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearRightArrowActionPerformed
         // TODO add your handling code here:
+        System.out.println(getNow(0) + " " +getNow(1) + " " + getNow(2));
         setTextData();
         year = year + 1;
         yearLabel.setText(String.valueOf(year));
@@ -4216,6 +4233,29 @@ private int getDefaultMonth(int dayButton){
         
         return stringMonth;
     }
+    
+    private int getNow(int num){
+    Calendar now = Calendar.getInstance();
+    int[] current = new int[3];
+    int yearNow = now.get(Calendar.YEAR);
+    int monthNow = now.get(Calendar.MONTH);
+    int dayNow = now.get(Calendar.DAY_OF_MONTH);
+    
+    current[0] = monthNow;
+    current[1] = dayNow;
+    current[2] = yearNow;
+   
+    return current[num];
+    }
+    
+    private boolean checkDayNow(){
+        if(getNow(2) == year){
+            if(getNow(0) == monthNum){
+                    return true;
+                }
+            }
+            return false;
+        }
     
     private void setTextData(){
         eventLabel1.setText("Event 1");
