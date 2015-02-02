@@ -49,14 +49,11 @@ public class DailyView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        dayButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         yearButton = new javax.swing.JButton();
         monthButton = new javax.swing.JButton();
         dayButton = new javax.swing.JButton();
         leftYearArrow = new javax.swing.JButton();
-        yearLabel = new javax.swing.JLabel();
         yearRightArrow = new javax.swing.JButton();
         settings = new javax.swing.JButton();
         modifyAdd = new javax.swing.JButton();
@@ -72,14 +69,7 @@ public class DailyView extends javax.swing.JFrame {
         monthComboBox = new javax.swing.JComboBox();
         showButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
-
-        jButton1.setText("jButton1");
-
-        dayButton1.setBackground(new java.awt.Color(29, 114, 239));
-        dayButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        dayButton1.setForeground(new java.awt.Color(240, 240, 240));
-        dayButton1.setText("DAY");
-        dayButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        yearLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,11 +110,6 @@ public class DailyView extends javax.swing.JFrame {
         dayButton.setForeground(new java.awt.Color(240, 240, 240));
         dayButton.setText("DAY");
         dayButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        dayButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dayButtonActionPerformed(evt);
-            }
-        });
 
         leftYearArrow.setBackground(new java.awt.Color(34, 34, 34));
         leftYearArrow.setForeground(new java.awt.Color(34, 34, 34));
@@ -135,10 +120,6 @@ public class DailyView extends javax.swing.JFrame {
                 leftYearArrowActionPerformed(evt);
             }
         });
-
-        yearLabel.setFont(new java.awt.Font("Tahoma", 0, 26)); // NOI18N
-        yearLabel.setForeground(new java.awt.Color(240, 240, 240));
-        yearLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         yearRightArrow.setBackground(new java.awt.Color(34, 34, 34));
         yearRightArrow.setForeground(new java.awt.Color(34, 34, 34));
@@ -170,12 +151,6 @@ public class DailyView extends javax.swing.JFrame {
         viewAllButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         viewAllButton.setForeground(new java.awt.Color(240, 240, 240));
         viewAllButton.setText("VIEW ALL");
-        viewAllButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        viewAllButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewAllButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -189,13 +164,11 @@ public class DailyView extends javax.swing.JFrame {
                 .addComponent(dayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(viewAllButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(leftYearArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(yearLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(leftYearArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109)
                 .addComponent(yearRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(27, 27, 27)
                 .addComponent(modifyAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(settings, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -204,16 +177,12 @@ public class DailyView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(yearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(monthButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(dayButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
             .addComponent(yearRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(yearLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(leftYearArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(modifyAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(settings, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(dayButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(viewAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(viewAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         if(checkPink() == 1){
@@ -226,7 +195,6 @@ public class DailyView extends javax.swing.JFrame {
         }else{
             monthButton.setBackground(new java.awt.Color(34, 34, 34));
         }
-        yearLabel.setText(String.valueOf(getYear()));
         if(checkPink() == 1){
             settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkWrench.png"))); // NOI18N
         }
@@ -355,6 +323,10 @@ public class DailyView extends javax.swing.JFrame {
             }
         });
 
+        yearLabel.setFont(new java.awt.Font("Tahoma", 0, 26)); // NOI18N
+        yearLabel.setForeground(new java.awt.Color(240, 240, 240));
+        yearLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -375,7 +347,9 @@ public class DailyView extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(yearLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(391, 391, 391))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,7 +370,12 @@ public class DailyView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 80, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(yearLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        yearLabel.setText(String.valueOf(getYear()));
 
         jScrollPane2.setViewportView(jPanel2);
         if(checkPink() == 1){
@@ -794,10 +773,8 @@ try {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dayButton;
-    private javax.swing.JButton dayButton1;
     private javax.swing.JComboBox dayComboBox;
     private javax.swing.JButton deleteButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
