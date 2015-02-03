@@ -314,7 +314,6 @@ public class YearlyView extends javax.swing.JFrame {
                 boolean[] canEdit = new boolean [] {
                     false, false, false, false
                 };
-
                 public boolean isCellEditable(int rowIndex, int columnIndex) {
                     return canEdit [columnIndex];
                 }
@@ -1021,8 +1020,17 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
+
         
         i = 1;
         removeZero();
@@ -1038,10 +1046,18 @@ public class YearlyView extends javax.swing.JFrame {
         {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
         {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
     },
-    new String [] {
+        new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
         
         i = 2;
         removeZero();
@@ -1059,8 +1075,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
         
         i = 3;
         removeZero();
@@ -1078,8 +1102,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
         
         i = 4;
         removeZero();
@@ -1097,8 +1129,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );       
         
         i = 5;
         removeZero();
@@ -1116,8 +1156,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));  
+
+    ); 
         
         i = 6;
         removeZero();
@@ -1135,8 +1183,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );       
 
         i = 7;
         removeZero();
@@ -1154,8 +1210,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
         
         i = 8;
         removeZero();
@@ -1173,8 +1237,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );       
         
         i = 9;
         removeZero();
@@ -1192,8 +1264,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );      
         
         i = 10;
         removeZero();
@@ -1211,8 +1291,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );      
         
         i = 11;
         removeZero();
@@ -1230,8 +1318,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );       
 
     }//GEN-LAST:event_yearRightArrowActionPerformed
 
@@ -1313,8 +1409,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
         
         i = 1;
         removeZero();
@@ -1332,8 +1436,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
         
         i = 2;
         removeZero();
@@ -1351,8 +1463,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
         
         i = 3;
         removeZero();
@@ -1370,8 +1490,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
         
         i = 4;
         removeZero();
@@ -1389,8 +1517,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));  
+
+    ); 
         
         i = 6;
         removeZero();
@@ -1408,8 +1544,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );       
 
         i = 7;
         removeZero();
@@ -1427,8 +1571,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));
+
+    );
         
         i = 8;
         removeZero();
@@ -1446,8 +1598,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );        
         
         i = 9;
         removeZero();
@@ -1465,8 +1625,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );       
         
         i = 10;
         removeZero();
@@ -1484,8 +1652,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-));        
+
+    );       
         
         i = 11;
         removeZero();
@@ -1503,9 +1679,16 @@ public class YearlyView extends javax.swing.JFrame {
     },
     new String [] {
         dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
     }
-            
-));        
+
+    );       
     }//GEN-LAST:event_leftYearArrowActionPerformed
     
     private void monthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthButtonActionPerformed
