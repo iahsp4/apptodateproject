@@ -148,9 +148,16 @@ public class DailyView extends javax.swing.JFrame {
         });
 
         viewAllButton.setBackground(new java.awt.Color(29, 114, 239));
+        viewAllButton.setContentAreaFilled(false);
+        viewAllButton.setOpaque(true);
         viewAllButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         viewAllButton.setForeground(new java.awt.Color(240, 240, 240));
         viewAllButton.setText("VIEW ALL");
+        viewAllButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAllButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -200,6 +207,11 @@ public class DailyView extends javax.swing.JFrame {
         }
         if(checkPink() == 1){
             modifyAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkAdd.png"))); // NOI18N
+        }
+        if(checkPink() == 1){
+            viewAllButton.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            viewAllButton.setBackground(new java.awt.Color(34, 34, 34));
         }
 
         jPanel2.setBackground(new java.awt.Color(34, 34, 34));
@@ -557,6 +569,9 @@ try {
 
     private void viewAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllButtonActionPerformed
         // TODO add your handling code here:
+        close();
+        viewAll va = new viewAll();
+        va.setVisible(true);
     }//GEN-LAST:event_viewAllButtonActionPerformed
 
     private void dayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButtonActionPerformed
