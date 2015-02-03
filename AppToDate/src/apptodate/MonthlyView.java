@@ -1306,7 +1306,6 @@ public class MonthlyView extends javax.swing.JFrame {
         }else{
             dayButton1.setBackground(new java.awt.Color(34, 34, 34));
         }
-
         if(checkDayNow()){
             int confirmDay = Integer.parseInt(dayButton1.getText());
             if(getNow(1) == confirmDay){
@@ -1337,6 +1336,7 @@ public class MonthlyView extends javax.swing.JFrame {
                 dayButton3.setBackground(new java.awt.Color(29, 114, 239));
             }
         }
+        setDayNowColor();
         if(checkPink() == 1){
             dayButton4.setBackground(new java.awt.Color(255, 9, 88));
         }else{
@@ -2360,6 +2360,7 @@ public class MonthlyView extends javax.swing.JFrame {
         if(num == 11){
             decButton.setBackground(new java.awt.Color(29,114,239));
         }
+        setDayNowColor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2914,7 +2915,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
-
+        setDayNowColor();
     }//GEN-LAST:event_janButtonActionPerformed
 
     private void febButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_febButtonActionPerformed
@@ -2995,6 +2996,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_febButtonActionPerformed
 
     private void marButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marButtonActionPerformed
@@ -3075,6 +3077,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_marButtonActionPerformed
 
     private void aprButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aprButtonActionPerformed
@@ -3155,6 +3158,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_aprButtonActionPerformed
 
     private void mayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mayButtonActionPerformed
@@ -3234,6 +3238,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_mayButtonActionPerformed
 
     private void junButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_junButtonActionPerformed
@@ -3314,6 +3319,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_junButtonActionPerformed
 
     private void julButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_julButtonActionPerformed
@@ -3394,6 +3400,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_julButtonActionPerformed
 
     private void augButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_augButtonActionPerformed
@@ -3474,6 +3481,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_augButtonActionPerformed
 
     private void sepButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sepButtonActionPerformed
@@ -3554,6 +3562,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_sepButtonActionPerformed
 
     private void octButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_octButtonActionPerformed
@@ -3634,6 +3643,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_octButtonActionPerformed
 
     private void novButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novButtonActionPerformed
@@ -3714,6 +3724,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_novButtonActionPerformed
 
     private void decButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decButtonActionPerformed
@@ -3794,6 +3805,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_decButtonActionPerformed
 
     private void leftYearArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftYearArrowActionPerformed
@@ -3843,11 +3855,11 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_leftYearArrowActionPerformed
 
     private void yearRightArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearRightArrowActionPerformed
         // TODO add your handling code here:
-        System.out.println(getNow(0) + " " +getNow(1) + " " + getNow(2));
         setTextData();
         year = year + 1;
         yearLabel.setText(String.valueOf(year));
@@ -3894,6 +3906,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_yearRightArrowActionPerformed
 
     private void yearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearButtonActionPerformed
@@ -4037,11 +4050,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
-        
-        
-        
-            
-        
+        setDayNowColor();
     }//GEN-LAST:event_monthLeftArrowActionPerformed
 
     private void monthRightArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthRightArrowActionPerformed
@@ -4165,6 +4174,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton40.setText(String.valueOf(getCalendarDay(39, i)));
         dayButton41.setText(String.valueOf(getCalendarDay(40, i)));
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
+        setDayNowColor();
     }//GEN-LAST:event_monthRightArrowActionPerformed
 
     private void dayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButtonActionPerformed
@@ -4298,7 +4308,7 @@ private int getDefaultMonth(int dayButton){
             store[counter] = 0; //1 + addNum;
             counter++;
             addNum++;
-        }
+        } 
     return store[dayButton];
 }
 
@@ -4528,6 +4538,267 @@ private int getDefaultMonth(int dayButton){
     return current[num];
     }
     
+    private void setDayNowColor(){
+        if(checkPink() == 1){
+        dayButton1.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton2.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton3.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton4.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton5.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton6.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton7.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton8.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton9.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton10.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton11.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton12.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton13.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton14.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton15.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton16.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton17.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton18.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton19.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton20.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton21.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton22.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton23.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton24.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton25.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton26.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton27.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton28.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton29.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton30.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton31.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton32.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton33.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton34.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton35.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton36.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton37.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton38.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton39.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton40.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton41.setBackground(new java.awt.Color(255, 9, 88));
+        dayButton42.setBackground(new java.awt.Color(255, 9, 88));
+
+        }else{
+        dayButton1.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton2.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton3.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton4.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton5.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton6.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton7.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton8.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton9.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton10.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton11.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton12.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton13.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton14.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton15.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton16.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton17.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton18.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton19.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton20.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton21.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton22.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton23.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton24.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton25.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton26.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton27.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton28.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton29.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton30.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton31.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton32.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton33.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton34.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton35.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton36.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton37.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton38.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton39.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton40.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton41.setBackground(new java.awt.Color(34, 34, 34));
+        dayButton42.setBackground(new java.awt.Color(34, 34, 34));
+    }
+        if(checkDayNow()){
+            int confirmDay = Integer.parseInt(dayButton1.getText());
+            if(getNow(1) == confirmDay){
+                dayButton1.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton2.getText());
+            if(getNow(1) == confirmDay){
+                dayButton2.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton3.getText());
+            if(getNow(1) == confirmDay){
+                dayButton3.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton4.getText());
+            if(getNow(1) == confirmDay){
+                dayButton4.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton5.getText());
+            if(getNow(1) == confirmDay){
+                dayButton5.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton6.getText());
+            if(getNow(1) == confirmDay){
+                dayButton6.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton7.getText());
+            if(getNow(1) == confirmDay){
+                dayButton7.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton8.getText());
+            if(getNow(1) == confirmDay){
+                dayButton8.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton9.getText());
+            if(getNow(1) == confirmDay){
+                dayButton9.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton10.getText());
+            if(getNow(1) == confirmDay){
+                dayButton10.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton11.getText());
+            if(getNow(1) == confirmDay){
+                dayButton11.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton12.getText());
+            if(getNow(1) == confirmDay){
+                dayButton12.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton13.getText());
+            if(getNow(1) == confirmDay){
+                dayButton13.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton14.getText());
+            if(getNow(1) == confirmDay){
+                dayButton14.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton15.getText());
+            if(getNow(1) == confirmDay){
+                dayButton15.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton16.getText());
+            if(getNow(1) == confirmDay){
+                dayButton16.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton17.getText());
+            if(getNow(1) == confirmDay){
+                dayButton17.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton18.getText());
+            if(getNow(1) == confirmDay){
+                dayButton18.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton19.getText());
+            if(getNow(1) == confirmDay){
+                dayButton19.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton20.getText());
+            if(getNow(1) == confirmDay){
+                dayButton20.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton21.getText());
+            if(getNow(1) == confirmDay){
+                dayButton21.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton22.getText());
+            if(getNow(1) == confirmDay){
+                dayButton22.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton23.getText());
+            if(getNow(1) == confirmDay){
+                dayButton23.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton24.getText());
+            if(getNow(1) == confirmDay){
+                dayButton24.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton25.getText());
+            if(getNow(1) == confirmDay){
+                dayButton25.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton26.getText());
+            if(getNow(1) == confirmDay){
+                dayButton26.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton27.getText());
+            if(getNow(1) == confirmDay){
+                dayButton27.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton28.getText());
+            if(getNow(1) == confirmDay){
+                dayButton28.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton29.getText());
+            if(getNow(1) == confirmDay){
+                dayButton29.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton30.getText());
+            if(getNow(1) == confirmDay){
+                dayButton30.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton31.getText());
+            if(getNow(1) == confirmDay){
+                dayButton31.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton32.getText());
+            if(getNow(1) == confirmDay){
+                dayButton32.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton33.getText());
+            if(getNow(1) == confirmDay){
+                dayButton33.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton34.getText());
+            if(getNow(1) == confirmDay){
+                dayButton34.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton35.getText());
+            if(getNow(1) == confirmDay){
+                dayButton35.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton36.getText());
+            if(getNow(1) == confirmDay){
+                dayButton36.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton37.getText());
+            if(getNow(1) == confirmDay){
+                dayButton37.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton38.getText());
+            if(getNow(1) == confirmDay){
+                dayButton38.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton39.getText());
+            if(getNow(1) == confirmDay){
+                dayButton39.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton40.getText());
+            if(getNow(1) == confirmDay){
+                dayButton40.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton41.getText());
+            if(getNow(1) == confirmDay){
+                dayButton41.setBackground(new java.awt.Color(29, 114, 239));
+            }
+            confirmDay = Integer.parseInt(dayButton42.getText());
+            if(getNow(1) == confirmDay){
+                dayButton42.setBackground(new java.awt.Color(29, 114, 239));
+            }
+    }
+        }
+    
     private boolean checkDayNow(){
         if(getNow(2) == year){
             if(getNow(0) == monthNum){
@@ -4631,6 +4902,8 @@ private int getDefaultMonth(int dayButton){
        }
        
     }
+    
+    
     
     
     
