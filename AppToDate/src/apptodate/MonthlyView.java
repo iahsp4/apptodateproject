@@ -1306,504 +1306,210 @@ public class MonthlyView extends javax.swing.JFrame {
         }else{
             dayButton1.setBackground(new java.awt.Color(34, 34, 34));
         }
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton1.getText());
-            if(getNow(1) == confirmDay){
-                dayButton1.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton2.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton2.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton2.getText());
-            if(getNow(1) == confirmDay){
-                dayButton2.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton3.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton3.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton3.getText());
-            if(getNow(1) == confirmDay){
-                dayButton3.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
-        setDayNowColor();
         if(checkPink() == 1){
             dayButton4.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton4.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton4.getText());
-            if(getNow(1) == confirmDay){
-                dayButton4.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton5.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton5.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton5.getText());
-            if(getNow(1) == confirmDay){
-                dayButton5.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton6.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton6.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton6.getText());
-            if(getNow(1) == confirmDay){
-                dayButton6.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton7.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton7.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton7.getText());
-            if(getNow(1) == confirmDay){
-                dayButton7.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton8.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton8.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton8.getText());
-            if(getNow(1) == confirmDay){
-                dayButton8.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton9.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton9.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton9.getText());
-            if(getNow(1) == confirmDay){
-                dayButton9.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton10.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton10.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton10.getText());
-            if(getNow(1) == confirmDay){
-                dayButton10.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton11.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton11.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton11.getText());
-            if(getNow(1) == confirmDay){
-                dayButton11.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton12.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton12.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton12.getText());
-            if(getNow(1) == confirmDay){
-                dayButton12.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton13.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton13.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton13.getText());
-            if(getNow(1) == confirmDay){
-                dayButton13.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton14.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton14.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton14.getText());
-            if(getNow(1) == confirmDay){
-                dayButton14.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton15.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton15.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton15.getText());
-            if(getNow(1) == confirmDay){
-                dayButton15.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton16.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton16.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton16.getText());
-            if(getNow(1) == confirmDay){
-                dayButton16.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton17.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton17.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton17.getText());
-            if(getNow(1) == confirmDay){
-                dayButton17.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton18.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton18.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton18.getText());
-            if(getNow(1) == confirmDay){
-                dayButton18.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton19.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton19.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton19.getText());
-            if(getNow(1) == confirmDay){
-                dayButton19.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton20.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton20.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton20.getText());
-            if(getNow(1) == confirmDay){
-                dayButton20.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton21.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton21.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton21.getText());
-            if(getNow(1) == confirmDay){
-                dayButton21.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton22.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton22.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton22.getText());
-            if(getNow(1) == confirmDay){
-                dayButton22.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton23.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton23.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton23.getText());
-            if(getNow(1) == confirmDay){
-                dayButton23.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton24.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton24.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton24.getText());
-            if(getNow(1) == confirmDay){
-                dayButton24.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton25.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton25.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton25.getText());
-            if(getNow(1) == confirmDay){
-                dayButton25.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton26.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton26.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton26.getText());
-            if(getNow(1) == confirmDay){
-                dayButton26.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton27.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton27.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton27.getText());
-            if(getNow(1) == confirmDay){
-                dayButton27.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton28.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton28.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton28.getText());
-            if(getNow(1) == confirmDay){
-                dayButton28.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton29.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton29.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton29.getText());
-            if(getNow(1) == confirmDay){
-                dayButton29.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton30.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton30.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton30.getText());
-            if(getNow(1) == confirmDay){
-                dayButton30.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton31.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton31.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton31.getText());
-            if(getNow(1) == confirmDay){
-                dayButton31.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton32.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton32.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton32.getText());
-            if(getNow(1) == confirmDay){
-                dayButton32.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton33.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton33.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton33.getText());
-            if(getNow(1) == confirmDay){
-                dayButton33.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton34.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton34.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton34.getText());
-            if(getNow(1) == confirmDay){
-                dayButton34.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton35.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton35.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton35.getText());
-            if(getNow(1) == confirmDay){
-                dayButton35.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton36.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton36.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton36.getText());
-            if(getNow(1) == confirmDay){
-                dayButton36.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton37.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton37.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton37.getText());
-            if(getNow(1) == confirmDay){
-                dayButton37.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton38.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton38.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton38.getText());
-            if(getNow(1) == confirmDay){
-                dayButton38.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton39.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton39.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton39.getText());
-            if(getNow(1) == confirmDay){
-                dayButton39.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton40.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton40.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton40.getText());
-            if(getNow(1) == confirmDay){
-                dayButton40.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
         if(checkPink() == 1){
             dayButton41.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton41.setBackground(new java.awt.Color(34, 34, 34));
         }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton41.getText());
-            if(getNow(1) == confirmDay){
-                dayButton41.setBackground(new java.awt.Color(29, 114, 239));
-            }
-        }
         if(checkPink() == 1){
             dayButton42.setBackground(new java.awt.Color(255, 9, 88));
         }else{
             dayButton42.setBackground(new java.awt.Color(34, 34, 34));
-        }
-
-        if(checkDayNow()){
-            int confirmDay = Integer.parseInt(dayButton42.getText());
-            if(getNow(1) == confirmDay){
-                dayButton42.setBackground(new java.awt.Color(29, 114, 239));
-            }
         }
 
         jPanel3.setBackground(new java.awt.Color(51, 61, 68));
