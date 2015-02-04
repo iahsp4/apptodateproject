@@ -230,9 +230,9 @@ public class DailyView extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jTable1.getTableHeader().setReorderingAllowed(Boolean.FALSE);
         jTable1.setForeground(new java.awt.Color(240, 240, 240));
-        String[][] d = new String[13][8];
+        String[][] d = new String[24][8];
 
-        for(int cntr = 0; cntr < 13; cntr++ ){
+        for(int cntr = 0; cntr < 24; cntr++ ){
             for(int cntr2 = 0; cntr2 < 8; cntr2++){
                 d[cntr][cntr2] = "";
             }
@@ -265,7 +265,18 @@ public class DailyView extends javax.swing.JFrame {
                 {d[9][0], d[9][1], d[9][2], d[9][3], d[9][4], d[9][5], d[9][6], d[9][7]},
                 {d[10][0], d[10][1], d[10][2], d[10][3], d[10][4], d[10][5], d[10][6], d[10][7]},
                 {d[11][0], d[11][1], d[11][2], d[11][3], d[11][4], d[11][5], d[11][6], d[11][7]},
-                {d[12][0], d[12][1], d[12][2], d[12][3], d[12][4], d[12][5], d[12][6], d[12][7]}
+                {d[12][0], d[12][1], d[12][2], d[12][3], d[12][4], d[12][5], d[12][6], d[12][7]},
+                {d[13][0], d[13][1], d[13][2], d[13][3], d[13][4], d[13][5], d[13][6], d[13][7]},
+                {d[14][0], d[14][1], d[14][2], d[14][3], d[14][4], d[14][5], d[14][6], d[14][7]},
+                {d[15][0], d[15][1], d[15][2], d[15][3], d[15][4], d[15][5], d[15][6], d[15][7]},
+                {d[16][0], d[16][1], d[16][2], d[16][3], d[16][4], d[16][5], d[16][6], d[16][7]},
+                {d[17][0], d[17][1], d[17][2], d[17][3], d[17][4], d[17][5], d[17][6], d[17][7]},
+                {d[18][0], d[18][1], d[18][2], d[18][3], d[18][4], d[18][5], d[18][6], d[18][7]},
+                {d[19][0], d[19][1], d[19][2], d[19][3], d[19][4], d[19][5], d[19][6], d[19][7]},
+                {d[20][0], d[20][1], d[20][2], d[20][3], d[20][4], d[20][5], d[20][6], d[20][7]},
+                {d[21][0], d[21][1], d[21][2], d[21][3], d[21][4], d[21][5], d[21][6], d[21][7]},
+                {d[22][0], d[22][1], d[22][2], d[22][3], d[22][4], d[22][5], d[22][6], d[22][7]},
+                {d[13][0], d[23][1], d[23][2], d[23][3], d[23][4], d[23][5], d[23][6], d[23][7]}
             },
             new String [] {
                 "Event Title", "Description", "Subject", "Started Time", "From", "Until Time", "Until", "PATH"
@@ -363,8 +374,8 @@ public class DailyView extends javax.swing.JFrame {
                                 .addComponent(showButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(495, 495, 495))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(825, 825, 825))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

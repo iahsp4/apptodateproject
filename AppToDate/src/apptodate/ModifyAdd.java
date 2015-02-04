@@ -524,6 +524,43 @@ public class ModifyAdd extends javax.swing.JFrame {
                }catch(IOException e){
                }
         }
+            File file6 = new File(myPathData + "\\AppToDate\\Events");
+            if(!file6.exists()){
+                file6.mkdir();
+            try{
+               Writer write = new BufferedWriter(new FileWriter(myPathData + "\\AppToDate\\Events" + eventTitle + "-" 
+                       + unMonth + "-" + untilD + "-" + untilYr + ".txt", false));
+               write.append(frMonth + " ");
+               write.append(fromD + ", ");
+               write.append(fromYr + "+");
+               write.append(eventTitle + " + "); 
+               write.append(unMonth + " ");
+               write.append(untilD + ", ");
+               write.append(untilYr + " + "); 
+               write.append(untilH + ":");
+               write.append(untilM);
+               write.append(Uampm + " + ");
+               write.close();
+               }catch(IOException e){
+               }
+            }else if(file6.exists()){
+               try{
+               Writer write = new BufferedWriter(new FileWriter(myPathData + "\\AppToDate\\Events\\" + eventTitle + "-" 
+                       + unMonth + "-" + untilD + "-" + untilYr + ".txt", false));
+               write.append(frMonth + " ");
+               write.append(fromD + ", ");
+               write.append(fromYr + "+");
+               write.append(eventTitle + " + "); 
+               write.append(unMonth + " ");
+               write.append(untilD + ", ");
+               write.append(untilYr + " + "); 
+               write.append(untilH + ":");
+               write.append(untilM);
+               write.append(Uampm + " + ");
+               write.close();
+               }catch(IOException e){
+               } 
+            }
             close();
     }//GEN-LAST:event_okButtonActionPerformed
 
