@@ -50,7 +50,7 @@ public class viewAll extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jEditorPane1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(561, 440));
 
         jPanel1.setBackground(new java.awt.Color(34, 34, 34));
