@@ -1005,10 +1005,10 @@ public class YearlyView extends javax.swing.JFrame {
             dow[6] = "F";  
         }
         i = 0;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         janTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1033,10 +1033,10 @@ public class YearlyView extends javax.swing.JFrame {
 
         
         i = 1;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         febTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1060,10 +1060,10 @@ public class YearlyView extends javax.swing.JFrame {
     );
         
         i = 2;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         marTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1087,10 +1087,10 @@ public class YearlyView extends javax.swing.JFrame {
     );
         
         i = 3;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         aprTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1114,10 +1114,10 @@ public class YearlyView extends javax.swing.JFrame {
     );
         
         i = 4;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         mayTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1141,10 +1141,10 @@ public class YearlyView extends javax.swing.JFrame {
     );       
         
         i = 5;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         junTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1168,10 +1168,10 @@ public class YearlyView extends javax.swing.JFrame {
     ); 
         
         i = 6;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         julTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1195,10 +1195,10 @@ public class YearlyView extends javax.swing.JFrame {
     );       
 
         i = 7;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         augTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1222,10 +1222,10 @@ public class YearlyView extends javax.swing.JFrame {
     );
         
         i = 8;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         sepTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1249,10 +1249,10 @@ public class YearlyView extends javax.swing.JFrame {
     );       
         
         i = 9;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         octTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1276,10 +1276,10 @@ public class YearlyView extends javax.swing.JFrame {
     );      
         
         i = 10;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         novTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1303,10 +1303,10 @@ public class YearlyView extends javax.swing.JFrame {
     );      
         
         i = 11;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         decTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1394,10 +1394,10 @@ public class YearlyView extends javax.swing.JFrame {
             dow[6] = "F";  
         }
         i = 0;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         janTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1421,10 +1421,10 @@ public class YearlyView extends javax.swing.JFrame {
     );
         
         i = 1;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         febTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1448,10 +1448,10 @@ public class YearlyView extends javax.swing.JFrame {
     );
         
         i = 2;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         marTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1475,10 +1475,10 @@ public class YearlyView extends javax.swing.JFrame {
     );
         
         i = 3;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         aprTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1502,10 +1502,10 @@ public class YearlyView extends javax.swing.JFrame {
     );
         
         i = 4;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         mayTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1526,13 +1526,40 @@ public class YearlyView extends javax.swing.JFrame {
         }
     }
 
-    ); 
-        
-        i = 6;
-        removeZero();
+    );
+
+        i = 5;
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
+        junTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+        {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
+        {s[7],  s[8],  s[9],  s[10], s[11], s[12], s[13]},
+        {s[14], s[15], s[16], s[17], s[18], s[19], s[20]},
+        {s[21], s[22], s[23], s[24], s[25], s[26], s[27]},
+        {s[28], s[29], s[30], s[31], s[32], s[33], s[34]},
+        {s[35], s[36], s[37], s[38], s[39], s[40], s[41]}
+    },
+    new String [] {
+        dow[0],dow[1],dow[2],dow[3],dow[4],dow[5],dow[6]
+    }){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    }
+
+    );
+        
+        i = 6;
+        for(int counter = 0; counter <= 41; counter++){
+        d[counter] = getCalendarDay(counter, i);
+        }
+        removeZero();
         julTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1556,10 +1583,10 @@ public class YearlyView extends javax.swing.JFrame {
     );       
 
         i = 7;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         augTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1583,10 +1610,10 @@ public class YearlyView extends javax.swing.JFrame {
     );
         
         i = 8;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         sepTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1610,10 +1637,10 @@ public class YearlyView extends javax.swing.JFrame {
     );        
         
         i = 9;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         octTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1637,10 +1664,10 @@ public class YearlyView extends javax.swing.JFrame {
     );       
         
         i = 10;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         novTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1664,10 +1691,10 @@ public class YearlyView extends javax.swing.JFrame {
     );       
         
         i = 11;
-        removeZero();
         for(int counter = 0; counter <= 41; counter++){
         d[counter] = getCalendarDay(counter, i);
         }
+        removeZero();
         decTable.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
         {s[0],  s[1],  s[2],  s[3],  s[4],  s[5],  s[6]},
@@ -1742,48 +1769,47 @@ public class YearlyView extends javax.swing.JFrame {
         return year;
     }
 
-    private int getCalendarDay(int dayButton, int i) {
-        String stringYear = yearLabel.getText();
-        int intYear = Integer.parseInt(stringYear);
-        int addNum = 0;
-        GregorianCalendar cal = new GregorianCalendar();
-        Date date = new Date(intYear, i, 1);
-        cal.setTime(date);
-
-        int max = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
-        Calendar c = Calendar.getInstance();
-        c.set(intYear, i, 1);
-        int day = c.get(Calendar.DAY_OF_WEEK);
-        int store[] = new int[42];
-
-        day = day - 1;
-        if(day - getStartingWeek() > 0){
-            day = day - getStartingWeek(); 
-        }else if(day - getStartingWeek() < 0){
-            day = 7 + (day - getStartingWeek());
-        }else if(day - getStartingWeek() == 0){
-            day = 0;
-        }
+private int getCalendarDay(int dayButton ,int i){
+    String stringYear = yearLabel.getText();
+    int intYear = Integer.parseInt(stringYear);
+    int addNum = 0;
+    GregorianCalendar cal = new GregorianCalendar();
+    Date date = new Date(intYear, i, 1);
+    cal.setTime(date);
+    
+    int max = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+    Calendar c = Calendar.getInstance();
+    c.set(intYear, i, 1);
+    int day = c.get(Calendar.DAY_OF_WEEK);
+    int store[] = new int[42];
+    
+    day = day - 1;
+    if(day - getStartingWeek() > 0){
+       day = day - getStartingWeek(); 
+    }else if(day - getStartingWeek() < 0){
+       day = 7 + (day - getStartingWeek());
+    }else if(day - getStartingWeek() == 0){
+        day = 0;
+    }
     
     int counter = 0;
         while(counter < day){
         store[counter] = 0; 
         counter++;
         }
-
-        for (int j = 1; j <= max; j++) {
+        
+        for(int j = 1; j <= max; j++){
             store[counter] = j;
             counter++;
         }
-
-        while (counter <= 41) {
-            //store[counter] = 1 + addNum;
+        
+        while(counter <= 41){
             store[counter] = 0;
             counter++;
             addNum++;
         }
-        return store[dayButton];
-    }
+    return store[dayButton];
+}
     
     private void close(){
         this.dispose();
