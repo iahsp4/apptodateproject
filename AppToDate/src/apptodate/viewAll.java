@@ -31,7 +31,8 @@ public class viewAll extends javax.swing.JFrame {
     private String stringPath;
     private String[] data;
     private String[][] info;
-    private String[][] info2; 
+    private String[][] info2;
+    private String[][] info3; 
     
     public viewAll() {
         initComponents();
@@ -53,7 +54,7 @@ public class viewAll extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         modifyAdd = new javax.swing.JButton();
         settings = new javax.swing.JButton();
-        sortByCombo = new javax.swing.JComboBox();
+        sortByBox = new javax.swing.JComboBox();
         sortByLabel = new javax.swing.JLabel();
         updateButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -91,8 +92,8 @@ public class viewAll extends javax.swing.JFrame {
             }
         });
 
-        sortByCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "Month", "Year" }));
-        sortByCombo.setToolTipText("");
+        sortByBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "Month", "Year" }));
+        sortByBox.setToolTipText("");
 
         sortByLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         sortByLabel.setForeground(new java.awt.Color(240, 240, 240));
@@ -116,7 +117,7 @@ public class viewAll extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(sortByLabel)
                 .addGap(16, 16, 16)
-                .addComponent(sortByCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sortByBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(modifyAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -133,7 +134,7 @@ public class viewAll extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sortByCombo)
+                    .addComponent(sortByBox)
                     .addComponent(updateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sortByLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -214,7 +215,7 @@ public class viewAll extends javax.swing.JFrame {
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         try {
             // TODO add your handling code here:
-            fileInfo();
+        fileInfo();
         DefaultTableModel model = (DefaultTableModel) eventsTable.getModel();
         model.setRowCount(0);
         for(int count = 0; count < countFiles(); count++){
@@ -224,7 +225,40 @@ public class viewAll extends javax.swing.JFrame {
             Logger.getLogger(viewAll.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_updateButtonActionPerformed
-    
+    /*
+    private void sort(int sortBy){
+        int arr[];
+        if(sortByBox.getSelectedItem().equals("Day")){
+           sortBy = 1;
+        }
+        if(sortByBox.getSelectedItem().equals("Month")){
+           sortBy = 2;
+        }
+        if(sortByBox.getSelectedItem().equals("Year")){
+           sortBy = 3;
+        }
+        arr = new int[countFiles()];
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = Integer.parseInt(info2[i][sortBy]);
+        }
+        
+        for (int i = 0; i < arr.length - 1; i++)
+        {
+            int index = i;
+            for (int j = i + 1; j < arr.length; j++)
+                if (arr[j] < arr[index])
+                    index = j;
+      
+            int smallerNumber = arr[index]; 
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+            info3[index][0] = info2[i][0]; 
+            info3[index][1] = info2[i][1]; 
+            info3[index][2] = info2[i][2]; 
+            info3[index][3] = info2[i][3]; 
+        }
+    }
+    */
     private void fileInfo() throws FileNotFoundException, IOException{
         int fileCount = countFiles();
         int counter = 0;
@@ -347,7 +381,7 @@ public class viewAll extends javax.swing.JFrame {
     private javax.swing.JButton modifyAdd;
     private javax.swing.JButton settings;
     private javax.swing.JButton settings1;
-    private javax.swing.JComboBox sortByCombo;
+    private javax.swing.JComboBox sortByBox;
     private javax.swing.JLabel sortByLabel;
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
