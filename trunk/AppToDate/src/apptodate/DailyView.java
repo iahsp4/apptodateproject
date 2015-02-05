@@ -689,7 +689,7 @@ try {
     return thePathFile[num];
     }
     public int getNumOfFiles(){
-         String thePathFile[] = new String[1000];
+        String thePathFile[] = new String[1000];
         String filePath = getPath();
         File folder = new File(filePath + "\\AppToDate\\" + yearLabel.getText() + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow) ;
         File[] listOfFiles = folder.listFiles();

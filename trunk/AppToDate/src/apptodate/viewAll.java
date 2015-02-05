@@ -6,6 +6,19 @@
 
 package apptodate;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author pepsipogi
@@ -15,9 +28,15 @@ public class viewAll extends javax.swing.JFrame {
     /**
      * Creates new form viewAll
      */
+    private String stringPath;
+    private String[] data;
+    private String[][] info;
+    private String[][] info2; 
+    
     public viewAll() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,6 +71,7 @@ public class viewAll extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jEditorPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(34, 34, 34));
 
@@ -192,9 +212,96 @@ public class viewAll extends javax.swing.JFrame {
     }//GEN-LAST:event_settings1ActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            fileInfo();
+        DefaultTableModel model = (DefaultTableModel) eventsTable.getModel();
+        model.setRowCount(0);
+        for(int count = 0; count < countFiles(); count++){
+        model.addRow(new Object[]{info2[count][0], info2[count][1], info2[count][2], info2[count][3]});
+        }
+            } catch (IOException ex) {
+            Logger.getLogger(viewAll.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_updateButtonActionPerformed
-
+    
+    private void fileInfo() throws FileNotFoundException, IOException{
+        int fileCount = countFiles();
+        int counter = 0;
+        data = new String[fileCount];
+        File folder = new File(getPath() + "\\AppToDate\\Events");
+        File[] listOfFiles = folder.listFiles();
+        if(folder.exists()){
+        for (int i = 0; i < listOfFiles.length; i++) {
+                data[counter] = listOfFiles[i].getName();
+                counter++;
+            
+        }
+        }
+        info = new String[fileCount][4];
+        info2 = new String[fileCount][4];
+        for(int num = 0; num < fileCount; num++){
+        String[] part = data[num].split("-");
+        
+        info[num][0] = part[0];
+        info[num][1] = part[1];
+        info[num][2] = part[2];        
+        info[num][3] = part[3];
+        }
+        
+        for(int num = 0; num < fileCount; num++){
+        BufferedReader br = new BufferedReader(new FileReader(getPath() + "\\AppToDate\\Events\\" + data[num]));
+        String line = null;
+        while ((line = br.readLine()) != null) {
+        String[] part = line.split("\\+");
+        info2[num][0] = part[0];
+        info2[num][1] = part[1];
+        info2[num][2] = part[2];
+        info2[num][3] = part[3];        
+            }
+ }
+    }
+    
+    public String getPath(){
+        Path path = Paths.get("");
+        Path realPath;
+        try {
+            realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+            stringPath = realPath.toString();
+            stringPath = stringPath.replace("\\","\\\\");
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String myPathData = "";
+        File file2 = new File(stringPath + "\\AppToDate\\configuration.txt");
+        String myConfig = file2.toString();
+        try {
+            FileReader fr = new FileReader(myConfig);
+            BufferedReader textRead = new BufferedReader(fr);
+            
+            try {
+                myPathData = textRead.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(ModifyAdd.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ModifyAdd.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return myPathData;
+    }
+    private int countFiles(){
+        File f = new File(getPath() + "\\AppToDate\\Events");
+        int count = 0;
+        if(f.exists()){
+            for (File file : f.listFiles()) {
+                if (file.isFile()) {
+                    count++;
+                    }
+                }
+        }
+        return count;
+    }
     /**
      * @param args the command line arguments
      */
