@@ -539,7 +539,7 @@ public class ModifyAdd extends javax.swing.JFrame {
                write.append(untilYr + " + "); 
                write.append(untilH + ":");
                write.append(untilM);
-               write.append(Uampm + " + ");
+               write.append(Uampm);
                write.close();
                }catch(IOException e){
                }
