@@ -21,8 +21,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * 
+ *@author Revamp Group
+ * Bacalanmo, Yra
+ * Damot, Peter Paul
+ * Delos Santos, Denmark
+ * Flores, Jann Marie
+ * Ingco, Chester
+ * Lao, Charles
+ * Ligos, Klarence
+ * Navarro, Frances Joffany
+ * Pamintuan, Louisa
+ * Sanchez, Ashley
+ * Toledo, Jazelle Mae
+ * Venturina, Kevin
  */
 public class ModifyAdd extends javax.swing.JFrame {
 

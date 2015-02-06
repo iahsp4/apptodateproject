@@ -20,9 +20,21 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author TONETTE
+ *@author Revamp Group
+ * Bacalanmo, Yra
+ * Damot, Peter Paul
+ * Delos Santos, Denmark
+ * Flores, Jann Marie
+ * Ingco, Chester
+ * Lao, Charles
+ * Ligos, Klarence
+ * Navarro, Frances Joffany
+ * Pamintuan, Louisa
+ * Sanchez, Ashley
+ * Toledo, Jazelle Mae
+ * Venturina, Kevin 
  */
+
 public class DailyView extends javax.swing.JFrame {
 
     /**
@@ -585,15 +597,11 @@ try {
     private void dayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dayButtonActionPerformed
-    public void setDataInfo(String data){
-        this.combineData = data;
-    }
-    public String getDataInfo(){
-        return this.combineData;
-    }    
-    public String getPath(){
+    
+     private int checkPink(){
         Path path = Paths.get("");
         Path realPath;
+        int check = 0;
         try {
             realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
             stringPath = realPath.toString();
@@ -601,24 +609,62 @@ try {
         } catch (IOException ex) {
             Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String myPathData = "";
-        File file2 = new File(stringPath + "\\AppToDate\\configuration.txt");
-        String myConfig = file2.toString();
-        try {
-            FileReader fr = new FileReader(myConfig);
-            BufferedReader textRead = new BufferedReader(fr);
-            
-            try {
-                myPathData = textRead.readLine();
-            } catch (IOException ex) {
-                Logger.getLogger(ModifyAdd.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ModifyAdd.class.getName()).log(Level.SEVERE, null, ex);
+        File pink = new File(stringPath + "\\AppToDate\\pink.txt");
+        if(pink.exists()){
+            check = 1;
         }
-        
-        return myPathData;
+        return check;
     }
+     
+     public String getData(int num, int num2) throws FileNotFoundException, IOException{
+        int j = 0;
+        String combineAll = "";
+        String[] splitString = new String[5];
+        File file = new File(getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
+        FileReader read = new FileReader(getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
+        BufferedReader br = new BufferedReader(read);
+        String[] descData = new String[100];
+        if(file.exists()){
+        j = 0;    
+            while((descData[j] = br.readLine()) != null) { 
+
+            j++;
+            } 
+            br.close();
+        for(int k = 0; k <= j; k++){
+            combineAll = combineAll + descData[k];
+        }
+        splitString = combineAll.split("\\+");
+        }
+        thePathOfFile = getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num);
+    
+        return splitString[num2];
+    }
+      
+    public String getDataInfo(){
+        return this.combineData;
+    }    
+    
+    public String getFileNames(int num){
+        String thePathFile[] = new String[1000];
+        String filePath = getPath();
+        File folder = new File(filePath + "\\AppToDate\\" + yearLabel.getText() + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow);
+        File[] listOfFiles = folder.listFiles();
+      if(folder.exists()){
+    for (int i = 0; i < listOfFiles.length; i++) {
+      if (listOfFiles[i].isFile()) {
+        thePathFile[i] = listOfFiles[i].getName();
+      }
+    }
+      }else if(!folder.exists()){
+          thePathFile[num] = "NONE";
+      }
+    return thePathFile[num];
+    }
+    
     public String getMonthNum(int num){
         String stringMonth = "";
         num = num - 1;
@@ -672,22 +718,7 @@ try {
         
         return stringMonth;
     }
-    public String getFileNames(int num){
-        String thePathFile[] = new String[1000];
-        String filePath = getPath();
-        File folder = new File(filePath + "\\AppToDate\\" + yearLabel.getText() + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow);
-        File[] listOfFiles = folder.listFiles();
-      if(folder.exists()){
-    for (int i = 0; i < listOfFiles.length; i++) {
-      if (listOfFiles[i].isFile()) {
-        thePathFile[i] = listOfFiles[i].getName();
-      }
-    }
-      }else if(!folder.exists()){
-          thePathFile[num] = "NONE";
-      }
-    return thePathFile[num];
-    }
+   
     public int getNumOfFiles(){
         String thePathFile[] = new String[1000];
         String filePath = getPath();
@@ -710,38 +741,10 @@ try {
     }
     return numFiles;
     }   
-    public String getData(int num, int num2) throws FileNotFoundException, IOException{
-        int j = 0;
-        String combineAll = "";
-        String[] splitString = new String[5];
-        File file = new File(getPath() + "\\AppToDate\\" + yearLabel.getText() 
-                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
-        FileReader read = new FileReader(getPath() + "\\AppToDate\\" + yearLabel.getText() 
-                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
-        BufferedReader br = new BufferedReader(read);
-        String[] descData = new String[100];
-        if(file.exists()){
-        j = 0;    
-            while((descData[j] = br.readLine()) != null) { 
-
-            j++;
-            } 
-            br.close();
-        for(int k = 0; k <= j; k++){
-            combineAll = combineAll + descData[k];
-        }
-        splitString = combineAll.split("\\+");
-        }
-        thePathOfFile = getPath() + "\\AppToDate\\" + yearLabel.getText() 
-                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num);
     
-        return splitString[num2];
-    }
-    
-    private int checkPink(){
+     public String getPath(){
         Path path = Paths.get("");
         Path realPath;
-        int check = 0;
         try {
             realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
             stringPath = realPath.toString();
@@ -749,11 +752,27 @@ try {
         } catch (IOException ex) {
             Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
         }
-        File pink = new File(stringPath + "\\AppToDate\\pink.txt");
-        if(pink.exists()){
-            check = 1;
+        String myPathData = "";
+        File file2 = new File(stringPath + "\\AppToDate\\configuration.txt");
+        String myConfig = file2.toString();
+        try {
+            FileReader fr = new FileReader(myConfig);
+            BufferedReader textRead = new BufferedReader(fr);
+            
+            try {
+                myPathData = textRead.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(ModifyAdd.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ModifyAdd.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return check;
+        
+        return myPathData;
+    }
+     
+    public void setDataInfo(String data){
+        this.combineData = data;
     }
     
     /**

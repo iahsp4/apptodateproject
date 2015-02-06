@@ -23,8 +23,19 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 /**
- *
- * 
+ *@author Revamp Group
+ * Bacalanmo, Yra
+ * Damot, Peter Paul
+ * Delos Santos, Denmark
+ * Flores, Jann Marie
+ * Ingco, Chester
+ * Lao, Charles
+ * Ligos, Klarence
+ * Navarro, Frances Joffany
+ * Pamintuan, Louisa
+ * Sanchez, Ashley
+ * Toledo, Jazelle Mae
+ * Venturina, Kevin
  */
 public class MonthlyView extends javax.swing.JFrame {
 
