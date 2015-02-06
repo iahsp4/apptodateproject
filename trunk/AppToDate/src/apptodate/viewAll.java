@@ -20,9 +20,21 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author pepsipogi
+ *@author Revamp Group
+ * Bacalanmo, Yra
+ * Damot, Peter Paul
+ * Delos Santos, Denmark
+ * Flores, Jann Marie
+ * Ingco, Chester
+ * Lao, Charles
+ * Ligos, Klarence
+ * Navarro, Frances Joffany
+ * Pamintuan, Louisa
+ * Sanchez, Ashley
+ * Toledo, Jazelle Mae
+ * Venturina, Kevin 
  */
+
 public class viewAll extends javax.swing.JFrame {
 
     /**

@@ -8,9 +8,25 @@ package apptodate;
 import javax.swing.UIManager;
 
 /**
- *
- * @author revamp group
+ * This application is a free-time scheduler calendar that is dedicated
+ * to students. The application is consist of a calendar that can be set with
+ * to do lists or events with its corresponding notification or alarms.
+ * 
+ *@author Revamp Group
+ * Bacalanmo, Yra
+ * Damot, Peter Paul
+ * Delos Santos, Denmark
+ * Flores, Jann Marie
+ * Ingco, Chester
+ * Lao, Charles
+ * Ligos, Klarence
+ * Navarro, Frances Joffany
+ * Pamintuan, Louisa
+ * Sanchez, Ashley
+ * Toledo, Jazelle Mae
+ * Venturina, Kevin 
  */
+
 public class AppToDate {
 
     /**
