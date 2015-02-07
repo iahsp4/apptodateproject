@@ -157,6 +157,7 @@ public class MonthlyView extends javax.swing.JFrame {
         eventButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         titlePanel.setBackground(new java.awt.Color(34, 34, 34));
         titlePanel.setForeground(new java.awt.Color(240, 240, 240));

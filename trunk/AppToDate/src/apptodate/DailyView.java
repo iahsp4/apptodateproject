@@ -84,6 +84,7 @@ public class DailyView extends javax.swing.JFrame {
         updateButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(34, 34, 34));
 
@@ -234,6 +235,8 @@ public class DailyView extends javax.swing.JFrame {
             viewAllButton.setBackground(new java.awt.Color(34, 34, 34));
         }
         yearLabel.setText(String.valueOf(getYear()));
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel2.setBackground(new java.awt.Color(34, 34, 34));
 
@@ -386,8 +389,8 @@ public class DailyView extends javax.swing.JFrame {
                                 .addComponent(showButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(825, 825, 825))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(807, 807, 807))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,7 +410,7 @@ public class DailyView extends javax.swing.JFrame {
                 .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 80, Short.MAX_VALUE))
+                .addGap(0, 91, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel2);
@@ -429,7 +432,7 @@ public class DailyView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE))
+                .addComponent(jScrollPane2))
         );
 
         if(checkPink() == 1){
@@ -511,6 +514,30 @@ public class DailyView extends javax.swing.JFrame {
         if(file.exists()){
             file.delete();
         }
+        
+        file = new File(getPath() + "\\AppToDate\\Events");
+        
+        if(file.exists()){
+            String string1 = (String) model.getValueAt(rowNum, 0);
+            String string2 = (String) model.getValueAt(rowNum, 6);
+            string1 = string1.trim();
+            System.out.println(string1 + string2);
+            string2 = string2.trim();
+            string2 = string2.replaceAll(" ","-");
+            string2 = string2.replaceAll(",","");
+            string1 = string1 + "-";
+            
+            String pathOfEvent = getPath().replace("\\\\", "\\");
+            
+            file = new File(pathOfEvent + "\\AppToDate\\Events\\" + string1 + string2 + ".txt");
+            file.delete();
+            
+        }
+        
+        
+
+        
+        
         
     }//GEN-LAST:event_deleteButtonActionPerformed
 

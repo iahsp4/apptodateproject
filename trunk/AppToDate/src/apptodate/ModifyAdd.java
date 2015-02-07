@@ -88,6 +88,7 @@ public class ModifyAdd extends javax.swing.JFrame {
         imgBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(34, 34, 34));
         jPanel1.setForeground(new java.awt.Color(240, 240, 240));

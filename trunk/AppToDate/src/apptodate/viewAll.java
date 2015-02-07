@@ -227,19 +227,24 @@ public class viewAll extends javax.swing.JFrame {
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         try {
             // TODO add your handling code here:
+        
         fileInfo();
         DefaultTableModel model = (DefaultTableModel) eventsTable.getModel();
         model.setRowCount(0);
+       
+        
         for(int count = 0; count < countFiles(); count++){
         model.addRow(new Object[]{info2[count][0], info2[count][1], info2[count][2], info2[count][3]});
         }
             } catch (IOException ex) {
             Logger.getLogger(viewAll.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_updateButtonActionPerformed
-    /*
-    private void sort(int sortBy){
+    
+    private void sort(){
         int arr[];
+        int sortBy = 0;
         if(sortByBox.getSelectedItem().equals("Day")){
            sortBy = 1;
         }
@@ -249,6 +254,8 @@ public class viewAll extends javax.swing.JFrame {
         if(sortByBox.getSelectedItem().equals("Year")){
            sortBy = 3;
         }
+        
+        
         arr = new int[countFiles()];
         for(int i = 0; i < arr.length; i++){
             arr[i] = Integer.parseInt(info2[i][sortBy]);
@@ -270,7 +277,7 @@ public class viewAll extends javax.swing.JFrame {
             info3[index][3] = info2[i][3]; 
         }
     }
-    */
+    
     private void fileInfo() throws FileNotFoundException, IOException{
         int fileCount = countFiles();
         int counter = 0;
@@ -286,6 +293,7 @@ public class viewAll extends javax.swing.JFrame {
         }
         info = new String[fileCount][4];
         info2 = new String[fileCount][4];
+        String[][] datePart = new String[fileCount][3];
         for(int num = 0; num < fileCount; num++){
         String[] part = data[num].split("-");
         
@@ -293,7 +301,10 @@ public class viewAll extends javax.swing.JFrame {
         info[num][1] = part[1];
         info[num][2] = part[2];        
         info[num][3] = part[3];
+        
         }
+        
+        
         
         for(int num = 0; num < fileCount; num++){
         BufferedReader br = new BufferedReader(new FileReader(getPath() + "\\AppToDate\\Events\\" + data[num]));
