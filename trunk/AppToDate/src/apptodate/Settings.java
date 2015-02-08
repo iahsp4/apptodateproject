@@ -363,10 +363,13 @@ public class Settings extends javax.swing.JFrame {
         
         
         JFileChooser choose = new JFileChooser();
+        choose.setApproveButtonText("OK");
         choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        choose.setDialogTitle("Choose Directory");
+        choose.setAcceptAllFileFilterUsed(false);
         choose.showOpenDialog(null);
         
-        file = choose.getCurrentDirectory();
+        file = choose.getSelectedFile();
         fileName = file.getAbsolutePath();
         confPath = fileName.replace("\\","\\\\");
         confTextField.setText(fileName);

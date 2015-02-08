@@ -17,6 +17,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -515,22 +517,29 @@ public class DailyView extends javax.swing.JFrame {
             file.delete();
         }
         
-        file = new File(getPath() + "\\AppToDate\\Events");
         
         if(file.exists()){
             String string1 = (String) model.getValueAt(rowNum, 0);
             String string2 = (String) model.getValueAt(rowNum, 6);
             string1 = string1.trim();
-            System.out.println(string1 + string2);
             string2 = string2.trim();
             string2 = string2.replaceAll(" ","-");
             string2 = string2.replaceAll(",","");
             string1 = string1 + "-";
             
             String pathOfEvent = getPath().replace("\\\\", "\\");
-            
             file = new File(pathOfEvent + "\\AppToDate\\Events\\" + string1 + string2 + ".txt");
             file.delete();
+            
+             JOptionPane.showMessageDialog(null, "DELETING...", "MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+ 
+            try {
+                Thread.sleep(5000);
+                JOptionPane.showMessageDialog(null, "FINISH", "MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+
+            } catch (InterruptedException ex) {
+                Logger.getLogger(DailyView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
         }
         

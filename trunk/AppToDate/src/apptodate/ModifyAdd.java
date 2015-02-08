@@ -79,8 +79,8 @@ public class ModifyAdd extends javax.swing.JFrame {
         fromMonth = new javax.swing.JComboBox();
         fromDay = new javax.swing.JComboBox();
         untilDay = new javax.swing.JComboBox();
-        fromYear = new javax.swing.JTextField();
-        untilYear = new javax.swing.JTextField();
+        fromYear = new javax.swing.JComboBox();
+        untilYear = new javax.swing.JComboBox();
         jPanel4 = new javax.swing.JPanel();
         subectLabel = new javax.swing.JLabel();
         subjectText = new javax.swing.JTextField();
@@ -245,6 +245,12 @@ public class ModifyAdd extends javax.swing.JFrame {
         untilDay.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         untilDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
+        fromYear.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        fromYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050", "2051", "2052", "2053", "2054", "2055", "2056", "2057", "2058", "2059", "2060", "2061", "2062", "2063", "2064", "2065", "2066", "2067", "2068", "2069", "2070", "2071", "2072", "2073", "2074", "2075", "2076", "2077", "2078", "2079", "2080", "2081", "2082", "2083", "2084", "2085", "2086", "2087", "2088", "2089", "2090", "2091", "2092", "2093", "2094", "2095", "2096", "2097", "2098", "2099", "2100" }));
+
+        untilYear.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        untilYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050", "2051", "2052", "2053", "2054", "2055", "2056", "2057", "2058", "2059", "2060", "2061", "2062", "2063", "2064", "2065", "2066", "2067", "2068", "2069", "2070", "2071", "2072", "2073", "2074", "2075", "2076", "2077", "2078", "2079", "2080", "2081", "2082", "2083", "2084", "2085", "2086", "2087", "2088", "2089", "2090", "2091", "2092", "2093", "2094", "2095", "2096", "2097", "2098", "2099", "2100" }));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -272,20 +278,21 @@ public class ModifyAdd extends javax.swing.JFrame {
                         .addComponent(untilMinute, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(untilAmpm, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(fromMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(fromDay, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(fromYear))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(untilMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(untilDay, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(untilYear, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(10, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(untilMonth, 0, 65, Short.MAX_VALUE)
+                            .addComponent(fromMonth, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(fromDay, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(fromYear, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(untilDay, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(untilYear, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,18 +315,14 @@ public class ModifyAdd extends javax.swing.JFrame {
                     .addComponent(fromLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(fromMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fromDay, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fromYear, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fromYear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(untilLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(untilMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(untilDay, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(untilYear, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(untilLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(untilMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(untilDay, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(untilYear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
         );
 
         jPanel4.setBackground(new java.awt.Color(34, 34, 34));
@@ -447,10 +450,10 @@ public class ModifyAdd extends javax.swing.JFrame {
         String Uampm = untilAmpm.getSelectedItem().toString();
         String frMonth = fromMonth.getSelectedItem().toString();
         String fromD = fromDay.getSelectedItem().toString();
-        String fromYr = fromYear.getText();
+        String fromYr = (String) fromYear.getSelectedItem();
         String unMonth = untilMonth.getSelectedItem().toString();
         String untilD = untilDay.getSelectedItem().toString();
-        String untilYr = untilYear.getText();
+        String untilYr = (String) untilYear.getSelectedItem();
         String imgPath = imgBox.getSelectedItem().toString();
         
         Path path = Paths.get("");
@@ -539,23 +542,9 @@ public class ModifyAdd extends javax.swing.JFrame {
             File file6 = new File(myPathData + "\\AppToDate\\Events");
             if(!file6.exists()){
                 file6.mkdir();
-            try{
-               Writer write = new BufferedWriter(new FileWriter(myPathData + "\\AppToDate\\Events" + eventTitle + "-" 
-                       + unMonth + "-" + untilD + "-" + untilYr + ".txt", false));
-               write.append(frMonth + " ");
-               write.append(fromD + ", ");
-               write.append(fromYr + "+");
-               write.append(eventTitle + " + "); 
-               write.append(unMonth + " ");
-               write.append(untilD + ", ");
-               write.append(untilYr + " + "); 
-               write.append(untilH + ":");
-               write.append(untilM);
-               write.append(Uampm);
-               write.close();
-               }catch(IOException e){
-               }
-            }else if(file6.exists()){
+            }
+            
+            if(file6.exists()){
                try{
                Writer write = new BufferedWriter(new FileWriter(myPathData + "\\AppToDate\\Events\\" + eventTitle + "-" 
                        + unMonth + "-" + untilD + "-" + untilYr + ".txt", false));
@@ -653,7 +642,7 @@ public class ModifyAdd extends javax.swing.JFrame {
     private javax.swing.JLabel fromLabel1;
     private javax.swing.JComboBox fromMinute;
     private javax.swing.JComboBox fromMonth;
-    private javax.swing.JTextField fromYear;
+    private javax.swing.JComboBox fromYear;
     private javax.swing.JLabel imagesLabel;
     private javax.swing.JComboBox imgBox;
     private javax.swing.JPanel jPanel1;
@@ -671,7 +660,7 @@ public class ModifyAdd extends javax.swing.JFrame {
     private javax.swing.JLabel untilLabel1;
     private javax.swing.JComboBox untilMinute;
     private javax.swing.JComboBox untilMonth;
-    private javax.swing.JTextField untilYear;
+    private javax.swing.JComboBox untilYear;
     private javax.swing.JRadioButton wholeDayEvent;
     // End of variables declaration//GEN-END:variables
 }
