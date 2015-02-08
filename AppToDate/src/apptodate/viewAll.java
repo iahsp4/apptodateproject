@@ -16,7 +16,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -44,7 +43,6 @@ public class viewAll extends javax.swing.JFrame {
     private String[] data;
     private String[][] info;
     private String[][] info2;
-    private String[][] info3; 
     
     public viewAll() {
         initComponents();
@@ -152,12 +150,18 @@ public class viewAll extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        if(checkPink() == 1){
+            modifyAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkAdd.png"))); // NOI18N
+        }
+        if(checkPink() == 1){
+            settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apptodate/images/pinkWrench.png"))); // NOI18N
+        }
+
         jPanel2.setBackground(new java.awt.Color(51, 61, 68));
         jPanel2.setPreferredSize(new java.awt.Dimension(5, 351));
 
         eventsTable.setBackground(new java.awt.Color(51, 61, 68));
         eventsTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        eventsTable.setForeground(new java.awt.Color(204, 204, 204));
         eventsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -171,6 +175,11 @@ public class viewAll extends javax.swing.JFrame {
         ));
         eventsTable.setPreferredSize(new java.awt.Dimension(561, 440));
         jScrollPane1.setViewportView(eventsTable);
+        if(checkPink() == 1){
+            eventsTable.setBackground(new java.awt.Color(255, 174, 201));
+        }else{
+            eventsTable.setBackground(new java.awt.Color(51, 61, 68));
+        }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -199,6 +208,12 @@ public class viewAll extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        if(checkPink() == 1){
+            jPanel1.setBackground(new java.awt.Color(255, 9, 88));
+        }else{
+            jPanel1.setBackground(new java.awt.Color(34, 34, 34));
+        }
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -211,6 +226,24 @@ public class viewAll extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_modifyAddActionPerformed
 
+    private int checkPink(){
+        Path path = Paths.get("");
+        Path realPath;
+        int check = 0;
+        try {
+            realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+            stringPath = realPath.toString();
+            stringPath = stringPath.replace("\\","\\\\");
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        File pink = new File(stringPath + "\\AppToDate\\pink.txt");
+        if(pink.exists()){
+            check = 1;
+        }
+        return check;
+    }
+    
     private void settingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsActionPerformed
         // TODO add your handling code here:
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -232,7 +265,7 @@ public class viewAll extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) eventsTable.getModel();
         model.setRowCount(0);
        
-        
+        sort();
         for(int count = 0; count < countFiles(); count++){
         model.addRow(new Object[]{info2[count][0], info2[count][1], info2[count][2], info2[count][3]});
         }
@@ -242,41 +275,97 @@ public class viewAll extends javax.swing.JFrame {
         
     }//GEN-LAST:event_updateButtonActionPerformed
     
+   
+    
     private void sort(){
         int arr[];
         int sortBy = 0;
         if(sortByBox.getSelectedItem().equals("Day")){
-           sortBy = 1;
+           sortBy = 2;
         }
         if(sortByBox.getSelectedItem().equals("Month")){
-           sortBy = 2;
+           sortBy = 1;
         }
         if(sortByBox.getSelectedItem().equals("Year")){
            sortBy = 3;
         }
-        
-        
-        arr = new int[countFiles()];
-        for(int i = 0; i < arr.length; i++){
-            arr[i] = Integer.parseInt(info2[i][sortBy]);
+        int sort[][] = new int[countFiles()][3];
+        for(int counter = 0; counter < countFiles(); counter++){
+            String parts[];
+            parts = info2[counter][2].split(" ");
+            parts[1] = parts[1].trim();
+            parts[2] = parts[2].replace(",", "");
+    
+            if(parts[1].equals("JAN")){
+               parts[1] = "1"; 
+            }
+            if(parts[1].equals("FEB")){
+               parts[1] = "2"; 
+            }
+            if(parts[1].equals("MAR")){
+               parts[1] = "3"; 
+            }
+            if(parts[1].equals("APR")){
+               parts[1] = "4"; 
+            }
+            if(parts[1].equals("MAY")){
+               parts[1] = "5"; 
+            }
+            if(parts[1].equals("JUN")){
+               parts[1] = "6"; 
+            }
+            if(parts[1].equals("JUL")){
+               parts[1] = "7"; 
+            }
+            if(parts[1].equals("AUG")){
+               parts[1] = "8"; 
+            }
+            if(parts[1].equals("SEP")){
+               parts[1] = "9"; 
+            }
+            if(parts[1].equals("OCT")){
+               parts[1] = "10"; 
+            }
+            if(parts[1].equals("NOV")){
+               parts[1] = "11"; 
+            }
+            if(parts[1].equals("DEC")){
+               parts[1] = "12"; 
+            }
+            sort[counter][0] = Integer.parseInt(parts[1]); //MONTH 1
+            sort[counter][1] = Integer.parseInt(parts[2]); //DAY 2
+            sort[counter][2] = Integer.parseInt(parts[3]); //YEAR 3
         }
         
-        for (int i = 0; i < arr.length - 1; i++)
-        {
-            int index = i;
-            for (int j = i + 1; j < arr.length; j++)
-                if (arr[j] < arr[index])
-                    index = j;
-      
-            int smallerNumber = arr[index]; 
-            arr[index] = arr[i];
-            arr[i] = smallerNumber;
-            info3[index][0] = info2[i][0]; 
-            info3[index][1] = info2[i][1]; 
-            info3[index][2] = info2[i][2]; 
-            info3[index][3] = info2[i][3]; 
+        int temp;
+        String temp1, temp2, temp3, temp4;
+        for (int i = 1; i < sort.length; i++) {
+            for(int j = i ; j > 0 ; j--){
+                if(sort[j][sortBy - 1] < sort[j-1][sortBy - 1]){
+                    temp = sort[j][sortBy - 1];
+                    sort[j][sortBy - 1] = sort[j-1][sortBy - 1];
+                    sort[j-1][sortBy - 1] = temp;
+                    
+                    temp1 = info2[j][0];
+                    info2[j][0] = info2[j-1][0];
+                    info2[j-1][0] = temp1;
+                    
+                    temp2 = info2[j][1];
+                    info2[j][1] = info2[j-1][1];
+                    info2[j-1][1] = temp2;
+                    
+                    temp3 = info2[j][2];
+                    info2[j][2] = info2[j-1][2];
+                    info2[j-1][2] = temp3;
+                    
+                    temp4 = info2[j][3];
+                    info2[j][3] = info2[j-1][3];
+                    info2[j-1][3] = temp4;
+                }
+            }
         }
     }
+    
     
     private void fileInfo() throws FileNotFoundException, IOException{
         int fileCount = countFiles();
@@ -293,7 +382,6 @@ public class viewAll extends javax.swing.JFrame {
         }
         info = new String[fileCount][4];
         info2 = new String[fileCount][4];
-        String[][] datePart = new String[fileCount][3];
         for(int num = 0; num < fileCount; num++){
         String[] part = data[num].split("-");
         
