@@ -233,7 +233,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;eventsTable.setBackground(new java.awt.Color(255, 174, 201));&#xa;}else{&#xa;eventsTable.setBackground(new java.awt.Color(51, 61, 68));&#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;eventsTable.setBackground(new java.awt.Color(255, 174, 201));&#xa;eventsTable.setForeground(new java.awt.Color(0,0,0));&#xa;}else{&#xa;eventsTable.setBackground(new java.awt.Color(51, 61, 68));&#xa;eventsTable.setForeground(new java.awt.Color(240,240,240));&#xa;}"/>
               </AuxValues>
             </Component>
           </SubComponents>

@@ -178,8 +178,10 @@ public class viewAll extends javax.swing.JFrame {
         jScrollPane1.setViewportView(eventsTable);
         if(checkPink() == 1){
             eventsTable.setBackground(new java.awt.Color(255, 174, 201));
+            eventsTable.setForeground(new java.awt.Color(0,0,0));
         }else{
             eventsTable.setBackground(new java.awt.Color(51, 61, 68));
+            eventsTable.setForeground(new java.awt.Color(240,240,240));
         }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
