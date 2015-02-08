@@ -294,12 +294,9 @@
                           <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
                           <Component id="monthComboBox" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="updateButton" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="deleteButton" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Component id="showButton" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="deleteButton" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="showButton" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -312,7 +309,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="382" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="40" max="-2" attributes="0"/>
@@ -326,9 +323,7 @@
                       <Component id="showButton" min="-2" pref="34" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       <Component id="deleteButton" min="-2" pref="34" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="updateButton" min="-2" pref="34" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="91" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -354,7 +349,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor" postCode="jTable1.getTableHeader().setReorderingAllowed(Boolean.FALSE);">
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="String[][] d = new String[24][8];&#xa;&#xa;for(int cntr = 0; cntr &lt; 24; cntr++ ){&#xa;        for(int cntr2 = 0; cntr2 &lt; 8; cntr2++){&#xa;            d[cntr][cntr2] = &quot;&quot;;&#xa;        }    &#xa;        }&#xa;for(int cntr = 0; cntr &lt; getNumOfFiles(); cntr++){&#xa;try {&#xa;        d[cntr][0] = getData(cntr, 0);&#xa;        d[cntr][1] = getData(cntr, 1);&#xa;        d[cntr][2] = getData(cntr, 2);&#xa;        d[cntr][3] = getData(cntr, 3);&#xa;        d[cntr][4] = getData(cntr, 4);&#xa;        d[cntr][5] = getData(cntr, 5);&#xa;        d[cntr][6] = getData(cntr, 6);&#xa;        d[cntr][7] = &quot;&quot;;&#xa;    } catch (IOException ex) {&#xa;                Logger.getLogger(DailyView.class.getName()).log(Level.SEVERE, null, ex);&#xa;            }&#xa;}">
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="String[][] d = new String[24][8];&#xa;&#xa;for(int cntr = 0; cntr &lt; 24; cntr++ ){&#xa;        for(int cntr2 = 0; cntr2 &lt; 8; cntr2++){&#xa;            d[cntr][cntr2] = &quot;&quot;;&#xa;        }    &#xa;        }&#xa;for(int cntr = 0; cntr &lt; getNumOfFiles(); cntr++){&#xa;try {&#xa;        d[cntr][0] = getData(cntr, 0);&#xa;        d[cntr][1] = getData(cntr, 1);&#xa;        d[cntr][2] = getData(cntr, 2);&#xa;        d[cntr][3] = getData(cntr, 3);&#xa;        d[cntr][4] = getData(cntr, 4);&#xa;        d[cntr][5] = getData(cntr, 5);&#xa;        d[cntr][6] = getData(cntr, 6);&#xa;        d[cntr][7] = thePathOfFile;&#xa;    } catch (IOException ex) {&#xa;                Logger.getLogger(DailyView.class.getName()).log(Level.SEVERE, null, ex);&#xa;            }&#xa;}">
                       <Color blue="f0" green="f0" red="f0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -488,17 +483,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showButtonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="updateButton">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="11" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="UPDATE"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

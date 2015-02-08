@@ -83,7 +83,6 @@ public class DailyView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         monthComboBox = new javax.swing.JComboBox();
         showButton = new javax.swing.JButton();
-        updateButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -263,7 +262,7 @@ public class DailyView extends javax.swing.JFrame {
                 d[cntr][4] = getData(cntr, 4);
                 d[cntr][5] = getData(cntr, 5);
                 d[cntr][6] = getData(cntr, 6);
-                d[cntr][7] = "";
+                d[cntr][7] = thePathOfFile;
             } catch (IOException ex) {
                 Logger.getLogger(DailyView.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -364,14 +363,6 @@ public class DailyView extends javax.swing.JFrame {
             }
         });
 
-        updateButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        updateButton.setText("UPDATE");
-        updateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -384,11 +375,9 @@ public class DailyView extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(monthComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(showButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(showButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -396,7 +385,7 @@ public class DailyView extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -410,9 +399,7 @@ public class DailyView extends javax.swing.JFrame {
                 .addComponent(showButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 91, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel2);
@@ -598,31 +585,6 @@ try {
 }
         
     }//GEN-LAST:event_showButtonActionPerformed
-
-    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-
-        for(int cntr = 0; cntr < 13; cntr++){
-            d[cntr][0] = "";
-            d[cntr][1] = "";
-            d[cntr][2] = "";
-            d[cntr][3] = "";
-            d[cntr][4] = "";
-            d[cntr][5] = "";
-            d[cntr][6] = "";
-            d[cntr][7] = "";
-            model.setValueAt(d[cntr][0], cntr, 0);
-            model.setValueAt(d[cntr][1], cntr, 1);
-            model.setValueAt(d[cntr][2], cntr, 2);
-            model.setValueAt(d[cntr][3], cntr, 3);
-            model.setValueAt(d[cntr][4], cntr, 4);
-            model.setValueAt(d[cntr][5], cntr, 5);
-            model.setValueAt(d[cntr][6], cntr, 6);
-            model.setValueAt(d[cntr][7], cntr, 7);
-
-}
-    }//GEN-LAST:event_updateButtonActionPerformed
 
     private void viewAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllButtonActionPerformed
         // TODO add your handling code here:
@@ -866,7 +828,6 @@ try {
     private javax.swing.JComboBox monthComboBox;
     private javax.swing.JButton settings;
     private javax.swing.JButton showButton;
-    private javax.swing.JButton updateButton;
     private javax.swing.JButton viewAllButton;
     private javax.swing.JButton yearButton;
     private javax.swing.JLabel yearLabel;

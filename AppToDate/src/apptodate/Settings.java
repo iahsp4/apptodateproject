@@ -525,7 +525,7 @@ public class Settings extends javax.swing.JFrame {
             }} catch (IOException ex) {
                 Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
             }
-         
+       
         close();
     }//GEN-LAST:event_okButtonActionPerformed
 
