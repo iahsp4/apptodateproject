@@ -162,6 +162,7 @@ public class viewAll extends javax.swing.JFrame {
 
         eventsTable.setBackground(new java.awt.Color(51, 61, 68));
         eventsTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        eventsTable.setForeground(new java.awt.Color(240, 240, 240));
         eventsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
