@@ -7,7 +7,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -74,13 +74,13 @@
                   <Component id="monthButton" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                   <Component id="dayButton" min="-2" pref="100" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                   <Component id="leftYearArrow" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="yearLabel" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="yearRightArrow" min="-2" pref="40" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="97" max="32767" attributes="0"/>
                   <Component id="refreshButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="modifyAdd" min="-2" pref="50" max="-2" attributes="0"/>
@@ -1829,7 +1829,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;jPanel3.setBackground(new java.awt.Color(255, 174, 201));&#xa;}else{&#xa;jPanel3.setBackground(new java.awt.Color(51, 61, 68));&#xa;}&#xa;int num = Calendar.getInstance().get(Calendar.MONTH);&#xa;monthNum = num;&#xa;i = num;&#xa;if(num == 0){&#xa;            janButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 1){&#xa;            febButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 2){&#xa;            marButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 3){&#xa;            aprButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 4){&#xa;            mayButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 5){&#xa;            junButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 6){&#xa;            julButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 7){&#xa;            augButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 8){&#xa;            sepButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 9){&#xa;            octButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 10){&#xa;            novButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 11){&#xa;            decButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;setDayNowColor();"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="if(checkPink() == 1){&#xa;jPanel3.setBackground(new java.awt.Color(255, 174, 201));&#xa;}else{&#xa;jPanel3.setBackground(new java.awt.Color(51, 61, 68));&#xa;}&#xa;int num = Calendar.getInstance().get(Calendar.MONTH);&#xa;monthNum = num;&#xa;i = num;&#xa;if(num == 0){&#xa;            janButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 1){&#xa;            febButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 2){&#xa;            marButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 3){&#xa;            aprButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 4){&#xa;            mayButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 5){&#xa;            junButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 6){&#xa;            julButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 7){&#xa;            augButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 8){&#xa;            sepButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 9){&#xa;            octButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 10){&#xa;            novButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        &#xa;        if(num == 11){&#xa;            decButton.setBackground(new java.awt.Color(29,114,239));&#xa;        }&#xa;        setDayNowColor();&#xa;&#xa; File file10 = new File(getPath() + &quot;\\AppToDate\\Notification\\music.txt&quot;);&#xa;            BufferedReader bReader = null;&#xa;                try{&#xa;                 String currentData;&#xa;                 bReader = new BufferedReader(new FileReader(file10));&#xa;                    while((currentData = bReader.readLine()) != null){&#xa;                    musicPath = currentData;&#xa;&#xa;                }&#xa;                   }catch (FileNotFoundException ex) {&#xa;                    System.out.println(getPath());&#xa;                    JOptionPane.showMessageDialog(null,&#xa;                   &quot;Music File not found&quot;,&quot;Error&quot;,&#xa;                   JOptionPane.WARNING_MESSAGE);&#xa;                   }catch (IOException ex){&#xa;}"/>
       </AuxValues>
 
       <Layout>

@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *@author Revamp Group
@@ -44,7 +45,9 @@ public class Settings extends javax.swing.JFrame {
     private String fileName;
     private String confValue = "";
     private String confPath;
+    private String notifyPath;
     private String chosenConf;
+    private String musicPath;
     /**
      * Creates new form Settings
      */
@@ -75,6 +78,10 @@ public class Settings extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         changeTheme = new javax.swing.JComboBox();
         jPanel4 = new javax.swing.JPanel();
+        notificationLabel = new javax.swing.JLabel();
+        alarmLabel = new javax.swing.JLabel();
+        alarmTextField = new javax.swing.JTextField();
+        chooseMusic = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -263,7 +270,7 @@ public class Settings extends javax.swing.JFrame {
                                                 .addComponent(jLabel3)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(startWeek, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addContainerGap(246, Short.MAX_VALUE))
                             );
                             customizeViewPanelLayout.setVerticalGroup(
                                 customizeViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,61 +290,129 @@ public class Settings extends javax.swing.JFrame {
 
                             jPanel4.setBackground(new java.awt.Color(34, 34, 34));
 
-                            javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-                            jPanel4.setLayout(jPanel4Layout);
-                            jPanel4Layout.setHorizontalGroup(
-                                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGap(0, 0, Short.MAX_VALUE)
-                            );
-                            jPanel4Layout.setVerticalGroup(
-                                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGap(0, 112, Short.MAX_VALUE)
-                            );
+                            notificationLabel.setBackground(new java.awt.Color(34, 34, 34));
+                            notificationLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+                            notificationLabel.setForeground(new java.awt.Color(240, 240, 240));
+                            notificationLabel.setText("Notification");
 
-                            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-                            getContentPane().setLayout(layout);
-                            layout.setHorizontalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(configurePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(whatToDoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(customizeViewPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            );
-                            layout.setVerticalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(configurePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(2, 2, 2)
-                                    .addComponent(customizeViewPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(2, 2, 2)
-                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(2, 2, 2)
-                                    .addComponent(whatToDoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            );
+                            alarmLabel.setBackground(new java.awt.Color(34, 34, 34));
+                            alarmLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                            alarmLabel.setForeground(new java.awt.Color(240, 240, 240));
+                            alarmLabel.setText("Choose Alarm: ");
+                            alarmLabel.setOpaque(false);
 
-                            if(checkPink() == 1){
-                                configurePanel.setBackground(new java.awt.Color(255, 9, 88));
-                            }else{
-                                configurePanel.setBackground(new java.awt.Color(34, 34, 34));
-                            }
-                            if(checkPink() == 1){
-                                whatToDoPanel.setBackground(new java.awt.Color(255, 9, 88));
-                            }else{
-                                whatToDoPanel.setBackground(new java.awt.Color(34, 34, 34));
-                            }
-                            if(checkPink() == 1){
-                                customizeViewPanel.setBackground(new java.awt.Color(255, 9, 88));
-                            }else{
-                                customizeViewPanel.setBackground(new java.awt.Color(34, 34, 34));
-                            }
-                            if(checkPink() == 1){
-                                jPanel4.setBackground(new java.awt.Color(255, 9, 88));
-                            }else{
-                                jPanel4.setBackground(new java.awt.Color(34, 34, 34));
-                            }
+                            path = Paths.get("");
 
-                            pack();
-                        }// </editor-fold>//GEN-END:initComponents
+                            try {
+                                realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+                                musicPath = realPath.toString();
+                                musicPath = musicPath.replace("\\","\\\\");
+                                } catch (IOException ex) {
+                                    Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                                fileNow = new File(stringPath + "\\AppToDate\\Notification\\music.txt");
+                                if(fileNow.exists()){
+
+                                    try {
+                                        FileReader fr = new FileReader(fileNow);
+                                        BufferedReader br = new BufferedReader(fr);
+                                        while((chosenConf = br.readLine()).matches(stringPath + "(.*)")) {
+                                        }
+                                        fr.close();
+                                        alarmTextField.setText(chosenConf.replace("\\\\","\\"));
+                                        } catch (FileNotFoundException ex) {
+                                            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+                                        } catch (IOException ex) {
+                                            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                    }
+                                    alarmTextField.addActionListener(new java.awt.event.ActionListener() {
+                                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                            alarmTextFieldActionPerformed(evt);
+                                        }
+                                    });
+
+                                    chooseMusic.setText("Choose");
+                                    chooseMusic.addActionListener(new java.awt.event.ActionListener() {
+                                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                            chooseMusicActionPerformed(evt);
+                                        }
+                                    });
+
+                                    javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+                                    jPanel4.setLayout(jPanel4Layout);
+                                    jPanel4Layout.setHorizontalGroup(
+                                        jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                                    .addComponent(alarmLabel)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(alarmTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(chooseMusic))
+                                                .addComponent(notificationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addContainerGap(23, Short.MAX_VALUE))
+                                    );
+                                    jPanel4Layout.setVerticalGroup(
+                                        jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .addComponent(notificationLabel)
+                                            .addGap(42, 42, 42)
+                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(alarmLabel)
+                                                .addComponent(alarmTextField)
+                                                .addComponent(chooseMusic))
+                                            .addContainerGap(23, Short.MAX_VALUE))
+                                    );
+
+                                    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+                                    getContentPane().setLayout(layout);
+                                    layout.setHorizontalGroup(
+                                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(configurePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(whatToDoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(customizeViewPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    );
+                                    layout.setVerticalGroup(
+                                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(configurePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(2, 2, 2)
+                                            .addComponent(customizeViewPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(2, 2, 2)
+                                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(2, 2, 2)
+                                            .addComponent(whatToDoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    );
+
+                                    if(checkPink() == 1){
+                                        configurePanel.setBackground(new java.awt.Color(255, 9, 88));
+                                    }else{
+                                        configurePanel.setBackground(new java.awt.Color(34, 34, 34));
+                                    }
+                                    if(checkPink() == 1){
+                                        whatToDoPanel.setBackground(new java.awt.Color(255, 9, 88));
+                                    }else{
+                                        whatToDoPanel.setBackground(new java.awt.Color(34, 34, 34));
+                                    }
+                                    if(checkPink() == 1){
+                                        customizeViewPanel.setBackground(new java.awt.Color(255, 9, 88));
+                                    }else{
+                                        customizeViewPanel.setBackground(new java.awt.Color(34, 34, 34));
+                                    }
+                                    if(checkPink() == 1){
+                                        jPanel4.setBackground(new java.awt.Color(255, 9, 88));
+                                    }else{
+                                        jPanel4.setBackground(new java.awt.Color(34, 34, 34));
+                                    }
+
+                                    pack();
+                                    setLocationRelativeTo(null);
+                                }// </editor-fold>//GEN-END:initComponents
 
     private void confTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confTextFieldActionPerformed
         // TODO add your handlind code here:
@@ -392,7 +467,8 @@ public class Settings extends javax.swing.JFrame {
                write.close();
                }catch(IOException e){
                }
-        }        
+        }
+           
     }//GEN-LAST:event_confButtonActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
@@ -525,6 +601,22 @@ public class Settings extends javax.swing.JFrame {
             }} catch (IOException ex) {
                 Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            File file2 = new File(stringPath + "\\AppToDate" + "\\Notification");  
+        
+            if(!file2.exists()){
+               file2.mkdir();
+               }
+               
+            if(file2.exists()){
+               try{
+               Writer write = new BufferedWriter(new FileWriter(stringPath + "\\AppToDate\\Notification\\music.txt", false));
+               write.append(musicPath);
+               write.close();
+               }catch(IOException e){
+               }
+        }
+            
        
         close();
     }//GEN-LAST:event_okButtonActionPerformed
@@ -542,9 +634,69 @@ public class Settings extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_changeThemeActionPerformed
 
+    private void alarmTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alarmTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alarmTextFieldActionPerformed
+
+    private void chooseMusicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseMusicActionPerformed
+        // TODO add your handling code here:
+        Path path = Paths.get("");
+        Path realPath;
+        try {
+            realPath = path.toRealPath(LinkOption.NOFOLLOW_LINKS);
+            musicPath = realPath.toString();
+            musicPath = musicPath.replace("\\","\\\\");
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        File file = new File(stringPath + "\\AppToDate" + "\\Notification");  
+        
+        if(!file.exists()){
+               file.mkdir();
+               }
+        
+        JFileChooser choose = new JFileChooser();
+        choose.setApproveButtonText("OK");
+        choose.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        choose.setDialogTitle("Choose Directory");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter(
+        "MP3 Files", "mp3");
+        choose.setFileFilter(filter);
+        choose.addChoosableFileFilter(filter);
+        choose.setAcceptAllFileFilterUsed(false);
+        choose.showOpenDialog(null);
+        
+
+        
+        file = choose.getSelectedFile();
+        fileName = file.getAbsolutePath();
+        notifyPath = fileName.replace("\\","\\\\");
+        alarmTextField.setText(fileName);
+        musicPath = alarmTextField.getText();
+        File file2 = new File(stringPath + "\\AppToDate" + "\\Notification");  
+        
+        if(!file2.exists()){
+               file2.mkdir();
+               }
+        
+        if(file2.exists()){
+        try{
+               Writer write = new BufferedWriter(new FileWriter(stringPath + "\\AppToDate\\Notification\\music.txt", false));
+               write.append(musicPath);
+               write.close();
+               }catch(IOException e){
+               }
+        }
+        
+        
+    }//GEN-LAST:event_chooseMusicActionPerformed
+
     private void close(){
         this.dispose();
     }
+    
+
     
     private int checkPink(){
         Path path = Paths.get("");
@@ -603,8 +755,11 @@ public class Settings extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel alarmLabel;
+    private javax.swing.JTextField alarmTextField;
     private javax.swing.JButton cancelButton;
     private javax.swing.JComboBox changeTheme;
+    private javax.swing.JButton chooseMusic;
     private javax.swing.JButton confButton;
     private javax.swing.JTextField confTextField;
     private javax.swing.JPanel configurePanel;
@@ -614,6 +769,7 @@ public class Settings extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel notificationLabel;
     private javax.swing.JButton okButton;
     private javax.swing.JComboBox startWeek;
     private javax.swing.JPanel whatToDoPanel;

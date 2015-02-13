@@ -7,6 +7,7 @@ package apptodate;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,11 +17,14 @@ import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javazoom.jl.player.Player;
 
 /**
  *@author Revamp Group
@@ -47,14 +51,185 @@ public class MonthlyView extends javax.swing.JFrame {
      * Creates new form MonthlyView
      */
     public int year;
+    private String[][] d = new String[13][8];
     private String thePathOfFile = "";
     private String whatDayNow;
+    private int lock;
     private int i;
     private int monthNum;
-    private int lock = 0;
     private String stringPath;
+    private String time;
+    private String today;
+    private String musicPath;
+    private String data[][] = new String[99][99];
+   
+
+    
+ 
+
     public MonthlyView() {
         initComponents();
+        new Thread(){
+            public void run(){
+                while(true){
+                    Calendar cal = new GregorianCalendar();
+                    int month = cal.get(Calendar.MONTH);
+                    int day = cal.get(Calendar.DAY_OF_MONTH);
+                    int yearClock = cal.get(Calendar.YEAR);
+                    int hour = cal.get(Calendar.HOUR);
+                    int min = cal.get(Calendar.MINUTE);
+                    int sec = cal.get(Calendar.SECOND);
+                    int AM_PM = cal.get(Calendar.AM_PM);
+                    int numOfFiles = 0;
+                    
+                    String monthString = "";
+                    if(month == 0){
+                       monthString = "JAN"; 
+                    }
+                    if(month == 1){
+                       monthString = "FEB"; 
+                    }
+                    if(month == 2){
+                       monthString = "MAR"; 
+                    }
+                    if(month == 3){
+                       monthString = "APR"; 
+                    }
+                    if(month == 4){
+                       monthString = "MAY"; 
+                    }
+                    if(month == 5){
+                       monthString = "JUN"; 
+                    }
+                    if(month == 6){
+                       monthString = "JUL"; 
+                    }
+                    if(month == 7){
+                       monthString = "AUG"; 
+                    }
+                    if(month == 8){
+                       monthString = "SEP"; 
+                    }
+                    if(month == 9){
+                       monthString = "OCT"; 
+                    }
+                    if(month == 10){
+                       monthString = "NOV"; 
+                    }
+                    if(month == 11){
+                       monthString = "DEC"; 
+                    }
+                    
+                    File file = new File(getPath().replace("\\\\","\\") + "\\AppToDate\\" + yearClock + "\\" + monthString + "\\" + day) ;
+                    File[] listOfFiles;
+                    if(file.exists()){
+              
+                        if(getNumOfFiles() > 0){
+                           listOfFiles = file.listFiles(); 
+                            for (int j = 0; j < listOfFiles.length; j++) {
+                            if (listOfFiles[j].isFile()) {
+                                
+                                File file2 = new File(getPath().replace("\\\\","\\") + "\\AppToDate\\" + yearClock + "\\" + monthString + "\\" + day
+                                + "\\" + listOfFiles[j].getName());
+                                BufferedReader br = null;
+                                try{
+                                    String currentData;
+                                    br = new BufferedReader(new FileReader(file2));
+                                    while((currentData = br.readLine()) != null){
+                                        String[] parts = currentData.split("\\+");
+                                        data[j][0] = parts[0];
+                                        data[j][1] = parts[1];
+                                        data[j][2] = parts[2];
+                                        data[j][3] = parts[3];
+                                        data[j][4] = parts[4];
+                                        data[j][5] = parts[5];//DEADLINE TIME
+                                        data[j][6] = parts[6];//DEADLINE DATE
+                                        numOfFiles = j;
+                                        //System.out.println(data[i][5]);
+                                        //System.out.println(data[i][6]);
+                                        
+                                    }
+                                }catch(IOException e){
+                                    
+                                }
+                                
+                                }
+                            
+                    
+               
+                            
+                            
+                     }                                            
+                           
+                        }
+                    }    
+                    
+                    
+                    
+                    String day_night = "";
+                    
+                    if(AM_PM == 1){
+                        day_night = "PM";
+                    }else{
+                        day_night = "AM";
+                    }
+                    
+                    if(hour == 0){
+                       hour = 12;   
+                    }
+                    
+                    today = monthString + " " + day + ", " + year;
+                    time = hour + ":" + min + ":" + sec + day_night;
+                    
+                   
+                    //System.out.println(today + " against " + data[0][6]);
+                   System.out.println(time);
+                    
+                  
+                    
+                    
+                    for(int i = 0; i < numOfFiles; i++){
+                    String compare = "";  
+                        if(data[i][5] != null){
+                    compare = data[i][5].replace(" ",":0").replace("M:0", "M");
+                    } 
+                     compare = compare.replace(" ", "");
+                     time = time.replace(" ", "");
+                     /*
+                     String parts[] = compare.split(":");
+                     int changeValue = Integer.parseInt(parts[0]);
+                     int numberToChange = changeValue - notifyMe;
+                     if(numberToChange <= 0){
+                         numberToChange = numberToChange + 12;
+                         
+                     }
+                     
+                        compare = numberToChange + ":" + parts[1] + ":" + parts[2];
+                     */
+                     compare = compare.replace(" ", "");
+                     time = time.replace(" ", "");
+                     System.out.println(compare);
+                     //System.out.println(time);
+                    if(time.equals(compare)){
+                        
+                    try{
+                     JOptionPane.showMessageDialog(null, "An Event is now in session");
+                      FileInputStream fis = new FileInputStream(musicPath);
+                      Player playMP3 = new Player(fis);
+                      playMP3.play();
+                         
+                      
+                    }catch(Exception e){
+                    System.out.println(e);
+                    }
+                    
+                        }
+                            }
+               
+    }//Infinite loop while
+            }
+        
+                }.start();
     }
 
     /**
@@ -267,13 +442,13 @@ public class MonthlyView extends javax.swing.JFrame {
                 .addComponent(monthButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(dayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(133, 133, 133)
+                .addGap(111, 111, 111)
                 .addComponent(leftYearArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(yearLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(yearRightArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(refreshButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(modifyAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2080,18 +2255,27 @@ public class MonthlyView extends javax.swing.JFrame {
         }
         setDayNowColor();
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+        File file10 = new File(getPath() + "\\AppToDate\\Notification\\music.txt");
+        BufferedReader bReader = null;
+        try{
+            String currentData;
+            bReader = new BufferedReader(new FileReader(file10));
+            while((currentData = bReader.readLine()) != null){
+                musicPath = currentData;
 
-    private void settingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsActionPerformed
-        // TODO add your handling code here:
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Settings().setVisible(true);
             }
-        });
-    }//GEN-LAST:event_settingsActionPerformed
+        }catch (FileNotFoundException ex) {
+            System.out.println(getPath());
+            JOptionPane.showMessageDialog(null,
+                "Music File not found","Error",
+                JOptionPane.WARNING_MESSAGE);
+        }catch (IOException ex){
+        }
 
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+    
     private void dayButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButton1ActionPerformed
         // TODO add your handling code here:
        setTextData();
@@ -3894,7 +4078,7 @@ public class MonthlyView extends javax.swing.JFrame {
         dayButton42.setText(String.valueOf(getCalendarDay(41, i)));
         setDayNowColor();
     }//GEN-LAST:event_monthRightArrowActionPerformed
-
+    
     private void dayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButtonActionPerformed
         // TODO add your handling code here:
         close();
@@ -3910,12 +4094,21 @@ public class MonthlyView extends javax.swing.JFrame {
         // TODO add your handling code here:
         close();
         new MonthlyView().setVisible(true);
-  
+      
     }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void eventButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_eventButton1ActionPerformed
+
+    private void settingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Settings().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_settingsActionPerformed
     
     private void close(){
         this.dispose();
@@ -4110,6 +4303,8 @@ private int getDefaultMonth(int dayButton){
         return splitString[7];
     }
     
+        
+        
     public String getFileNames(int num){
         String thePathFile[] = new String[1000];
         String filePath = getPath();
@@ -4148,6 +4343,8 @@ private int getDefaultMonth(int dayButton){
     }
     return numFiles;
     }
+        
+        
         
     private int checkPink(){
         Path path = Paths.get("");
@@ -4541,6 +4738,35 @@ private int getDefaultMonth(int dayButton){
         eventButton3.setText("Img");
     }
     
+        public String getData(int num, int num2) throws FileNotFoundException, IOException{
+        int j = 0;
+        String combineAll = "";
+        String[] splitString = new String[5];
+        File file = new File(getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
+        FileReader read = new FileReader(getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num));
+        BufferedReader br = new BufferedReader(read);
+        String[] descData = new String[100];
+        if(file.exists()){
+        j = 0;    
+            while((descData[j] = br.readLine()) != null) { 
+
+            j++;
+            } 
+            br.close();
+        for(int k = 0; k <= j; k++){
+            combineAll = combineAll + descData[k];
+        }
+        splitString = combineAll.split("\\+");
+        }
+        thePathOfFile = getPath() + "\\AppToDate\\" + yearLabel.getText() 
+                + "\\" + getMonthNum(monthNum) + "\\" + whatDayNow + "\\" + getFileNames(num);
+    
+        return splitString[num2];
+    }
+        
+        
     private void setEventData(String monthNow, String dayNow){
        String combine = monthNow + "-" + dayNow;
        whatDayNow = dayNow;
