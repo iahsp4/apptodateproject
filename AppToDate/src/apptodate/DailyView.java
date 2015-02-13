@@ -83,6 +83,7 @@ public class DailyView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         monthComboBox = new javax.swing.JComboBox();
         showButton = new javax.swing.JButton();
+        clearButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -269,40 +270,40 @@ public class DailyView extends javax.swing.JFrame {
         }
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {d[0][0], d[0][1], d[0][2], d[0][3], d[0][4], d[0][5], d[0][6], d[0][7]},
-                {d[1][0], d[1][1], d[1][2], d[1][3], d[1][4], d[1][5], d[1][6], d[1][7]},
-                {d[2][0], d[2][1], d[2][2], d[2][3], d[2][4], d[2][5], d[2][6], d[2][7]},
-                {d[3][0], d[3][1], d[3][2], d[3][3], d[3][4], d[3][5], d[3][6], d[3][7]},
-                {d[4][0], d[4][1], d[4][2], d[4][3], d[4][4], d[4][5], d[4][6], d[4][7]},
-                {d[5][0], d[5][1], d[5][2], d[5][3], d[5][4], d[5][5], d[5][6], d[5][7]},
-                {d[6][0], d[6][1], d[6][2], d[6][3], d[6][4], d[6][5], d[6][6], d[6][7]},
-                {d[7][0], d[7][1], d[7][2], d[7][3], d[7][4], d[7][5], d[7][6], d[7][7]},
-                {d[8][0], d[8][1], d[8][2], d[8][3], d[8][4], d[8][5], d[8][6], d[8][7]},
-                {d[9][0], d[9][1], d[9][2], d[9][3], d[9][4], d[9][5], d[9][6], d[9][7]},
-                {d[10][0], d[10][1], d[10][2], d[10][3], d[10][4], d[10][5], d[10][6], d[10][7]},
-                {d[11][0], d[11][1], d[11][2], d[11][3], d[11][4], d[11][5], d[11][6], d[11][7]},
-                {d[12][0], d[12][1], d[12][2], d[12][3], d[12][4], d[12][5], d[12][6], d[12][7]},
-                {d[13][0], d[13][1], d[13][2], d[13][3], d[13][4], d[13][5], d[13][6], d[13][7]},
-                {d[14][0], d[14][1], d[14][2], d[14][3], d[14][4], d[14][5], d[14][6], d[14][7]},
-                {d[15][0], d[15][1], d[15][2], d[15][3], d[15][4], d[15][5], d[15][6], d[15][7]},
-                {d[16][0], d[16][1], d[16][2], d[16][3], d[16][4], d[16][5], d[16][6], d[16][7]},
-                {d[17][0], d[17][1], d[17][2], d[17][3], d[17][4], d[17][5], d[17][6], d[17][7]},
-                {d[18][0], d[18][1], d[18][2], d[18][3], d[18][4], d[18][5], d[18][6], d[18][7]},
-                {d[19][0], d[19][1], d[19][2], d[19][3], d[19][4], d[19][5], d[19][6], d[19][7]},
-                {d[20][0], d[20][1], d[20][2], d[20][3], d[20][4], d[20][5], d[20][6], d[20][7]},
-                {d[21][0], d[21][1], d[21][2], d[21][3], d[21][4], d[21][5], d[21][6], d[21][7]},
-                {d[22][0], d[22][1], d[22][2], d[22][3], d[22][4], d[22][5], d[22][6], d[22][7]},
-                {d[13][0], d[23][1], d[23][2], d[23][3], d[23][4], d[23][5], d[23][6], d[23][7]}
+                {d[0][0], d[0][1], d[0][2], d[0][3], d[0][4], d[0][5], d[0][6]},
+                {d[1][0], d[1][1], d[1][2], d[1][3], d[1][4], d[1][5], d[1][6]},
+                {d[2][0], d[2][1], d[2][2], d[2][3], d[2][4], d[2][5], d[2][6]},
+                {d[3][0], d[3][1], d[3][2], d[3][3], d[3][4], d[3][5], d[3][6]},
+                {d[4][0], d[4][1], d[4][2], d[4][3], d[4][4], d[4][5], d[4][6]},
+                {d[5][0], d[5][1], d[5][2], d[5][3], d[5][4], d[5][5], d[5][6]},
+                {d[6][0], d[6][1], d[6][2], d[6][3], d[6][4], d[6][5], d[6][6]},
+                {d[7][0], d[7][1], d[7][2], d[7][3], d[7][4], d[7][5], d[7][6]},
+                {d[8][0], d[8][1], d[8][2], d[8][3], d[8][4], d[8][5], d[8][6]},
+                {d[9][0], d[9][1], d[9][2], d[9][3], d[9][4], d[9][5], d[9][6]},
+                {d[10][0], d[10][1], d[10][2], d[10][3], d[10][4], d[10][5], d[10][6]},
+                {d[11][0], d[11][1], d[11][2], d[11][3], d[11][4], d[11][5], d[11][6]},
+                {d[12][0], d[12][1], d[12][2], d[12][3], d[12][4], d[12][5], d[12][6]},
+                {d[13][0], d[13][1], d[13][2], d[13][3], d[13][4], d[13][5], d[13][6]},
+                {d[14][0], d[14][1], d[14][2], d[14][3], d[14][4], d[14][5], d[14][6]},
+                {d[15][0], d[15][1], d[15][2], d[15][3], d[15][4], d[15][5], d[15][6]},
+                {d[16][0], d[16][1], d[16][2], d[16][3], d[16][4], d[16][5], d[16][6]},
+                {d[17][0], d[17][1], d[17][2], d[17][3], d[17][4], d[17][5], d[17][6]},
+                {d[18][0], d[18][1], d[18][2], d[18][3], d[18][4], d[18][5], d[18][6]},
+                {d[19][0], d[19][1], d[19][2], d[19][3], d[19][4], d[19][5], d[19][6]},
+                {d[20][0], d[20][1], d[20][2], d[20][3], d[20][4], d[20][5], d[20][6]},
+                {d[21][0], d[21][1], d[21][2], d[21][3], d[21][4], d[21][5], d[21][6]},
+                {d[22][0], d[22][1], d[22][2], d[22][3], d[22][4], d[22][5], d[22][6]},
+                {d[13][0], d[23][1], d[23][2], d[23][3], d[23][4], d[23][5], d[23][6]},
             },
             new String [] {
-                "Event Title", "Description", "Subject", "Started Time", "From", "Until Time", "Until", "PATH"
+                "Event Title", "Description", "Subject", "Started Time", "From", "Until Time", "Until"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -363,6 +364,14 @@ public class DailyView extends javax.swing.JFrame {
             }
         });
 
+        clearButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        clearButton.setText("CLEAR");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -376,8 +385,10 @@ public class DailyView extends javax.swing.JFrame {
                     .addComponent(monthComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(showButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(showButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -397,8 +408,10 @@ public class DailyView extends javax.swing.JFrame {
                 .addComponent(monthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(showButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -431,6 +444,7 @@ public class DailyView extends javax.swing.JFrame {
         }
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
     private void close(){
@@ -575,7 +589,6 @@ try {
         model.setValueAt(d[cntr][4], cntr, 4);
         model.setValueAt(d[cntr][5], cntr, 5);
         model.setValueAt(d[cntr][6], cntr, 6);
-        model.setValueAt(d[cntr][7], cntr, 7);
 
         
     } catch (IOException ex) {
@@ -595,6 +608,29 @@ try {
     private void dayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dayButtonActionPerformed
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        for(int cntr = 0; cntr < 24; cntr++){
+            d[cntr][0] = "";
+            d[cntr][1] = "";
+            d[cntr][2] = "";
+            d[cntr][3] = "";
+            d[cntr][4] = "";
+            d[cntr][5] = "";
+            d[cntr][6] = "";
+            d[cntr][7] = "";
+            model.setValueAt(d[cntr][0], cntr, 0);
+            model.setValueAt(d[cntr][1], cntr, 1);
+            model.setValueAt(d[cntr][2], cntr, 2);
+            model.setValueAt(d[cntr][3], cntr, 3);
+            model.setValueAt(d[cntr][4], cntr, 4);
+            model.setValueAt(d[cntr][5], cntr, 5);
+            model.setValueAt(d[cntr][6], cntr, 6);
+        }
+    }//GEN-LAST:event_clearButtonActionPerformed
     
      private int checkPink(){
         Path path = Paths.get("");
@@ -812,6 +848,7 @@ try {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clearButton;
     private javax.swing.JButton dayButton;
     private javax.swing.JComboBox dayComboBox;
     private javax.swing.JButton deleteButton;

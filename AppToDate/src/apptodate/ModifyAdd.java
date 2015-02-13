@@ -426,6 +426,7 @@ public class ModifyAdd extends javax.swing.JFrame {
         }
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void eventAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventAreaActionPerformed
@@ -488,17 +489,17 @@ public class ModifyAdd extends javax.swing.JFrame {
                 file3.mkdir();
             }
             
-            File file4 = new File(myPathData + "\\AppToDate\\" + fromYr + "\\");
+            File file4 = new File(myPathData + "\\AppToDate\\" + untilYr + "\\");
             if(!file4.exists()){
                 file4.mkdir();
             }
             
-              File file42 = new File(myPathData + "\\AppToDate\\" + fromYr + "\\" + frMonth);
+              File file42 = new File(myPathData + "\\AppToDate\\" + untilYr + "\\" + unMonth);
             if(!file42.exists()){
                 file42.mkdir();
             }
             
-            File file43 = new File(myPathData + "\\AppToDate\\" + fromYr + "\\" + frMonth + "\\" + fromD);
+            File file43 = new File(myPathData + "\\AppToDate\\" + untilYr + "\\" + unMonth + "\\" + untilD);
             if(!file43.exists()){
                 file43.mkdir();
             }
@@ -511,12 +512,12 @@ public class ModifyAdd extends javax.swing.JFrame {
                 Uampm = "PM";
             }
             
-            File file5 = new File(myPathData + "\\AppToDate\\" + fromYr + "\\" + frMonth 
-                    + "\\" + fromD + "\\" + frMonth + "-" + fromD + "-" + eventTitle + ".txt");
+            File file5 = new File(myPathData + "\\AppToDate\\" + untilYr + "\\" + unMonth 
+                    + "\\" + untilD + "\\" + unMonth + "-" + untilD + "-" + eventTitle + ".txt");
             if(!file5.exists()){
             try{
-               Writer write = new BufferedWriter(new FileWriter(myPathData + "\\AppToDate\\" + fromYr + "\\" + frMonth + "\\" 
-                       + fromD + "\\" + frMonth + "-" + fromD + "-" + eventTitle + ".txt", false));
+               Writer write = new BufferedWriter(new FileWriter(myPathData + "\\AppToDate\\" + untilYr + "\\" + unMonth + "\\" 
+                       + untilD + "\\" + unMonth + "-" + untilD + "-" + eventTitle + ".txt", false));
                write.append(eventTitle + " + "); 
                write.append(desc + " + ");
                write.append(subj + " + ");
@@ -527,7 +528,7 @@ public class ModifyAdd extends javax.swing.JFrame {
                write.append(fromD + ", ");
                write.append(fromYr + "+");
                write.append(untilH + ":");
-               write.append(untilM);
+               write.append(untilM + " ");
                write.append(Uampm + " + ");
                write.append(unMonth + " ");
                write.append(untilD + ", ");
@@ -556,7 +557,7 @@ public class ModifyAdd extends javax.swing.JFrame {
                write.append(untilD + ", ");
                write.append(untilYr + " + "); 
                write.append(untilH + ":");
-               write.append(untilM);
+               write.append(untilM + " ");
                write.append(Uampm + " + ");
                write.close();
                }catch(IOException e){
